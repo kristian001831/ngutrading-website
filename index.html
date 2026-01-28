@@ -174,6 +174,29 @@
   </div>
 </div>
 
+
+<div id="advanced" class="section" style="display:none;">
+  <div class="container">
+    <div class="card unlocked">
+      <div class="card-pad">
+        <div class="kicker" data-i18n="adv_k"></div>
+        <h2 style="margin:10px 0 6px; font-size:32px;" data-i18n="adv_h"></h2>
+        <p class="lead" style="font-size:14px; margin:0;" data-i18n="adv_p"></p>
+        <div class="hr"></div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <span class="badge"><b>300€</b> <span style="text-decoration:line-through; opacity:.65;">600€</span></span>
+          <span class="badge" id="countdownBadge">⏳ <span id="countdownText">24:00:00</span></span>
+        </div>
+        <div class="actions" style="margin-top:14px;">
+          <a class="btn gold" href="offer.html" data-i18n="adv_btn"></a>
+          <a class="btn" href="#free" data-i18n="cta_back">Back</a>
+        </div>
+        <p class="caption" style="margin-top:10px;">* Pricing display is a marketing presentation. Past performance is not a guarantee of future results.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="free" class="section">
   <div class="container">
     <div class="card">
@@ -217,6 +240,7 @@
   </div>
 </div>
 
+<div id="toast" class="toast"><strong id="toastTitle"></strong><span id="toastBody"></span><div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;"><a id="toastCta" class="btn small gold" href="offer.html"></a><button id="toastClose" class="btn small">OK</button></div></div>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>

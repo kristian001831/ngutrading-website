@@ -12,3 +12,6 @@ http://localhost:8000/ngu_funnel_v10/index.html
 
 Included testimonials: 8
 Included profit screenshots: 12
+
+
+v11 updates: unlock UX + gated offer page + upgraded legal pages.
