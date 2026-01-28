@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>NGU Advanced — Full Strategy (Limited Access)</title>
+  <meta name="description" content="Full NGU strategy end-to-end: rules, examples, templates, and a growing library. Exclusive community + support. Limited access."/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:title" content="NGU Advanced — Full Strategy (Limited Access)"/>
+  <meta property="og:description" content="A complete rule-based system for consistent execution. Limited access."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="../assets/ngu-logo.jpeg"/>
+  <link rel="icon" href="../assets/ngu-logo.jpeg"/>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body class="offerCompact">
+  <div class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="../index.html">
+          <img src="../assets/ngu-logo.jpeg" alt="NGU Logo">
+          <div class="meta">
+            <strong>NGU TRADING</strong>
+            <span>Never Give Up • System &gt; Emotion</span>
+          </div>
+        </a>
+        <div class="controls">
+          <a class="btn small ghost" href="../index.html">Home</a>
+          <button id="langDE" class="btn small ghost">DE</button>
+          <button id="langEN" class="btn small ghost">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="card goldline">
+        <div class="card-pad">
+          <div class="pill"><span class="dot"></span> Limited access • Full strategy inside</div>
+          <div class="h1">NGU Advanced</div>
+          <p class="lead">Everything you need to execute NGU end‑to‑end — rules, examples, templates — plus a library that grows over time. Built for traders who want <b>clean execution</b> and <b>funded longevity</b>.</p>
+
+          <div class="pricebar">
+            <div class="left">
+              <div class="reg">Regular: <s>€600</s></div>
+              <div class="now">€300 one‑time</div>
+            </div>
+            <span class="pillMini"><b>Ends in</b> <span id="countdownText" style="font-variant-numeric:tabular-nums;">23:59:59</span></span>
+            <span class="pillMini"><b>Spots left</b> <span id="spotsText" style="font-variant-numeric:tabular-nums;">–</span></span>
+          </div>
+
+          <div class="outcomes">
+            <span class="chip">✅ Clear entry / exit rules</span>
+            <span class="chip">🧠 Less FOMO &amp; overtrading</span>
+            <span class="chip">🛡️ Capital protection framework</span>
+            <span class="chip">📊 Audit‑style execution</span>
+          </div>
+
+          <div class="stackTight">
+            <div class="bullet">📌 <div><div class="t">Full Strategy Playbook</div><p class="d">Exact conditions + “no‑trade” filters. Trade less, trade better.</p></div></div>
+            <div class="bullet">📚 <div><div class="t">Videos + eBooks + Templates</div><p class="d">Step‑by‑step training + checklists so you execute the same way every time.</p></div></div>
+            <div class="bullet">🔒 <div><div class="t">Exclusive Community + Support</div><p class="d">Course‑only access + support by Kristian. Future exclusives may include live Q&amp;As / private sessions.</p></div></div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn primary" target="_blank" rel="noopener" href="https://whop.com/checkout/plan_bgPFruiqerClS">Unlock NGU Advanced</a>
+            <a class="btn ghost" href="#proof">See feedback</a>
+          </div>
+
+          <div class="caption" style="margin-top:10px;">Share: <a data-share="de" href="#">DE link</a> • <a data-share="en" href="#">EN link</a></div>
+          <p class="caption" style="margin-top:10px;">No trade signals. No profit promises. Education + execution only.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="proof">
+    <div class="container">
+      <div class="h2">Feedback (Screenshots)</div>
+      <p class="lead" style="font-size:14px;">Unedited screenshots from chats, community feedback and reviews.</p>
+      <div id="proofMount"></div>
+      <p class="caption" style="margin-top:10px;">(If you want the full proof gallery, use the main page.)</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <div class="legal">
+        <div>© <span class="js-year"></span> NGU Trading.</div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="../impressum/index.html">Impressum</a>
+          <a href="../datenschutz/index.html">Datenschutz</a>
+          <a href="../disclaimer/index.html">Disclaimer</a>
+        </div>
+      </div>
+      <p class="caption" data-i18n="legal"></p>
+    </div>
+  </div>
+
+  <script src="../assets/i18n.js"></script>
+  <script src="../assets/app.js"></script>
+  <script>
+    // mount a small proof scroller (first 10 images) for credibility without clutter
+    (function(){
+      var mount=document.getElementById('proofMount');
+      if(!mount) return;
+      var files=(window.NGU_PROOF_FILES||[]).slice(0,10);
+      if(!files.length){ mount.innerHTML='<p class="caption">Proof images not found.</p>'; return; }
+      var html='<div class="scroller" style="margin-top:12px;">';
+      files.forEach(function(fn){
+        html += '<div class="shot"><div class="imgframe"><img loading="lazy" src="../assets/proof/'+fn+'" alt="Feedback"></div></div>';
+      });
+      html+='</div>';
+      mount.innerHTML=html;
+    })();
+  </script>
+</body>
+</html>
