@@ -1,10 +1,8 @@
-
 const CONFIG = {
   telegramInvite: "https://t.me/nguvipgroup",
   coachBot: "https://chatgpt.com/g/g-6978f4798004819197383b0c645e6854-ngu-trading-strategy-coach",
-  members: 300,
-  unlockKey: "ngu_unlocked",
-  offerPath: "offer.html"
+  whopCheckout: "https://whop.com/checkout/plan_bgPFruiqerClS",
+  langKey: "ngu_lang"
 };
 
 (function(){
@@ -17,7 +15,7 @@ const CONFIG = {
   };
 
   function guessLang(){
-    const saved = store.get('nguLang', null);
+    const saved = store.get(CONFIG.langKey, null);
     if(saved) return saved;
     const lang = (navigator.language||'').toLowerCase();
     const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
@@ -25,118 +23,59 @@ const CONFIG = {
     return looksDach ? 'de' : 'en';
   }
 
-  function dict(){
-    const code = store.get('nguLang', null) || guessLang();
-    return (window.NGU_I18N && window.NGU_I18N[code]) ? window.NGU_I18N[code] : (window.NGU_I18N?.en || {});
-  }
-
   function applyLang(code){
     const d = (window.NGU_I18N && window.NGU_I18N[code]) ? window.NGU_I18N[code] : window.NGU_I18N.en;
     document.documentElement.setAttribute('lang', code);
-    store.set('nguLang', code);
-
+    store.set(CONFIG.langKey, code);
     $$('[data-i18n]').forEach(el=>{
       const key = el.getAttribute('data-i18n');
-      let txt = d[key] ?? '';
-      txt = txt.replace('{members}', String(CONFIG.members));
-      el.textContent = txt;
+      el.textContent = d[key] ?? '';
     });
-
     $('#langDE')?.classList.toggle('active', code==='de');
     $('#langEN')?.classList.toggle('active', code==='en');
-
-    // toast CTA label
-    const cta = $('#toastCta');
-    if(cta) cta.textContent = d['unlock_cta'] || (code==='de' ? 'Next Step ansehen →' : 'View next step →');
   }
 
-  function setLink(sel, href){
+  function setLink(sel, href, newTab=true){
     $$(sel).forEach(a=>{
       a.setAttribute('href', href);
-      a.setAttribute('target','_blank');
-      a.setAttribute('rel','noopener noreferrer');
+      if(newTab){
+        a.setAttribute('target','_blank');
+        a.setAttribute('rel','noopener noreferrer');
+      }
     });
   }
 
-  function isUnlocked(){
-    return store.get(CONFIG.unlockKey, false) === true;
-  }
-  function unlock(){
-    store.set(CONFIG.unlockKey, true);
-  }
-
-  function revealAdvanced(){
-    const adv = $('#advanced');
-    if(!adv) return;
-    adv.style.display = 'block';
-  }
-
-  function showToast(){
+  function toast(title, body, ctaText, ctaHref){
     const t = $('#toast');
     if(!t) return;
-    const d = dict();
-    $('#toastTitle').textContent = d.unlock_title || '✅ Access unlocked';
-    $('#toastBody').textContent = d.unlock_body || 'You can now view the next step.';
-    t.classList.add('show');
-  }
-  function hideToast(){ $('#toast')?.classList.remove('show'); }
-
-  function bindUnlockClicks(){
-    // We bind to all buttons that open Telegram/Bot.
-    $$('#telegramLink, #botLink').forEach(el=>{
-      el.addEventListener('click', ()=>{
-        // Unlock immediately, then external opens in new tab (already set).
-        unlock();
-        revealAdvanced();
-        showToast();
-      });
-    });
-    $('#toastClose')?.addEventListener('click', hideToast);
-  }
-
-  function startCountdown(){
-    const el = $('#countdownText');
-    if(!el) return;
-    // Artificial countdown: resets daily at midnight local time.
-    function tick(){
-      const now = new Date();
-      const end = new Date(now);
-      end.setHours(23,59,59,999);
-      const ms = Math.max(0, end - now);
-      const total = Math.floor(ms/1000);
-      const h = String(Math.floor(total/3600)).padStart(2,'0');
-      const m = String(Math.floor((total%3600)/60)).padStart(2,'0');
-      const s = String(total%60).padStart(2,'0');
-      el.textContent = `${h}:${m}:${s}`;
+    $('#toastTitle').textContent = title || '';
+    $('#toastBody').textContent = body || '';
+    const c = $('#toastCta');
+    if(c){
+      c.textContent = ctaText || '';
+      c.href = ctaHref || '#';
+      c.target = '_self';
     }
-    tick();
-    setInterval(tick, 1000);
+    t.classList.add('show');
+    $('#toastClose')?.addEventListener('click', ()=>t.classList.remove('show'), {once:true});
+    setTimeout(()=>t.classList.remove('show'), 7000);
   }
 
-  // smooth anchors
-  $$('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',(e)=>{
-      const id=a.getAttribute('href');
-      const target=document.querySelector(id);
-      if(!target) return;
-      e.preventDefault();
-      target.scrollIntoView({behavior:'smooth', block:'start'});
-    });
-  });
-
-  // init
-  setLink('#telegramLink', CONFIG.telegramInvite);
-  setLink('#botLink', CONFIG.coachBot);
-
-  const initial = guessLang();
-  applyLang(initial);
+  const lang = guessLang();
+  applyLang(lang);
   $('#langDE')?.addEventListener('click', ()=>applyLang('de'));
   $('#langEN')?.addEventListener('click', ()=>applyLang('en'));
 
-  if(isUnlocked()){
-    revealAdvanced();
-  }
+  setLink('.telegramLink', CONFIG.telegramInvite, true);
+  setLink('.botLink', CONFIG.coachBot, true);
+  setLink('.checkoutLink', CONFIG.whopCheckout, true);
 
-  bindUnlockClicks();
-  startCountdown();
+  $$('.telegramLink, .botLink').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const d = (window.NGU_I18N && window.NGU_I18N[document.documentElement.lang]) ? window.NGU_I18N[document.documentElement.lang] : window.NGU_I18N.en;
+      toast("✅ Unlocked", "Optional next step is available now.", d['cta_offer'] || "View advanced →", "/offer/");
+    });
+  });
+
+  $$('.js-year').forEach(el=>el.textContent = new Date().getFullYear());
 })();
