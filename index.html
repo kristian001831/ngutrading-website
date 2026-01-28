@@ -1,226 +1,76 @@
+
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>NGU Trading — Free Community + Coach Bot</title>
-<link rel="icon" href="assets/ngu-logo.jpeg" />
-<link rel="stylesheet" href="assets/styles.css" />
+<meta charset="utf-8">
+<title>NGU Trading Funnel</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div class="topbar">
-  <div class="container">
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <img src="assets/ngu-logo.jpeg" alt="NGU Logo">
-        <div class="wm">
-          <strong>NGU TRADING</strong>
-          <span>Never Give Up • System &gt; Emotion</span>
-        </div>
-      </a>
 
-      <div class="navlinks">
-        <a href="#free" data-i18n="nav_free">Free</a>
-        <a href="#how" data-i18n="nav_how">How</a>
-        <a href="#proof" data-i18n="nav_proof">Proof</a>
-      </div>
-
-      <div class="controls">
-        <button id="langDE" class="btn small ghost">DE</button>
-        <button id="langEN" class="btn small ghost">EN</button>
-        <a class="btn primary" href="#free" data-i18n="cta_start">Start free</a>
-      </div>
-    </div>
-  </div>
+<div class="container nav">
+<div><img src="assets/logo.jpeg" width="40"></div>
+<div class="lang">
+<button onclick="setLang('de')">DE</button>
+<button onclick="setLang('en')">EN</button>
+</div>
 </div>
 
+<section class="section container">
+<h1 data-key="hero"></h1>
+<p data-key="sub"></p>
+<a class="btn" target="_blank" href="https://t.me/nguvipgroup" data-key="cta"></a>
+<a class="btn gold" target="_blank" href="https://chatgpt.com/g/g-6978f4798004819197383b0c645e6854-ngu-trading-strategy-coach">Coach Bot</a>
+</section>
 
-<div class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="pill" data-i18n="pill_members">+300 traders</div>
-        <div class="h1" data-i18n="h1"></div>
-        <p class="lead" data-i18n="lead"></p>
-
-        <div class="actions">
-          <a id="telegramLink" class="btn primary" href="#" data-i18n="cta_telegram">Join Telegram →</a>
-          <a id="botLink" class="btn gold" href="#" data-i18n="cta_bot">Open coach bot</a>
-          <a class="btn" href="#proof">Proof ↓</a>
-        </div>
-
-        <div class="badges">
-          <span class="pill">✅ Pre‑Trade Gate</span>
-          <span class="pill">🧠 Anti‑FOMO</span>
-          <span class="pill">📊 Audit‑Style</span>
-        </div>
-
-        <p class="caption" data-i18n="hero_note"></p>
-      </div>
-
-      <div class="card">
-        <div class="card-pad">
-          <div class="kicker" data-i18n="free_k">Free</div>
-          <h2 style="margin:10px 0 6px; font-size:20px;" data-i18n="free_h"></h2>
-
-          <div class="hr"></div>
-
-          <div class="feature">
-            <h3 data-i18n="f1_t"></h3>
-            <p data-i18n="f1_p"></p>
-            <div class="actions" style="margin-top:12px;">
-              <a id="telegramLink" class="btn primary" href="#" data-i18n="cta_telegram"></a>
-            </div>
-          </div>
-
-          <div class="feature" style="margin-top:12px;">
-            <h3 data-i18n="f2_t"></h3>
-            <p data-i18n="f2_p"></p>
-            <div class="actions" style="margin-top:12px;">
-              <a id="botLink" class="btn gold" href="#" data-i18n="cta_bot"></a>
-            </div>
-          </div>
-
-          <div class="feature" style="margin-top:12px;">
-            <h3 data-i18n="f3_t"></h3>
-            <p data-i18n="f3_p"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="section container">
+<h2 data-key="stack"></h2>
+<div class="grid3">
+<div class="card">Telegram Community<br>Accountability & Structure</div>
+<div class="card">NGU Coach Bot<br>Pre-trade discipline gate</div>
+<div class="card">Free Signals<br>Unlock inside community</div>
 </div>
+</section>
 
-<div id="proof" class="section">
-  <div class="container">
-    <div class="kicker" data-i18n="proof_k">Proof</div>
-    <h2 style="margin:10px 0 12px; font-size:36px;" data-i18n="proof_h"></h2>
+<section class="section container">
+<h2 data-key="stats"></h2>
+<img src="assets/proof/stats.jpg">
+</section>
 
-    <div class="proof-grid" style="margin-top:14px;">
-      <div class="imgframe">
-        <img src="assets/proof/stats_2023_2025.jpg" alt="Multi-year stats 2023–2025">
-      </div>
-      <div class="feature">
-        <p class="lead" style="font-size:14px; margin:0;" data-i18n="proof_p"></p>
-        <div class="hr"></div>
-        <p class="caption" data-i18n="shots_p"></p>
-      </div>
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="kicker" data-i18n="shots_k">Recent Outcomes</div>
-    <h3 style="margin:10px 0 6px;" data-i18n="shots_h"></h3>
-    <p class="lead" style="font-size:14px; margin:0 0 12px;" data-i18n="shots_p"></p>
-    <div class="scroller" style="margin-top:14px;"><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_01.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_02.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_03.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_04.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_05.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_06.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_07.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_08.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_09.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_10.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_11.jpg" alt="Profit screenshot"></div></div><div class="shot"><div class="imgframe"><img loading="lazy" src="assets/proof/profit_12.jpg" alt="Profit screenshot"></div></div></div>
-  </div>
+<section class="section container">
+<h2 data-key="how"></h2>
+<div class="grid3">
+<div class="card">1. Join Free Ecosystem</div>
+<div class="card">2. Use Bot Gate</div>
+<div class="card">3. Execute with Rules</div>
 </div>
+</section>
 
-<div id="how" class="section">
-  <div class="container">
-    <div class="kicker" data-i18n="how_k"></div>
-    <h2 style="margin:10px 0 12px; font-size:36px;" data-i18n="how_h"></h2>
-
-    <div class="grid-3" style="margin-top:14px;">
-      <div class="feature">
-        <h3 data-i18n="s1"></h3>
-        <p data-i18n="s1p"></p>
-      </div>
-      <div class="feature">
-        <h3 data-i18n="s2"></h3>
-        <p data-i18n="s2p"></p>
-      </div>
-      <div class="feature">
-        <h3 data-i18n="s3"></h3>
-        <p data-i18n="s3p"></p>
-      </div>
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="kicker" data-i18n="test_k"></div>
-    <h2 style="margin:10px 0 12px; font-size:32px;" data-i18n="test_h"></h2>
-    <div class="grid-3" style="margin-top:14px;"><div class="feature"><div class="imgframe"><img loading="lazy" src="assets/proof/testimonial_01.png" alt="Testimonial screenshot"></div></div><div class="feature"><div class="imgframe"><img loading="lazy" src="assets/proof/testimonial_02.png" alt="Testimonial screenshot"></div></div><div class="feature"><div class="imgframe"><img loading="lazy" src="assets/proof/testimonial_03.png" alt="Testimonial screenshot"></div></div><div class="feature"><div class="imgframe"><img loading="lazy" src="assets/proof/testimonial_04.png" alt="Testimonial screenshot"></div></div><div class="feature"><div class="imgframe"><img loading="lazy" src="assets/proof/testimonial_05.png" alt="Testimonial screenshot"></div></div><div class="feature"><div class="imgframe"><img loading="lazy" src="assets/proof/testimonial_06.png" alt="Testimonial screenshot"></div></div><div class="feature"><div class="imgframe"><img loading="lazy" src="assets/proof/testimonial_07.png" alt="Testimonial screenshot"></div></div><div class="feature"><div class="imgframe"><img loading="lazy" src="assets/proof/testimonial_08.png" alt="Testimonial screenshot"></div></div></div>
-
-    <div class="hr"></div>
-
-    <div class="kicker" data-i18n="faq_k"></div>
-    <div class="faq" style="margin-top:14px;">
-      <details open>
-        <summary data-i18n="faq1q"></summary>
-        <p data-i18n="faq1a"></p>
-      </details>
-      <details>
-        <summary data-i18n="faq2q"></summary>
-        <p data-i18n="faq2a"></p>
-      </details>
-      <details>
-        <summary data-i18n="faq3q"></summary>
-        <p data-i18n="faq3a"></p>
-      </details>
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="card">
-      <div class="card-pad">
-        <div class="kicker">Next step (gated)</div>
-        <h2 style="margin:10px 0 6px; font-size:28px;">Advanced NGU training</h2>
-        <p class="lead" style="font-size:14px; margin:0;">
-          The paid product stays hidden publicly. It becomes relevant only after you joined the free ecosystem.
-        </p>
-      </div>
-    </div>
-  </div>
+<section class="section container">
+<h2 data-key="proof"></h2>
+<div class="grid2">
+<img src="assets/proof/shot_1.jpg">
+<img src="assets/proof/shot_2.jpg">
+<img src="assets/proof/shot_3.jpg">
+<img src="assets/proof/shot_4.jpg">
 </div>
+</section>
 
-<div id="free" class="section">
-  <div class="container">
-    <div class="card">
-      <div class="card-pad">
-        <div class="kicker" data-i18n="free_k"></div>
-        <h2 style="margin:10px 0 6px; font-size:32px;" data-i18n="free_h"></h2>
-        <p class="lead" style="font-size:14px; margin:0;">
-          No email. Two clicks. Choose your start:
-        </p>
-        <div class="actions" style="margin-top:14px;">
-          <a id="telegramLink" class="btn primary" href="#" data-i18n="cta_telegram"></a>
-          <a id="botLink" class="btn gold" href="#" data-i18n="cta_bot"></a>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="section container">
+<h2 data-key="profit"></h2>
+<div class="scroller">
+<img src="assets/proof/shot_5.jpg">
+<img src="assets/proof/shot_6.jpg">
+<img src="assets/proof/shot_7.jpg">
+<img src="assets/proof/shot_8.jpg">
 </div>
+</section>
 
+<footer class="container footer">
+<span data-key="footer"></span>
+</footer>
 
-<div class="stickybar">
-  <div class="row">
-    <div class="mini" data-i18n="sticky">Free: community + coach bot</div>
-    <div class="cta">
-      <a class="btn small primary" href="#free" data-i18n="cta_start">Start free</a>
-      <a id="botLink" class="btn small gold" href="#" data-i18n="cta_bot">Open coach bot</a>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  <div class="container">
-    <div class="legal">
-      <div>© <span id="year"></span> NGU Trading.</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="impressum.html">Impressum</a>
-        <a href="privacy.html">Datenschutz</a>
-        <a href="disclaimer.html">Risk</a>
-      </div>
-    </div>
-    <p class="small" style="margin-top:12px;" data-i18n="legal"></p>
-  </div>
-</div>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-<script src="assets/i18n.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>
