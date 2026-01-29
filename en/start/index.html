@@ -17,25 +17,27 @@
 </script>
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a href="../index.html" class="brand">
-      <img src="../assets/ngu-logo.jpeg" alt="NGU Trading Logo">
-      <span class="brand-name">NGU TRADING</span>
+<header class="nguHeader">
+  <div class="nguHeader__inner">
+    <a class="nguBrand" href="../index.html">
+      <img class="nguBrand__logo" src="../assets/ngu-logo.jpeg" alt="NGU Trading Logo">
+      <div class="nguBrand__text">
+        <div class="nguBrand__name">NGU TRADING</div>
+        <div class="nguBrand__tag">Never Give Up · System > Emotion</div>
+      </div>
     </a>
-    <nav class="nav">
-      <a href="../start/index.html">Free Access</a>
-      <a href="../coach/index.html">Coach Bot</a>
-      <a href="../offer/index.html">NGU Advanced</a>
-      <div class="lang-switch">
-        <a href="../../de/index.html" class="">DE</a>
-        <a href="../../en/index.html" class="active">EN</a>
+
+    <nav class="nguNav" aria-label="Primary">
+      <a class="nguNav__link" href="../index.html#start">Start</a>
+      <a class="nguNav__link" href="../index.html#proof">Proof</a>
+      <a class="nguNav__link" href="../index.html#faq">FAQ</a>
+      <div class="nguLang" aria-label="Language">
+        <a class="nguLang__btn" href="../../de/index.html">DE</a>
+        <a class="nguLang__btn nguLang__btn--active" href="../../en/index.html">EN</a>
       </div>
     </nav>
   </div>
 </header>
-
-</div>
 
 <div class="section">
   <div class="container">
@@ -55,15 +57,18 @@
             <div class="card-pad">
               <div class="kicker">FREE</div>
               <div class="h2" style="font-size:28px; margin:10px 0 10px;">Free NGU Access</div>
-              <ul class="lead" style="font-size:14px; max-width:none; margin:0; padding-left:18px;">
-                <li class="li-check">Community (Accountability + Q&amp;A)</li>
-                <li>Coach Bot (Pre‑Trade Gate)</li>
-                <li class="li-check">Signals included (first 50 only)</li>
-              </ul>
+              <ul class="cleanList">
+  <li class="li-check">Community (Accountability + Q&amp;A)</li>
+  <li class="li-check">Coach Bot (Pre‑Trade Gate)</li>
+  <li class="li-check">Signals included (first 50 only)</li>
+</ul>
               <div class="hr"></div>
               <div style="display:flex; gap:12px; flex-wrap:wrap;">
-                <a class="btn primary telegramLink" href="#" data-i18n="cta_join"></a>
-                <a class="btn gold botLink" href="#" data-i18n="cta_bot"></a>
+                <a class="btn primary botLink" href="#" data-i18n="cta_bot"></a>
+                <a class="btn ghost telegramLink" href="#" data-i18n="cta_join"></a>
+              </div>
+              <div style="margin-top:10px;">
+                <a class="link coachInfoLink" href="../coach/index.html?lang=en" data-i18n="cta_coachpage"></a>
               </div>
               <p class="caption">No email. No payment.</p>
             </div>
