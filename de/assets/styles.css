@@ -362,3 +362,79 @@ ul.cleanList li.li-x::before{content:"❌"; opacity:.95;}
 
 /* main page for / not for lists */
 .cleanList.cleanList--main li{font-size:14px; margin:9px 0;}
+ul.cleanList li{list-style:none !important;}
+
+/* Coach page */
+.coachGrid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:14px;}
+@media (max-width: 860px){.coachGrid{grid-template-columns:1fr;}}
+.coachCard{border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); border-radius:16px; padding:14px;}
+.coachCard .k{font-weight:800; margin-bottom:6px;}
+.bubbles{display:flex; flex-direction:column; gap:10px; margin-top:14px;}
+.bubble{max-width:760px; padding:12px 14px; border-radius:16px; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.04);}
+.bubble.me{margin-left:auto; background:rgba(255,215,0,.08); border-color:rgba(255,215,0,.22);}
+.badgeRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
+.badge{padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.10); background:rgba(0,0,0,.15); font-size:12px;}
+
+.btn.ghost.coach{border-color:rgba(255,215,0,.25);}
+
+/* For / Not-for glow */
+.card[data-glow="green"]{box-shadow:0 0 0 1px rgba(60,255,150,.18), 0 18px 60px rgba(0,0,0,.35), 0 0 28px rgba(60,255,150,.12);}
+.card[data-glow="red"]{box-shadow:0 0 0 1px rgba(255,80,120,.18), 0 18px 60px rgba(0,0,0,.35), 0 0 28px rgba(255,80,120,.10);}
+.icon{display:inline-flex;align-items:center;justify-content:center;width:22px;min-width:22px;margin-right:10px;font-size:16px;line-height:1;transform:translateY(1px);}
+.liText{display:inline-block;opacity:.95}
+.textLink{color:rgba(255,215,0,.9);text-decoration:none;border-bottom:1px dashed rgba(255,215,0,.35);}
+.textLink:hover{opacity:.9}
+.miniLink{margin-top:8px;font-size:13px;opacity:.9}
+
+/* Coach header language toggle */
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;background:rgba(10,8,18,.55);backdrop-filter: blur(10px);border-bottom:1px solid rgba(255,255,255,.06);}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brandLink{color:rgba(255,255,255,.92);text-decoration:none;font-weight:700;letter-spacing:.06em}
+.brandTag{font-size:12px;opacity:.7}
+.navRight{display:flex;align-items:center;gap:10px}
+.langToggle{display:flex;gap:6px;align-items:center}
+.langBtn{display:inline-flex;align-items:center;justify-content:center;height:30px;padding:0 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.85);text-decoration:none;font-size:12px}
+.langBtn.active{border-color:rgba(255,215,0,.35);box-shadow:0 0 0 1px rgba(255,215,0,.18) inset;color:rgba(255,215,0,.95)}
+
+
+/* For/Not-For glow (main page) */
+.card.forGlow{box-shadow:0 0 0 1px rgba(60,255,150,.20), 0 18px 70px rgba(0,0,0,.38), 0 0 32px rgba(60,255,150,.16);}
+.card.notGlow{box-shadow:0 0 0 1px rgba(255,80,120,.20), 0 18px 70px rgba(0,0,0,.38), 0 0 32px rgba(255,80,120,.14);}
+.card.forGlow .h2, .card.forGlow h2{color:rgba(220,255,236,.96)}
+.card.notGlow .h2, .card.notGlow h2{color:rgba(255,225,233,.96)}
+
+/* list icons */
+.icon{display:inline-flex;align-items:center;justify-content:center;width:22px;min-width:22px;margin-right:10px;font-size:16px;line-height:1;transform:translateY(1px);}
+.liText{display:inline-block;opacity:.95}
+ul{list-style:none;padding-left:0;margin:10px 0 0}
+li{display:flex;align-items:flex-start;gap:0;margin:8px 0}
+
+/* small coach explainer link */
+.miniLink{margin-top:8px;font-size:13px;opacity:.9}
+.textLink{color:rgba(255,215,0,.9);text-decoration:none;border-bottom:1px dashed rgba(255,215,0,.35);}
+.textLink:hover{opacity:.9}
+
+
+
+/* --- Robust header layout --- */
+.topbar .nav{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+.topbar .brand{display:flex; align-items:center; gap:10px; min-width:240px;}
+.topbar .controls{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
+.topbar img{display:block;}
+
+/* --- Check/X lists (no bullets) --- */
+ul.cleanList, ul.cleanList--main, ul.cleanList.cleanList--main{list-style:none; padding-left:0; margin:0;}
+ul.cleanList li, ul.cleanList--main li{position:relative; padding-left:26px; margin:10px 0;}
+ul.cleanList li::before, ul.cleanList--main li::before{position:absolute; left:0; top:0; width:20px; text-align:center; font-weight:900;}
+ul.cleanList li.li-check::before, ul.cleanList--main li.li-check::before{content:"✅";}
+ul.cleanList li.li-x::before, ul.cleanList--main li.li-x::before{content:"❌";}
+
+/* --- Green/Red glow cards --- */
+.glowCard{border:1px solid rgba(255,255,255,.08);}
+.glowGreen{box-shadow: 0 0 0 1px rgba(55, 255, 120, .18), 0 0 40px rgba(55,255,120,.18);}
+.glowRed{box-shadow: 0 0 0 1px rgba(255, 60, 60, .18), 0 0 40px rgba(255,60,60,.18);}
+
+.logo{width:34px;height:34px;border-radius:10px;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 10px 30px rgba(0,0,0,.35);}
+.brandName{font-weight:800;letter-spacing:.08em;font-size:12px;}
+.langBtn{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:34px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18);color:rgba(255,255,255,.85);text-decoration:none;font-weight:700;}
+.langBtn.active{border-color:rgba(255,215,128,.55);box-shadow:0 0 0 1px rgba(255,215,128,.24),0 0 24px rgba(255,215,128,.14);}
