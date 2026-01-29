@@ -5,7 +5,6 @@ const CONFIG = {
   telegramInvite: "https://t.me/nguvipgroup",
   coachBot: "https://chatgpt.com/g/g-6978f4798004819197383b0c645e6854-ngu-trading-strategy-coach",
   whopCheckout: "https://whop.com/checkout/plan_bgPFruiqerClS",
-  langKey: "ngu_lang",
   spotsKey: "ngu_spots_data",
   minSpots: 2,
   startMin: 11,
@@ -21,42 +20,6 @@ const CONFIG = {
     set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
   };
 
-  function guessLang(){
-    const saved = store.get(CONFIG.langKey, null);
-    if(saved) return saved;
-    const lang = (navigator.language||'').toLowerCase();
-    const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
-    const looksDACH = lang.startsWith('de') || /europe\/(berlin|zurich|vienna)/.test(tz);
-    return looksDACH ? 'de' : 'en';
-  }
-
-  function dict(){
-    const code = document.documentElement.getAttribute('lang') || 'en';
-    return (window.NGU_I18N && window.NGU_I18N[code]) ? window.NGU_I18N[code] : window.NGU_I18N.en;
-  }
-
-
-  function toggleLegalBlocks(){
-    const code = document.documentElement.getAttribute('lang') || 'en';
-    $$('[data-lang-block]').forEach(el=>{
-      const show = (el.getAttribute('data-lang-block') === code);
-      el.style.display = show ? '' : 'none';
-    });
-  }
-
-  function applyLang(code){
-    const d = (window.NGU_I18N && window.NGU_I18N[code]) ? window.NGU_I18N[code] : window.NGU_I18N.en;
-    document.documentElement.setAttribute('lang', code);
-    store.set(CONFIG.langKey, code);
-    $$('[data-i18n]').forEach(el=>{
-      const key = el.getAttribute('data-i18n');
-      el.textContent = d[key] ?? '';
-    });
-    $('#langDE')?.classList.toggle('active', code==='de');
-    $('#langEN')?.classList.toggle('active', code==='en');
-    toggleLegalBlocks();
-  }
-
   function setExternal(sel, href){
     $$(sel).forEach(a=>{
       a.setAttribute('href', href);
@@ -68,11 +31,6 @@ const CONFIG = {
   function openModal(){
     const m = $('#bridgeModal');
     if(!m) return;
-    const d = dict();
-    $('#mTitle').textContent = d.modal_h || "✅ Opened";
-    $('#mBody').textContent = d.modal_p || "";
-    $('#mFree').textContent = d.modal_free || "Continue";
-    $('#mAdv').textContent = d.modal_adv || "View advanced";
     m.classList.add('show');
   }
   function closeModal(){ $('#bridgeModal')?.classList.remove('show'); }
@@ -124,11 +82,6 @@ const CONFIG = {
   }
 
   // init
-  const lang = guessLang();
-  applyLang(lang);
-  $('#langDE')?.addEventListener('click', ()=>applyLang('de'));
-  $('#langEN')?.addEventListener('click', ()=>applyLang('en'));
-
   setExternal('.telegramLink', CONFIG.telegramInvite);
   setExternal('.botLink', CONFIG.coachBot);
   setExternal('.checkoutLink', CONFIG.whopCheckout);
@@ -151,29 +104,4 @@ const CONFIG = {
 
   // year
   $$('.js-year').forEach(el=>el.textContent = new Date().getFullYear());
-})();
-
-// --- Language via URL (?lang=en|de) ---
-(function(){
-  try{
-    const p=new URLSearchParams(window.location.search);
-    const q=p.get('lang');
-    if(q==='en'||q==='de'){
-      localStorage.setItem('ngu_lang', q);
-    }
-  }catch(e){}
-})();
-
-
-(function(){
-  function setShareLinks(){
-    var de=document.querySelectorAll('[data-share="de"]');
-    var en=document.querySelectorAll('[data-share="en"]');
-    try{
-      var u=new URL(window.location.href);
-      u.searchParams.set('lang','de'); de.forEach(function(a){a.href=u.toString();});
-      u.searchParams.set('lang','en'); en.forEach(function(a){a.href=u.toString();});
-    }catch(e){}
-  }
-  document.addEventListener('DOMContentLoaded', setShareLinks);
 })();
