@@ -34,13 +34,6 @@ const CONFIG = {
     m.classList.add('show');
   }
   function closeModal(){ $('#bridgeModal')?.classList.remove('show'); }
-  function closeGiveaway(){
-    const m = $('#giveawayModal');
-    if(!m) return;
-    m.classList.remove('show');
-    const today = todayKey();
-    store.set('ngu_giveaway_seen', today);
-  }
 
   // Countdown (end of day local)
   function tickCountdown(){
@@ -88,6 +81,18 @@ const CONFIG = {
     }
   }
 
+  function tickGiveawayCountdown(){
+    const el = $('#giveawayCountdown');
+    if(!el) return;
+    const end = new Date('2026-02-02T09:00:00+01:00');
+    const now = new Date();
+    const total = Math.max(0, Math.floor((end - now) / 1000));
+    const days = Math.floor(total / 86400);
+    const hours = Math.floor((total % 86400) / 3600);
+    const minutes = Math.floor((total % 3600) / 60);
+    el.textContent = `${days}d ${String(hours).padStart(2,'0')}h ${String(minutes).padStart(2,'0')}m`;
+  }
+
   // init
   setExternal('.telegramLink', CONFIG.telegramInvite);
   setExternal('.botLink', CONFIG.coachBot);
@@ -103,179 +108,67 @@ const CONFIG = {
   $('#mFree')?.addEventListener('click', closeModal);
   $('#bridgeModal')?.addEventListener('click', (e)=>{ if(e.target.id==='bridgeModal') closeModal(); });
 
-  function ensureGiveawayModal(){
-    if($('#giveawayModal')) return;
+  function ensureGiveawayHint(){
+    if($('#giveawayHint')) return;
     const lang = document.documentElement.lang || 'en';
     const isDe = lang.toLowerCase().startsWith('de');
-    const startHref = isDe ? '/de/start/index.html' : '/en/start/index.html';
+    const giveawayHref = isDe ? '/de/giveaway/index.html' : '/en/giveaway/index.html';
     const copy = isDe ? {
-      title: 'Gewinne den kompletten NGU Trading Strategy Kurs',
-      prize1Label: '🥇 1. Preis',
-      prize1: '100% GRATIS – kompletter NGU Trading Strategy Kurs',
-      prize2Label: '🥈 2. Preis',
-      prize2: '75% RABATT',
-      prize3Label: '🥉 3. Preis',
-      prize3: '50% RABATT',
-      enterTitle: 'So machst du mit 👇',
-      enter1: 'Teile dein NGU Zertifikat oder Trading Summary als <strong>Instagram Story</strong>.',
-      enter2: 'Markiere <strong>@futuremillionairego</strong> UND <strong>@kristian.ngut</strong>.',
-      getTitle: 'So bekommst du Zertifikat oder Summary 👇',
-      get1: 'Gehe auf ngutrading.com.',
-      get2: 'Starte den FREE NGU Bot.',
-      get3: 'Erzähl ihm von deinem Trading‑Tag oder deiner Woche.',
-      get4: 'Frag nach einem Zertifikat oder einer Daily/Weekly Summary zum Teilen (IG Story).',
-      footer: '🏆 Gewinner werden zufällig gezogen · 📅 Montag zum Market Close',
-      primaryCta: 'Starte den FREE NGU Bot →',
-      secondaryCta: 'Free Access sichern',
-      closeCta: 'Später'
+      title: '🎁 Giveaway läuft',
+      body: 'Infos zum Gewinnspiel & Beispiele sind jetzt auf der Detailseite.',
+      ends: 'Endet: Montag, 2. Feb · 09:00 Uhr (DE)',
+      cta: 'Zur Giveaway-Seite',
+      close: 'Später'
     } : {
-      title: 'Win my FULL NGU Trading Strategy Course',
-      prize1Label: '🥇 1st prize',
-      prize1: '100% FREE – Full NGU Trading Strategy Course',
-      prize2Label: '🥈 2nd prize',
-      prize2: '75% OFF',
-      prize3Label: '🥉 3rd prize',
-      prize3: '50% OFF',
-      enterTitle: 'How to enter 👇',
-      enter1: 'Share your NGU certificate or trading summary as an <strong>Instagram Story</strong>.',
-      enter2: 'Mention <strong>@futuremillionairego</strong> AND <strong>@kristian.ngut</strong>.',
-      getTitle: 'How to get your certificate or summary 👇',
-      get1: 'Go to ngutrading.com.',
-      get2: 'Start the FREE NGU bot.',
-      get3: 'Tell it about your trading day or week.',
-      get4: 'Ask for a certificate or daily/weekly summary to share on social media (IG story).',
-      footer: '🏆 Winners chosen randomly · 📅 Monday at market close',
-      primaryCta: 'Start the FREE NGU bot →',
-      secondaryCta: 'Get free access',
-      closeCta: 'Not now'
+      title: '🎁 Giveaway live',
+      body: 'Details and sample images are on the giveaway page.',
+      ends: 'Ends: Monday, Feb 2 · 09:00 (DE time)',
+      cta: 'View giveaway details',
+      close: 'Not now'
     };
-    const previewCopy = isDe ? {
-      toggleLabel: 'Beispielbilder anzeigen',
-      certLabel: 'Beispiel: Zertifikat',
-      summaryLabel: 'Beispiel: Summary'
-    } : {
-      toggleLabel: 'Show sample images',
-      certLabel: 'Sample: Certificate',
-      summaryLabel: 'Sample: Summary'
-    };
-    const previewMarkup = `
-      <div class="giveawayPreview">
-        <div class="giveawayPreviewCard">
-          <div class="giveawayPreviewLabel">${previewCopy.certLabel}</div>
-          <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NGU execution certificate preview">
-            <defs>
-              <linearGradient id="cert-bg-popup" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#0a0712"/>
-                <stop offset="100%" stop-color="#1c1422"/>
-              </linearGradient>
-              <linearGradient id="cert-gold-popup" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#f8d889"/>
-                <stop offset="100%" stop-color="#c9973f"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="360" rx="22" fill="url(#cert-bg-popup)"/>
-            <rect x="18" y="18" width="564" height="324" rx="18" fill="none" stroke="url(#cert-gold-popup)" stroke-width="2"/>
-            <text x="300" y="70" text-anchor="middle" fill="url(#cert-gold-popup)" font-family="Georgia, serif" font-size="28" letter-spacing="2">NGU CERTIFICATE</text>
-            <text x="300" y="105" text-anchor="middle" fill="#d8c8a1" font-family="Arial, sans-serif" font-size="14">NGU Trading Strategy</text>
-            <text x="300" y="160" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20">Execution Proficiency</text>
-            <text x="300" y="195" text-anchor="middle" fill="#bfae88" font-family="Arial, sans-serif" font-size="13">Trader: Your Name · Score 86/100</text>
-            <rect x="180" y="220" width="240" height="58" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.12)"/>
-            <text x="300" y="252" text-anchor="middle" fill="#f3d28a" font-family="Arial, sans-serif" font-size="14">Disciplined. Consistent. Professional.</text>
-            <text x="300" y="300" text-anchor="middle" fill="#8f7a59" font-family="Arial, sans-serif" font-size="11">www.NGUtrading.com</text>
-          </svg>
-        </div>
-        <div class="giveawayPreviewCard">
-          <div class="giveawayPreviewLabel">${previewCopy.summaryLabel}</div>
-          <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NGU execution summary preview">
-            <defs>
-              <linearGradient id="sum-bg-popup" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#0a0712"/>
-                <stop offset="100%" stop-color="#171019"/>
-              </linearGradient>
-              <linearGradient id="sum-gold-popup" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#f7d17b"/>
-                <stop offset="100%" stop-color="#b88432"/>
-              </linearGradient>
-            </defs>
-            <rect width="600" height="360" rx="22" fill="url(#sum-bg-popup)"/>
-            <rect x="20" y="20" width="560" height="320" rx="18" fill="none" stroke="url(#sum-gold-popup)" stroke-width="2"/>
-            <text x="300" y="72" text-anchor="middle" fill="url(#sum-gold-popup)" font-family="Georgia, serif" font-size="24" letter-spacing="2">DAILY EXECUTION SUMMARY</text>
-            <text x="70" y="130" fill="#f0d7a5" font-family="Arial, sans-serif" font-size="13">Session</text>
-            <text x="220" y="130" fill="#ffffff" font-family="Arial, sans-serif" font-size="13">New York</text>
-            <text x="70" y="160" fill="#f0d7a5" font-family="Arial, sans-serif" font-size="13">Trades</text>
-            <text x="220" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="13">9 · Win rate 56%</text>
-            <text x="70" y="190" fill="#f0d7a5" font-family="Arial, sans-serif" font-size="13">Avg R</text>
-            <text x="220" y="190" fill="#ffffff" font-family="Arial, sans-serif" font-size="13">+0.42</text>
-            <rect x="70" y="220" width="460" height="70" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.12)"/>
-            <text x="90" y="252" fill="#f3d28a" font-family="Arial, sans-serif" font-size="14">Strength: Patience on entries</text>
-            <text x="90" y="278" fill="#bfae88" font-family="Arial, sans-serif" font-size="13">Next fix: FOMO after 2nd trade</text>
-            <text x="300" y="318" text-anchor="middle" fill="#8f7a59" font-family="Arial, sans-serif" font-size="11">www.NGUtrading.com</text>
-          </svg>
-        </div>
-      </div>
-    `;
     const modal = document.createElement('div');
-    modal.className = 'modal giveawayModal';
-    modal.id = 'giveawayModal';
+    modal.className = 'modal giveawayHintModal';
+    modal.id = 'giveawayHint';
     modal.innerHTML = `
-      <div class="box">
-        <div class="pad giveawayPad">
-          <div class="giveawayHeader">🎁 GIVEAWAY 🎁</div>
-          <h3>${copy.title}</h3>
-          <div class="giveawayGrid">
-            <div class="giveawayCard">
-              <div class="giveawayTag">${copy.prize1Label}</div>
-              <p>${copy.prize1}</p>
+      <div class="box giveawayHintBox" role="dialog" aria-modal="true">
+        <div class="pad giveawayHintPad">
+          <div class="giveawayHintHead">
+            <div>
+              <h3>${copy.title}</h3>
+              <p>${copy.body}</p>
             </div>
-            <div class="giveawayCard">
-              <div class="giveawayTag">${copy.prize2Label}</div>
-              <p>${copy.prize2}</p>
-            </div>
-            <div class="giveawayCard">
-              <div class="giveawayTag">${copy.prize3Label}</div>
-              <p>${copy.prize3}</p>
-            </div>
+            <button class="btn small" type="button" id="giveawayHintClose">✕</button>
           </div>
-          <details class="giveawayPreviewToggle">
-            <summary>${previewCopy.toggleLabel}</summary>
-            ${previewMarkup}
-          </details>
-          <div class="giveawayBlock">
-            <div class="giveawayTitle">${copy.enterTitle}</div>
-            <ol>
-              <li>${copy.enter1}</li>
-              <li>${copy.enter2}</li>
-            </ol>
+          <div class="giveawayHintMeta">
+            <span>${copy.ends}</span>
+            <span class="giveawayHintCountdown" id="giveawayCountdown">--</span>
           </div>
-          <div class="giveawayBlock">
-            <div class="giveawayTitle">${copy.getTitle}</div>
-            <ol>
-              <li>${copy.get1}</li>
-              <li>${copy.get2}</li>
-              <li>${copy.get3}</li>
-              <li>${copy.get4}</li>
-            </ol>
-          </div>
-          <div class="giveawayFooter">${copy.footer}</div>
-          <div class="row" style="margin-top:16px;">
-            <a class="btn primary botLink" href="#">${copy.primaryCta}</a>
-            <a class="btn gold" href="${startHref}">${copy.secondaryCta}</a>
-            <button class="btn ghost" type="button" id="giveawayClose">${copy.closeCta}</button>
+          <div class="row" style="margin-top:10px;">
+            <a class="btn gold" href="${giveawayHref}">${copy.cta}</a>
+            <button class="btn ghost" type="button" id="giveawayHintLater">${copy.close}</button>
           </div>
         </div>
       </div>
     `;
     document.body.appendChild(modal);
-    setExternal('.botLink', CONFIG.coachBot);
-    $('#giveawayClose')?.addEventListener('click', closeGiveaway);
-    modal.addEventListener('click', (e)=>{ if(e.target.id==='giveawayModal') closeGiveaway(); });
+    const closeHint = ()=>{
+      modal.classList.remove('show');
+      store.set('ngu_giveaway_hint_seen', todayKey());
+    };
+    $('#giveawayHintClose')?.addEventListener('click', closeHint);
+    $('#giveawayHintLater')?.addEventListener('click', closeHint);
+    modal.addEventListener('click', (e)=>{ if(e.target.id==='giveawayHint') closeHint(); });
   }
 
-  function maybeShowGiveaway(){
-    const seen = store.get('ngu_giveaway_seen', null);
+  function maybeShowGiveawayHint(){
+    if(window.location.pathname.includes('/giveaway/')) return;
+    const seen = store.get('ngu_giveaway_hint_seen', null);
     if(seen === todayKey()) return;
-    ensureGiveawayModal();
-    setTimeout(()=>$('#giveawayModal')?.classList.add('show'), 500);
+    ensureGiveawayHint();
+    setTimeout(()=>{
+      $('#giveawayHint')?.classList.add('show');
+      tickGiveawayCountdown();
+    }, 500);
   }
 
   // offer widgets
@@ -284,7 +177,8 @@ const CONFIG = {
   updateSpots();
   setInterval(updateSpots, 60*1000); // check once/min
 
-  maybeShowGiveaway();
+  maybeShowGiveawayHint();
+  setInterval(tickGiveawayCountdown, 60000);
 
   // year
   $$('.js-year').forEach(el=>el.textContent = new Date().getFullYear());

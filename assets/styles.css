@@ -207,36 +207,27 @@ button{font-family:inherit}
 .modal p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
 .modal .row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; align-items:center}
 
-.giveawayModal .box{border-color: rgba(255,213,110,.4)}
-.giveawayModal .box{
-  --modal-scale: min(1, calc((100vh - 36px) / 820));
-  transform: scale(var(--modal-scale));
-  transform-origin: center;
+.giveawayHintModal .box{border-color: rgba(255,213,110,.4)}
+.giveawayHintBox{width:min(520px, 100%)}
+.giveawayHintPad{display:flex; flex-direction:column; gap:12px}
+.giveawayHintHead{display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
+.giveawayHintHead h3{margin:0 0 4px}
+.giveawayHintHead p{margin:0; color:var(--muted); font-size:14px}
+.giveawayHintMeta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 16px;
+  align-items:center;
+  font-size:13px;
+  color:var(--muted);
+}
+.giveawayHintCountdown{
+  font-weight:900;
+  color:var(--gold);
+  letter-spacing:.06em;
 }
 .giveawayPad{display:flex; flex-direction:column; gap:14px}
 .giveawayHeader{font-size:13px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--gold)}
-.giveawayPreviewToggle{
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:14px;
-  background: rgba(0,0,0,.22);
-  padding:10px 12px;
-}
-.giveawayPreviewToggle summary{
-  cursor:pointer;
-  font-weight:800;
-  color:var(--gold);
-  list-style:none;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.giveawayPreviewToggle summary::-webkit-details-marker{display:none}
-.giveawayPreviewToggle summary::after{
-  content:'▾';
-  font-size:12px;
-}
-.giveawayPreviewToggle[open] summary::after{content:'▴'}
-.giveawayPreviewToggle .giveawayPreview{margin-top:10px}
 .giveawayGrid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
 .giveawayCard{
   padding:12px;
@@ -262,26 +253,12 @@ button{font-family:inherit}
   .giveawayPreviewCard svg{max-height:160px}
   .giveawaySampleMedia svg{max-height:180px}
   .giveawayBlock ol{margin-left:16px}
-  .giveawayModal .row{gap:8px}
-  .giveawayModal .btn{padding:10px 14px; font-size:13px}
+  .giveawayHintModal .row{gap:8px}
+  .giveawayHintModal .btn{padding:10px 14px; font-size:13px}
 }
-@media (max-height:780px){
-  .giveawayPad{gap:8px}
-  .giveawayHeader{font-size:11px}
-  .giveawayBlock{padding:8px}
-  .giveawayBlock ol{font-size:12px}
-  .giveawayCard p{font-size:12px}
-  .giveawayFooter{font-size:11px}
-  .giveawayPreviewCard svg{max-height:150px}
-}
-@media (max-height:640px){
-  .giveawayPad{padding:12px}
-  .giveawayHeader{letter-spacing:.15em}
-  .giveawayGrid{gap:8px}
-  .giveawayBlock{padding:6px}
-  .giveawayBlock ol{margin-top:6px}
-  .giveawayPreview{gap:8px}
-  .giveawayModal .row{margin-top:10px}
+@media (max-width:720px){
+  .giveawayHintMeta{font-size:12px}
+  .giveawayHintHead p{font-size:13px}
 }
 
 .giveawaySamples{display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; justify-items:center}
