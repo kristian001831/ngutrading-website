@@ -4,23 +4,14 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>NGU — Start Free</title>
-  <link rel="icon" href="../assets/ngu-logo.jpeg"/>
-  <link rel="stylesheet" href="../assets/styles.css"/>
-<script>
-  // Force language for this folder
-  try {
-    localStorage.setItem('ngu_lang','en');
-    var u=new URL(window.location.href);
-    u.searchParams.set('lang','en');
-    window.history.replaceState({},'',u.toString());
-  } catch(e) {}
-</script>
+  <link rel="icon" href="../../assets/ngu-logo.jpeg"/>
+  <link rel="stylesheet" href="../../assets/styles.css"/>
 </head>
 <body>
 <header class="nguHeader">
   <div class="nguHeader__inner">
     <a class="nguBrand" href="../index.html">
-      <img class="nguBrand__logo" src="../assets/ngu-logo.jpeg" alt="NGU Trading Logo">
+      <img class="nguBrand__logo" src="../../assets/ngu-logo.jpeg" alt="NGU Trading Logo">
       <div class="nguBrand__text">
         <div class="nguBrand__name">NGU TRADING</div>
         <div class="nguBrand__tag">Never Give Up · System > Emotion</div>
@@ -32,8 +23,8 @@
       <a class="nguNav__link" href="../index.html#proof">Proof</a>
       <a class="nguNav__link" href="../index.html#faq">FAQ</a>
       <div class="nguLang" aria-label="Language">
-        <a class="nguLang__btn" href="../../de/index.html">DE</a>
-        <a class="nguLang__btn nguLang__btn--active" href="../../en/index.html">EN</a>
+        <a class="nguLang__btn" href="/de/">DE</a>
+        <a class="nguLang__btn nguLang__btn--active" href="/en/">EN</a>
       </div>
     </nav>
   </div>
@@ -44,13 +35,13 @@
     <div class="hero">
       <div class="glow"></div>
       <div class="inner">
-        <div class="h1" style="font-size:46px;" data-i18n="bridge_h"></div>
+        <div class="h1" style="font-size:46px;">You’re in.</div>
 <div class="progress">
   <div class="label">Step 1 of 2 • Free access</div>
   <div class="bar"><div class="fill" style="width:50%"></div></div>
 </div>
-        <p class="lead" data-i18n="bridge_p"></p>
-        <p class="caption" data-i18n="bridge_tip"></p>
+        <p class="lead">Pick your free entry. Both open in a new tab. This page stays open so you can optionally view Advanced.</p>
+        <p class="caption">Tip: community first → then bot. Signals are for the first 50.</p>
 
         <div class="grid-2" style="margin-top:18px;">
           <div class="card">
@@ -64,11 +55,11 @@
 </ul>
               <div class="hr"></div>
               <div style="display:flex; gap:12px; flex-wrap:wrap;">
-                <a class="btn primary botLink" href="#" data-i18n="cta_bot"></a>
-                <a class="btn ghost telegramLink" href="#" data-i18n="cta_join"></a>
+                <a class="btn primary botLink" href="#">Open coach bot</a>
+                <a class="btn ghost telegramLink" href="#">Open Telegram community</a>
               </div>
               <div style="margin-top:10px;">
-                <a class="link coachInfoLink" href="../coach/index.html?lang=en" data-i18n="cta_coachpage"></a>
+                <a class="link coachInfoLink" href="../coach/index.html">🔍 How to use the coach bot (examples) →</a>
               </div>
               <p class="caption">No email. No payment.</p>
             </div>
@@ -76,16 +67,16 @@
 
           <div class="card goldline">
             <div class="card-pad">
-              <div class="kicker" data-i18n="adv_k"></div>
-              <div class="h2" style="font-size:28px;" data-i18n="adv_h"></div>
-              <p class="lead" style="font-size:14px;" data-i18n="adv_p"></p>
+              <div class="kicker">Limited Access</div>
+              <div class="h2" style="font-size:28px;">Advanced NGU Training</div>
+              <p class="lead" style="font-size:14px;">For traders who want the full system + support. Not for everyone. Only for people who actually implement structure.</p>
               <div class="grid-2" style="margin-top:12px;">
-                <div class="feature"><p style="margin:0;" data-i18n="adv_b1"></p></div>
-                <div class="feature"><p style="margin:0;" data-i18n="adv_b2"></p></div>
+                <div class="feature"><p style="margin:0;">Videos + eBooks + templates</p></div>
+                <div class="feature"><p style="margin:0;">Support by me</p></div>
               </div>
-              <div class="feature" style="margin-top:12px;"><p style="margin:0;" data-i18n="adv_b3"></p></div>
+              <div class="feature" style="margin-top:12px;"><p style="margin:0;">Exclusive course community</p></div>
               <div class="hr"></div>
-              <a class="btn gold" href="../offer/index.html" data-i18n="cta_offer"></a>
+              <a class="btn gold" href="../offer/index.html">View advanced →</a>
               <p class="caption">Optional. The free path works on its own.</p>
             </div>
           </div>
@@ -105,7 +96,7 @@
       <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
         <div>
           <h3 id="mTitle">✅ Free access opened</h3>
-          <p id="mBody">Opened in a new tab.</p>
+          <p id="mBody">Community/Bot opened in a new tab. You can optionally view Advanced now (no pressure).</p>
         </div>
         <button id="mClose" class="btn small">✕</button>
       </div>
@@ -127,9 +118,9 @@
         <a href="../disclaimer/index.html">Disclaimer</a>
       </div>
     </div>
-    <p class="caption" data-i18n="legal"></p>
+    <p class="caption">Educational content. No financial advice. Trading involves risk.</p>
   </div>
 </div>
-<script src="../assets/i18n.js"></script><script src="../assets/app.js"></script>
+<script src="../../assets/app.js"></script>
 </body>
 </html>
