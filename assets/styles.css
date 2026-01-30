@@ -209,7 +209,7 @@ button{font-family:inherit}
 
 .giveawayModal .box{border-color: rgba(255,213,110,.4)}
 .giveawayModal .box{
-  --modal-scale: min(1, calc((100vh - 36px) / 900));
+  --modal-scale: min(1, calc((100vh - 36px) / 820));
   transform: scale(var(--modal-scale));
   transform-origin: center;
 }
@@ -234,13 +234,32 @@ button{font-family:inherit}
 .giveawayTitle{font-weight:800}
 .giveawayFooter{font-size:13px; color:var(--muted)}
 @media (max-width:860px){ .giveawayGrid{grid-template-columns:1fr} }
+@media (max-width:600px){
+  .giveawayPad{padding:14px}
+  .giveawayPad h3{font-size:18px}
+  .giveawayPreviewCard svg{max-height:160px}
+  .giveawaySampleMedia svg{max-height:180px}
+  .giveawayBlock ol{margin-left:16px}
+  .giveawayModal .row{gap:8px}
+  .giveawayModal .btn{padding:10px 14px; font-size:13px}
+}
 @media (max-height:780px){
-  .giveawayPad{gap:10px}
-  .giveawayHeader{font-size:12px}
-  .giveawayBlock{padding:10px}
-  .giveawayBlock ol{font-size:13px}
-  .giveawayCard p{font-size:13px}
-  .giveawayFooter{font-size:12px}
+  .giveawayPad{gap:8px}
+  .giveawayHeader{font-size:11px}
+  .giveawayBlock{padding:8px}
+  .giveawayBlock ol{font-size:12px}
+  .giveawayCard p{font-size:12px}
+  .giveawayFooter{font-size:11px}
+  .giveawayPreviewCard svg{max-height:150px}
+}
+@media (max-height:640px){
+  .giveawayPad{padding:12px}
+  .giveawayHeader{letter-spacing:.15em}
+  .giveawayGrid{gap:8px}
+  .giveawayBlock{padding:6px}
+  .giveawayBlock ol{margin-top:6px}
+  .giveawayPreview{gap:8px}
+  .giveawayModal .row{margin-top:10px}
 }
 
 .giveawaySamples{display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; justify-items:center}
