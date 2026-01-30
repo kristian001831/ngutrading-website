@@ -149,6 +149,69 @@ const CONFIG = {
       secondaryCta: 'Get free access',
       closeCta: 'Not now'
     };
+    const previewCopy = isDe ? {
+      certLabel: 'Beispiel: Zertifikat',
+      summaryLabel: 'Beispiel: Summary'
+    } : {
+      certLabel: 'Sample: Certificate',
+      summaryLabel: 'Sample: Summary'
+    };
+    const previewMarkup = `
+      <div class="giveawayPreview">
+        <div class="giveawayPreviewCard">
+          <div class="giveawayPreviewLabel">${previewCopy.certLabel}</div>
+          <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NGU execution certificate preview">
+            <defs>
+              <linearGradient id="cert-bg-popup" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0a0712"/>
+                <stop offset="100%" stop-color="#1c1422"/>
+              </linearGradient>
+              <linearGradient id="cert-gold-popup" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#f8d889"/>
+                <stop offset="100%" stop-color="#c9973f"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="360" rx="22" fill="url(#cert-bg-popup)"/>
+            <rect x="18" y="18" width="564" height="324" rx="18" fill="none" stroke="url(#cert-gold-popup)" stroke-width="2"/>
+            <text x="300" y="70" text-anchor="middle" fill="url(#cert-gold-popup)" font-family="Georgia, serif" font-size="28" letter-spacing="2">NGU CERTIFICATE</text>
+            <text x="300" y="105" text-anchor="middle" fill="#d8c8a1" font-family="Arial, sans-serif" font-size="14">NGU Trading Strategy</text>
+            <text x="300" y="160" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="20">Execution Proficiency</text>
+            <text x="300" y="195" text-anchor="middle" fill="#bfae88" font-family="Arial, sans-serif" font-size="13">Trader: Your Name · Score 86/100</text>
+            <rect x="180" y="220" width="240" height="58" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.12)"/>
+            <text x="300" y="252" text-anchor="middle" fill="#f3d28a" font-family="Arial, sans-serif" font-size="14">Disciplined. Consistent. Professional.</text>
+            <text x="300" y="300" text-anchor="middle" fill="#8f7a59" font-family="Arial, sans-serif" font-size="11">www.NGUtrading.com</text>
+          </svg>
+        </div>
+        <div class="giveawayPreviewCard">
+          <div class="giveawayPreviewLabel">${previewCopy.summaryLabel}</div>
+          <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NGU execution summary preview">
+            <defs>
+              <linearGradient id="sum-bg-popup" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0a0712"/>
+                <stop offset="100%" stop-color="#171019"/>
+              </linearGradient>
+              <linearGradient id="sum-gold-popup" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#f7d17b"/>
+                <stop offset="100%" stop-color="#b88432"/>
+              </linearGradient>
+            </defs>
+            <rect width="600" height="360" rx="22" fill="url(#sum-bg-popup)"/>
+            <rect x="20" y="20" width="560" height="320" rx="18" fill="none" stroke="url(#sum-gold-popup)" stroke-width="2"/>
+            <text x="300" y="72" text-anchor="middle" fill="url(#sum-gold-popup)" font-family="Georgia, serif" font-size="24" letter-spacing="2">DAILY EXECUTION SUMMARY</text>
+            <text x="70" y="130" fill="#f0d7a5" font-family="Arial, sans-serif" font-size="13">Session</text>
+            <text x="220" y="130" fill="#ffffff" font-family="Arial, sans-serif" font-size="13">New York</text>
+            <text x="70" y="160" fill="#f0d7a5" font-family="Arial, sans-serif" font-size="13">Trades</text>
+            <text x="220" y="160" fill="#ffffff" font-family="Arial, sans-serif" font-size="13">9 · Win rate 56%</text>
+            <text x="70" y="190" fill="#f0d7a5" font-family="Arial, sans-serif" font-size="13">Avg R</text>
+            <text x="220" y="190" fill="#ffffff" font-family="Arial, sans-serif" font-size="13">+0.42</text>
+            <rect x="70" y="220" width="460" height="70" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.12)"/>
+            <text x="90" y="252" fill="#f3d28a" font-family="Arial, sans-serif" font-size="14">Strength: Patience on entries</text>
+            <text x="90" y="278" fill="#bfae88" font-family="Arial, sans-serif" font-size="13">Next fix: FOMO after 2nd trade</text>
+            <text x="300" y="318" text-anchor="middle" fill="#8f7a59" font-family="Arial, sans-serif" font-size="11">www.NGUtrading.com</text>
+          </svg>
+        </div>
+      </div>
+    `;
     const modal = document.createElement('div');
     modal.className = 'modal giveawayModal';
     modal.id = 'giveawayModal';
@@ -171,6 +234,7 @@ const CONFIG = {
               <p>${copy.prize3}</p>
             </div>
           </div>
+          ${previewMarkup}
           <div class="giveawayBlock">
             <div class="giveawayTitle">${copy.enterTitle}</div>
             <ol>
