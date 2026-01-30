@@ -210,6 +210,7 @@ const CONFIG = {
 
   ensureGiveawayBanner();
   maybeShowGiveawayHint();
+  tickGiveawayCountdown();
   setInterval(tickGiveawayCountdown, 60000);
 
   // year
