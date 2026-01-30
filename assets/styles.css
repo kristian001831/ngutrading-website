@@ -194,12 +194,13 @@ button{font-family:inherit}
 .modal.show{display:flex}
 .modal .box{
   width:min(780px, 100%);
+  max-height: calc(100vh - 36px);
   border-radius: 22px;
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(7,3,14,.92);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
-  overflow:hidden;
+  overflow:auto;
 }
 .modal .pad{padding:18px}
 .modal h3{margin:0 0 6px}
