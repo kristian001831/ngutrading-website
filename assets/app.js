@@ -34,6 +34,13 @@ const CONFIG = {
     m.classList.add('show');
   }
   function closeModal(){ $('#bridgeModal')?.classList.remove('show'); }
+  function closeGiveaway(){
+    const m = $('#giveawayModal');
+    if(!m) return;
+    m.classList.remove('show');
+    const today = todayKey();
+    store.set('ngu_giveaway_seen', today);
+  }
 
   // Countdown (end of day local)
   function tickCountdown(){
@@ -96,11 +103,119 @@ const CONFIG = {
   $('#mFree')?.addEventListener('click', closeModal);
   $('#bridgeModal')?.addEventListener('click', (e)=>{ if(e.target.id==='bridgeModal') closeModal(); });
 
+  function ensureGiveawayModal(){
+    if($('#giveawayModal')) return;
+    const lang = document.documentElement.lang || 'en';
+    const isDe = lang.toLowerCase().startsWith('de');
+    const startHref = isDe ? '/de/start/index.html' : '/en/start/index.html';
+    const copy = isDe ? {
+      title: 'Gewinne den kompletten NGU Trading Strategy Kurs',
+      prize1Label: '🥇 1. Preis',
+      prize1: '100% GRATIS – kompletter NGU Trading Strategy Kurs',
+      prize2Label: '🥈 2. Preis',
+      prize2: '75% RABATT',
+      prize3Label: '🥉 3. Preis',
+      prize3: '50% RABATT',
+      enterTitle: 'So machst du mit 👇',
+      enter1: 'Teile dein NGU Zertifikat oder Trading Summary als <strong>Instagram Story</strong>.',
+      enter2: 'Markiere <strong>@futuremillionairego</strong> UND <strong>@kristian.ngut</strong>.',
+      getTitle: 'So bekommst du Zertifikat oder Summary 👇',
+      get1: 'Gehe auf ngutrading.com.',
+      get2: 'Starte den FREE NGU Bot.',
+      get3: 'Erzähl ihm von deinem Trading‑Tag oder deiner Woche.',
+      get4: 'Frag nach einem Zertifikat oder einer Daily/Weekly Summary zum Teilen (IG Story).',
+      footer: '🏆 Gewinner werden zufällig gezogen · 📅 Montag zum Market Close',
+      primaryCta: 'Starte den FREE NGU Bot →',
+      secondaryCta: 'Free Access sichern',
+      closeCta: 'Später'
+    } : {
+      title: 'Win my FULL NGU Trading Strategy Course',
+      prize1Label: '🥇 1st prize',
+      prize1: '100% FREE – Full NGU Trading Strategy Course',
+      prize2Label: '🥈 2nd prize',
+      prize2: '75% OFF',
+      prize3Label: '🥉 3rd prize',
+      prize3: '50% OFF',
+      enterTitle: 'How to enter 👇',
+      enter1: 'Share your NGU certificate or trading summary as an <strong>Instagram Story</strong>.',
+      enter2: 'Mention <strong>@futuremillionairego</strong> AND <strong>@kristian.ngut</strong>.',
+      getTitle: 'How to get your certificate or summary 👇',
+      get1: 'Go to ngutrading.com.',
+      get2: 'Start the FREE NGU bot.',
+      get3: 'Tell it about your trading day or week.',
+      get4: 'Ask for a certificate or daily/weekly summary to share on social media (IG story).',
+      footer: '🏆 Winners chosen randomly · 📅 Monday at market close',
+      primaryCta: 'Start the FREE NGU bot →',
+      secondaryCta: 'Get free access',
+      closeCta: 'Not now'
+    };
+    const modal = document.createElement('div');
+    modal.className = 'modal giveawayModal';
+    modal.id = 'giveawayModal';
+    modal.innerHTML = `
+      <div class="box">
+        <div class="pad giveawayPad">
+          <div class="giveawayHeader">🎁 GIVEAWAY 🎁</div>
+          <h3>${copy.title}</h3>
+          <div class="giveawayGrid">
+            <div class="giveawayCard">
+              <div class="giveawayTag">${copy.prize1Label}</div>
+              <p>${copy.prize1}</p>
+            </div>
+            <div class="giveawayCard">
+              <div class="giveawayTag">${copy.prize2Label}</div>
+              <p>${copy.prize2}</p>
+            </div>
+            <div class="giveawayCard">
+              <div class="giveawayTag">${copy.prize3Label}</div>
+              <p>${copy.prize3}</p>
+            </div>
+          </div>
+          <div class="giveawayBlock">
+            <div class="giveawayTitle">${copy.enterTitle}</div>
+            <ol>
+              <li>${copy.enter1}</li>
+              <li>${copy.enter2}</li>
+            </ol>
+          </div>
+          <div class="giveawayBlock">
+            <div class="giveawayTitle">${copy.getTitle}</div>
+            <ol>
+              <li>${copy.get1}</li>
+              <li>${copy.get2}</li>
+              <li>${copy.get3}</li>
+              <li>${copy.get4}</li>
+            </ol>
+          </div>
+          <div class="giveawayFooter">${copy.footer}</div>
+          <div class="row" style="margin-top:16px;">
+            <a class="btn primary botLink" href="#">${copy.primaryCta}</a>
+            <a class="btn gold" href="${startHref}">${copy.secondaryCta}</a>
+            <button class="btn ghost" type="button" id="giveawayClose">${copy.closeCta}</button>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    setExternal('.botLink', CONFIG.coachBot);
+    $('#giveawayClose')?.addEventListener('click', closeGiveaway);
+    modal.addEventListener('click', (e)=>{ if(e.target.id==='giveawayModal') closeGiveaway(); });
+  }
+
+  function maybeShowGiveaway(){
+    const seen = store.get('ngu_giveaway_seen', null);
+    if(seen === todayKey()) return;
+    ensureGiveawayModal();
+    setTimeout(()=>$('#giveawayModal')?.classList.add('show'), 500);
+  }
+
   // offer widgets
   tickCountdown();
   setInterval(tickCountdown, 1000);
   updateSpots();
   setInterval(updateSpots, 60*1000); // check once/min
+
+  maybeShowGiveaway();
 
   // year
   $$('.js-year').forEach(el=>el.textContent = new Date().getFullYear());
