@@ -208,7 +208,10 @@ button{font-family:inherit}
 .modal .row{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; align-items:center}
 
 .giveawayHintModal .box{border-color: rgba(255,213,110,.4)}
-.giveawayHintBox{width:min(520px, 100%)}
+.giveawayHintBox{
+  width: min(520px, 88vw);
+  max-height: calc(100vh - 120px);
+}
 .giveawayHintPad{display:flex; flex-direction:column; gap:12px}
 .giveawayHintHead{display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
 .giveawayHintHead h3{margin:0 0 4px}
@@ -232,6 +235,7 @@ button{font-family:inherit}
   left: 0;
   right: 0;
   width: 100%;
+  margin-left: 0;
   display: block;
   z-index: 9998;
   background: rgba(12,10,20,.92);
