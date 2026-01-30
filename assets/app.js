@@ -82,15 +82,16 @@ const CONFIG = {
   }
 
   function tickGiveawayCountdown(){
-    const el = $('#giveawayCountdown');
-    if(!el) return;
+    const els = document.querySelectorAll('[data-giveaway-countdown]');
+    if(!els.length) return;
     const end = new Date('2026-02-02T09:00:00+01:00');
     const now = new Date();
     const total = Math.max(0, Math.floor((end - now) / 1000));
     const days = Math.floor(total / 86400);
     const hours = Math.floor((total % 86400) / 3600);
     const minutes = Math.floor((total % 3600) / 60);
-    el.textContent = `${days}d ${String(hours).padStart(2,'0')}h ${String(minutes).padStart(2,'0')}m`;
+    const text = `${days}d ${String(hours).padStart(2,'0')}h ${String(minutes).padStart(2,'0')}m`;
+    els.forEach((el)=>{ el.textContent = text; });
   }
 
   // init
@@ -141,7 +142,7 @@ const CONFIG = {
           </div>
           <div class="giveawayHintMeta">
             <span>${copy.ends}</span>
-            <span class="giveawayHintCountdown" id="giveawayCountdown">--</span>
+            <span class="giveawayHintCountdown" data-giveaway-countdown>--</span>
           </div>
           <div class="row" style="margin-top:10px;">
             <a class="btn gold" href="${giveawayHref}">${copy.cta}</a>
@@ -171,12 +172,43 @@ const CONFIG = {
     }, 500);
   }
 
+  function ensureGiveawayBanner(){
+    if($('#giveawayBanner')) return;
+    if(window.location.pathname.includes('/giveaway/')) return;
+    const header = document.querySelector('header');
+    if(!header) return;
+    const lang = document.documentElement.lang || 'en';
+    const isDe = lang.toLowerCase().startsWith('de');
+    const giveawayHref = isDe ? '/de/giveaway/index.html' : '/en/giveaway/index.html';
+    const copy = isDe ? {
+      text: '🎁 Giveaway läuft · Endet Montag, 2. Feb · 09:00 Uhr (DE)',
+      cta: 'Zur Giveaway-Seite'
+    } : {
+      text: '🎁 Giveaway live · Ends Monday, Feb 2 · 09:00 (German time)',
+      cta: 'View giveaway details'
+    };
+    const banner = document.createElement('div');
+    banner.className = 'giveawayBanner';
+    banner.id = 'giveawayBanner';
+    banner.innerHTML = `
+      <div class="container giveawayBanner__inner">
+        <div class="giveawayBanner__text">
+          <span>${copy.text}</span>
+          <span class="giveawayBanner__countdown" data-giveaway-countdown>--</span>
+        </div>
+        <a class="btn small gold" href="${giveawayHref}">${copy.cta}</a>
+      </div>
+    `;
+    header.after(banner);
+  }
+
   // offer widgets
   tickCountdown();
   setInterval(tickCountdown, 1000);
   updateSpots();
   setInterval(updateSpots, 60*1000); // check once/min
 
+  ensureGiveawayBanner();
   maybeShowGiveawayHint();
   setInterval(tickGiveawayCountdown, 60000);
 
