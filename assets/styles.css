@@ -230,9 +230,6 @@ button{font-family:inherit}
   position: sticky;
   top: 64px;
   z-index: 9998;
-  left: 0;
-  right: 0;
-  width: 100%;
   background: rgba(12,10,20,.92);
   border-bottom: 1px solid rgba(255,255,255,.08);
   box-shadow: 0 12px 30px rgba(0,0,0,.28);
