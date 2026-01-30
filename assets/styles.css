@@ -209,8 +209,8 @@ button{font-family:inherit}
 
 .giveawayHintModal .box{border-color: rgba(255,213,110,.4)}
 .giveawayHintBox{
-  width: min(520px, 92vw);
-  max-height: calc(100vh - 72px);
+  width: min(520px, 88vw);
+  max-height: calc(100vh - 120px);
 }
 .giveawayHintPad{display:flex; flex-direction:column; gap:12px}
 .giveawayHintHead{display:flex; align-items:flex-start; justify-content:space-between; gap:12px}
@@ -234,8 +234,8 @@ button{font-family:inherit}
   top: 64px;
   left: 0;
   right: 0;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
+  margin-left: 0;
   display: block;
   z-index: 9998;
   background: rgba(12,10,20,.92);
