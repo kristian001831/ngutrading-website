@@ -150,9 +150,11 @@ const CONFIG = {
       closeCta: 'Not now'
     };
     const previewCopy = isDe ? {
+      toggleLabel: 'Beispielbilder anzeigen',
       certLabel: 'Beispiel: Zertifikat',
       summaryLabel: 'Beispiel: Summary'
     } : {
+      toggleLabel: 'Show sample images',
       certLabel: 'Sample: Certificate',
       summaryLabel: 'Sample: Summary'
     };
@@ -234,7 +236,10 @@ const CONFIG = {
               <p>${copy.prize3}</p>
             </div>
           </div>
-          ${previewMarkup}
+          <details class="giveawayPreviewToggle">
+            <summary>${previewCopy.toggleLabel}</summary>
+            ${previewMarkup}
+          </details>
           <div class="giveawayBlock">
             <div class="giveawayTitle">${copy.enterTitle}</div>
             <ol>

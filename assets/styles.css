@@ -215,6 +215,28 @@ button{font-family:inherit}
 }
 .giveawayPad{display:flex; flex-direction:column; gap:14px}
 .giveawayHeader{font-size:13px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--gold)}
+.giveawayPreviewToggle{
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+  background: rgba(0,0,0,.22);
+  padding:10px 12px;
+}
+.giveawayPreviewToggle summary{
+  cursor:pointer;
+  font-weight:800;
+  color:var(--gold);
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.giveawayPreviewToggle summary::-webkit-details-marker{display:none}
+.giveawayPreviewToggle summary::after{
+  content:'▾';
+  font-size:12px;
+}
+.giveawayPreviewToggle[open] summary::after{content:'▴'}
+.giveawayPreviewToggle .giveawayPreview{margin-top:10px}
 .giveawayGrid{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px}
 .giveawayCard{
   padding:12px;
