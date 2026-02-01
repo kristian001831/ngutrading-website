@@ -84,7 +84,7 @@ const CONFIG = {
   function tickGiveawayCountdown(){
     const els = document.querySelectorAll('[data-giveaway-countdown]');
     if(!els.length) return;
-    const end = new Date('2026-02-02T09:00:00+01:00');
+    const end = new Date('2026-02-08T22:00:00+01:00');
     const now = new Date();
     const total = Math.max(0, Math.floor((end - now) / 1000));
     const days = Math.floor(total / 86400);
@@ -117,13 +117,13 @@ const CONFIG = {
     const copy = isDe ? {
       title: '🎁 Giveaway läuft',
       body: 'Infos zum Gewinnspiel & Beispiele sind jetzt auf der Detailseite.',
-      ends: 'Endet: Montag, 2. Feb · 09:00 Uhr (DE)',
+      ends: 'Endet: Sonntag, 8. Feb · 22:00 Uhr (DE)',
       cta: 'Zur Giveaway-Seite',
       close: 'Später'
     } : {
       title: '🎁 Giveaway live',
       body: 'Details and sample images are on the giveaway page.',
-      ends: 'Ends: Monday, Feb 2 · 09:00 (DE time)',
+      ends: 'Ends: Sunday, Feb 8 · 22:00 (DE time)',
       cta: 'View giveaway details',
       close: 'Not now'
     };
@@ -181,10 +181,10 @@ const CONFIG = {
     const isDe = lang.toLowerCase().startsWith('de');
     const giveawayHref = isDe ? '/de/giveaway/index.html' : '/en/giveaway/index.html';
     const copy = isDe ? {
-      text: '🎁 Giveaway läuft · Endet Montag, 2. Feb · 09:00 Uhr (DE)',
+      text: '🎁 Giveaway läuft · Endet Sonntag, 8. Feb · 22:00 Uhr (DE)',
       cta: 'Zur Giveaway-Seite'
     } : {
-      text: '🎁 Giveaway live · Ends Monday, Feb 2 · 09:00 (German time)',
+      text: '🎁 Giveaway live · Ends Sunday, Feb 8 · 22:00 (German time)',
       cta: 'View giveaway details'
     };
     const banner = document.createElement('div');
