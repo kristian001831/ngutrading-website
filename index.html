@@ -13,16 +13,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Instant redirect for everyone -->
-  <meta http-equiv="refresh" content="0; url=/de/" />
-
   <title>NGU Trading</title>
 
-  <!-- If browser is NOT German, override to /en/ -->
+  <!-- Route app domain to /app/, otherwise use language-based redirect -->
   <script>
     try {
-      const l = (navigator.language || "").toLowerCase();
-      if (!l.startsWith("de")) location.replace("/en/");
+      const host = (location.hostname || "").toLowerCase();
+      if (host.includes("ngutrading.app")) {
+        location.replace("/app/");
+      } else {
+        const l = (navigator.language || "").toLowerCase();
+        if (!l.startsWith("de")) {
+          location.replace("/en/");
+        } else {
+          location.replace("/de/");
+        }
+      }
     } catch(e) {}
   </script>
 </head>
