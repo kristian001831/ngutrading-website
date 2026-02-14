@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>NGU Quiz Funnel | Trading Behavior Diagnostic</title>
+  <meta name="description" content="Behavior-based trading diagnostic quiz. Identify your biggest execution leak and get a focused 7-day action plan."/>
+  <meta name="robots" content="noindex,follow"/>
+  <link rel="icon" href="../../assets/ngu-logo.jpeg"/>
+  <link rel="stylesheet" href="../../assets/styles.css"/>
+  <style>
+    .quizApp{min-height:calc(100vh - 84px);display:flex;align-items:center;padding:24px 0}
+    .quizWrap{width:min(940px,100%);margin:0 auto}
+    .quizCard{border-radius:24px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(145deg, rgba(5,5,12,.8), rgba(52,14,74,.35));box-shadow:var(--shadow);overflow:hidden}
+    .quizHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .quizHead h1,.quizHead h2{margin:8px 0 0;font-size:30px;line-height:1.1;letter-spacing:-.02em}
+    .quizBody{padding:20px}
+    .quizChoices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+    .quizChoice{appearance:none;width:100%;text-align:left;padding:14px 15px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--text);font-size:15px;line-height:1.35;cursor:pointer;transition:.15s}
+    .quizChoice:hover{transform:translateY(-1px);border-color:rgba(255,213,110,.52);background:rgba(255,255,255,.08)}
+    .quizChoice[aria-pressed="true"]{border-color:rgba(255,213,110,.92);background:linear-gradient(135deg, rgba(255,213,110,.2), rgba(156,54,207,.2));box-shadow:0 0 0 1px rgba(255,213,110,.14) inset}
+    .quizFoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px}
+    .resultList{padding-left:18px;color:var(--muted)}
+    .resultList li{margin:8px 0;line-height:1.45}
+    .resultActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .hidden{display:none!important}
+    @media (max-width:860px){.quizChoices{grid-template-columns:1fr}.quizHead h1,.quizHead h2{font-size:26px}}
+  </style>
+</head>
+<body>
+<header class="nguHeader">
+  <div class="nguHeader__inner">
+    <a class="nguBrand" href="/app/">
+      <img class="nguBrand__logo" src="../../assets/ngu-logo.jpeg" alt="NGU Trading Logo"/>
+      <div class="nguBrand__text">
+        <div class="nguBrand__name">NGU TRADING</div>
+        <div class="nguBrand__tag">Never Give Up · System &gt; Emotion</div>
+      </div>
+    </a>
+    <nav class="nguNav" aria-label="Primary">
+      <a class="nguNav__link" href="/app/">App Home</a>
+      <a class="nguNav__link" href="/app/trader-coach/index.html">About App</a>
+      <a class="nguNav__link" href="https://ngutrading.app" target="_blank" rel="noopener">Open App</a>
+    </nav>
+  </div>
+</header>
+
+<main class="quizApp">
+  <div class="container quizWrap">
+    <section class="quizCard" data-app-quiz>
+      <div class="quizHead">
+        <div>
+          <div class="kicker">Behavior Diagnostic</div>
+          <h1 data-title>How often do you end a day thinking “I should’ve stopped earlier”?</h1>
+          <p class="lead" style="font-size:14px;margin:8px 0 0;">Answer based on recent behavior. One question at a time.</p>
+        </div>
+        <div class="badge timer" data-progress>1 / 10</div>
+      </div>
+      <div class="quizBody">
+        <div class="quizChoices" data-choices></div>
+
+        <div class="quizFoot" data-nav>
+          <button type="button" class="btn" data-back>Back</button>
+          <button type="button" class="btn primary" data-next disabled>Next</button>
+        </div>
+
+        <section class="hidden" data-result>
+          <div class="kicker">Diagnostic Result</div>
+          <h2 class="h2" style="margin-top:8px;" data-result-headline></h2>
+          <p class="lead" style="font-size:14px;max-width:none;margin:8px 0 4px;" data-result-track></p>
+          <ul class="resultList" data-result-list></ul>
+          <div class="resultActions">
+            <a class="btn primary" href="https://ngutrading.app/dashboard" target="_blank" rel="noopener">Go to Dashboard</a>
+            <button type="button" class="btn gold" data-apply-rules>Apply NGU Preset Rules</button>
+            <a class="btn" data-challenge-link href="https://ngutrading.app/challenges" target="_blank" rel="noopener">Start Recommended Challenge</a>
+            <a class="btn ghost" href="/en/coach/index.html">Open Coach Bot</a>
+          </div>
+          <p class="caption" style="margin-top:12px;">Educational process guidance only. No financial advice.</p>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script src="../../assets/app-quiz.js"></script>
+</body>
+</html>
