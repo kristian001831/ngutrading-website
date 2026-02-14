@@ -1,106 +1,123 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Learn Trading with Structure | NGU Trading</title>
-  <meta name="description" content="Learn trading with a clear trading strategy, trading psychology support, and an AI trading coach. Keep your trading rules consistent.">
-  <meta name="keywords" content="learn trading, trading strategy, trading psychology, AI trading coach, follow trading rules">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://example.com/en/">
-  <link rel="alternate" hreflang="de" href="https://example.com/de/">
-  <link rel="alternate" hreflang="en" href="https://example.com/en/">
-  <link rel="alternate" hreflang="x-default" href="https://example.com/en/">
-  <link rel="stylesheet" href="/assets/site.css">
+  <meta name="description" content="Learn trading with structured strategy, trading psychology support, and an AI trading coach. Start with the Free Access giveaway."/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="canonical" href="https://example.com/en/"/>
+  <link rel="alternate" hreflang="de" href="https://example.com/de/"/>
+  <link rel="alternate" hreflang="en" href="https://example.com/en/"/>
+  <link rel="alternate" hreflang="x-default" href="https://example.com/en/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Learn Trading with Structure | NGU Trading"/>
+  <meta property="og:description" content="Trading strategy, psychology, and AI coach with visible Free Access giveaway."/>
+  <link rel="stylesheet" href="/assets/styles.css"/>
   <script defer src="/assets/quiz.js"></script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Is NGU Trading financial advice?","acceptedAnswer":{"@type":"Answer","text":"No. The content is educational and process-oriented, not personalized financial advice."}},
-      {"@type":"Question","name":"What is included in Free Access?","acceptedAnswer":{"@type":"Answer","text":"Free Access includes community entry, learning resources, and a practical starter workflow."}},
-      {"@type":"Question","name":"Who should use the AI Trading Coach?","acceptedAnswer":{"@type":"Answer","text":"Traders who want better rule-following and more stable execution habits."}}
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is NGU Trading financial advice?","acceptedAnswer":{"@type":"Answer","text":"No. NGU provides educational and process-oriented content only."}},{"@type":"Question","name":"What does Free Access include?","acceptedAnswer":{"@type":"Answer","text":"Free Access gives a no-paywall start into community resources, practical basics, and rule-based onboarding."}}]}</script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/en/"><img src="/assets/ngu-logo.jpeg" alt="NGU Logo">NGU Trading</a>
-    <div class="nav-wrap">
-      <nav aria-label="Primary navigation">
-        <a href="/en/">Home</a><a href="/en/free-access.html">Free Access</a><a href="/en/coach-bot.html">Coach Bot</a><a href="/en/advanced.html">Advanced</a><a href="/en/faq.html">FAQ</a><a href="/en/proof.html">Proof</a>
-      </nav>
-      <div class="lang-switch"><a href="/de/">DE</a><a class="active" href="/en/">EN</a></div>
+<header class="topbar">
+  <div class="container nav" style="padding:10px 0;">
+    <a class="brand" href="/en/">
+      <img src="/assets/ngu-logo.jpeg" alt="NGU Trading Logo"/>
+      <div class="meta"><strong>NGU TRADING</strong><span>Never Give Up · System &gt; Emotion</span></div>
+    </a>
+    <div class="controls">
+      <a class="btn small" href="/en/free-access.html">Free Access</a>
+      <a class="btn small" href="/en/coach-bot.html">Coach Bot</a>
+      <a class="btn small" href="/en/advanced.html">Advanced</a>
+      <a class="btn small" href="/en/faq.html">FAQ</a>
+      <a class="btn small" href="/en/proof.html">Proof</a>
+      <a class="btn small" href="/de/">DE</a>
+      <a class="btn small active" href="/en/">EN</a>
     </div>
   </div>
 </header>
+
 <main>
-  <section class="hero container">
-    <h1>Learn trading with structure, not hype</h1>
-    <p>Build a practical <strong>trading strategy</strong>, improve <strong>trading psychology</strong>, and reliably follow your rules. NGU combines education, community, and an <strong>AI trading coach</strong> in a crawlable, fast static site.</p>
-    <div class="giveaway">
-      <h2>🎁 Giveaway: Start with Free Access</h2>
-      <p>Get immediate Free Access to core resources, peer support, and implementation checklists. Great for anyone who wants to learn trading in a step-by-step way.</p>
-      <a class="btn alt" href="/en/free-access.html">Explore Free Access</a>
+  <section class="section quizShell">
+    <div class="container">
+      <div class="quizStage" data-quiz-flow data-redirect-text="Redirecting ...">
+        <div class="quizStage__head">
+          <div>
+            <div class="kicker">🎁 Giveaway: Free Access</div>
+            <div class="caption">Learn trading · trading strategy · trading psychology · AI trading coach · follow trading rules</div>
+          </div>
+          <div class="quizProgress" data-progress></div>
+        </div>
+
+        <div class="quizStage__body">
+          <div class="quizStep" data-question="challenge">
+            <h1 class="quizTitle">What is your biggest trading challenge right now?</h1>
+            <p class="quizLead">Answer 4 quick questions to get your best-fit path.</p>
+            <div class="quizChoices">
+              <button class="quizChoice" type="button" data-value="discipline" aria-pressed="false">I struggle to follow my rules consistently.</button>
+              <button class="quizChoice" type="button" data-value="consistency" aria-pressed="false">My performance lacks consistency.</button>
+              <button class="quizChoice" type="button" data-value="strategy" aria-pressed="false">I need a clearer trading strategy.</button>
+              <button class="quizChoice" type="button" data-value="psychology" aria-pressed="false">Emotions affect my execution.</button>
+            </div>
+          </div>
+
+          <div class="quizStep" data-question="level" hidden>
+            <h2 class="quizTitle">What is your experience level?</h2>
+            <div class="quizChoices">
+              <button class="quizChoice" type="button" data-value="beginner" aria-pressed="false">Beginner: learning fundamentals.</button>
+              <button class="quizChoice" type="button" data-value="intermediate" aria-pressed="false">Intermediate: actively trading with a plan.</button>
+              <button class="quizChoice" type="button" data-value="advanced" aria-pressed="false">Advanced: refining systems and details.</button>
+            </div>
+          </div>
+
+          <div class="quizStep" data-question="feature" hidden>
+            <h2 class="quizTitle">Which feature matters most to you?</h2>
+            <div class="quizChoices">
+              <button class="quizChoice" type="button" data-value="community" aria-pressed="false">Community + guided learning path</button>
+              <button class="quizChoice" type="button" data-value="ai" aria-pressed="false">AI trading coach with direct feedback</button>
+              <button class="quizChoice" type="button" data-value="structure" aria-pressed="false">Rule-based structure</button>
+              <button class="quizChoice" type="button" data-value="accountability" aria-pressed="false">Accountability for better execution</button>
+            </div>
+          </div>
+
+          <div class="quizStep" data-question="time" hidden>
+            <h2 class="quizTitle">How much time can you commit daily?</h2>
+            <div class="quizChoices">
+              <button class="quizChoice" type="button" data-value="t15" aria-pressed="false">15 minutes</button>
+              <button class="quizChoice" type="button" data-value="t30" aria-pressed="false">30 minutes</button>
+              <button class="quizChoice" type="button" data-value="t60" aria-pressed="false">60 minutes</button>
+              <button class="quizChoice" type="button" data-value="t90" aria-pressed="false">90+ minutes</button>
+            </div>
+          </div>
+
+          <div class="quizNav">
+            <button type="button" class="btn" data-back>Back</button>
+            <div style="display:flex; gap:10px;">
+              <button type="button" class="btn primary" data-next>Next</button>
+              <button type="button" class="btn gold" data-submit hidden>Open my result</button>
+            </div>
+          </div>
+          <p class="quizNote" data-quiz-note aria-live="polite"></p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="container grid" id="onboarding">
-    <article class="card">
-      <h2>Interactive onboarding quiz</h2>
-      <p class="meta-note">Answer 4 questions and we route you to Free Access, Coach Bot, or Advanced.</p>
-      <form class="quiz" data-onboarding-quiz data-msg-required="Please answer all questions." data-msg-redirect="Thanks! Redirecting now.">
-        <fieldset>
-          <legend>1) What is your biggest trading challenge?</legend>
-          <label><input type="radio" name="challenge" value="discipline"> Discipline / rule-following</label>
-          <label><input type="radio" name="challenge" value="consistency"> Consistency</label>
-          <label><input type="radio" name="challenge" value="strategy"> Building a clear strategy</label>
-          <label><input type="radio" name="challenge" value="psychology"> Emotions / psychology</label>
-        </fieldset>
-        <fieldset>
-          <legend>2) What is your experience level?</legend>
-          <label><input type="radio" name="level" value="beginner"> Beginner</label>
-          <label><input type="radio" name="level" value="intermediate"> Intermediate</label>
-          <label><input type="radio" name="level" value="advanced"> Advanced</label>
-        </fieldset>
-        <fieldset>
-          <legend>3) What feature matters most to you?</legend>
-          <label><input type="radio" name="feature" value="community"> Community + pathway</label>
-          <label><input type="radio" name="feature" value="ai"> AI trading coach</label>
-          <label><input type="radio" name="feature" value="structure"> Structured framework</label>
-          <label><input type="radio" name="feature" value="accountability"> Accountability</label>
-        </fieldset>
-        <fieldset>
-          <legend>4) How much time do you commit daily?</legend>
-          <label><input type="radio" name="time" value="t15"> 15 minutes</label>
-          <label><input type="radio" name="time" value="t30"> 30 minutes</label>
-          <label><input type="radio" name="time" value="t60"> 60 minutes</label>
-          <label><input type="radio" name="time" value="t90"> 90+ minutes</label>
-        </fieldset>
-        <button class="btn" type="submit">Get my recommendation</button>
-        <p class="meta-note" data-quiz-message aria-live="polite"></p>
-      </form>
-    </article>
-    <aside class="card">
-      <h2>Routing logic snapshot</h2>
-      <ul class="clean">
-        <li>Beginner + low daily time → <strong>Free Access</strong></li>
-        <li>Psychology + AI-first preference → <strong>Coach Bot</strong></li>
-        <li>High commitment + system focus → <strong>Advanced</strong></li>
-      </ul>
-      <p class="meta-note">Educational only. No investment recommendations.</p>
-    </aside>
-  </section>
-
-  <section class="container">
-    <h2>FAQ (short)</h2>
-    <div class="faq-item"><h3>Is the giveaway visible above the fold?</h3><p>Yes. Free Access is highlighted before and next to the quiz.</p></div>
-    <div class="faq-item"><h3>Can search engines index this homepage?</h3><p>Yes. The primary SEO copy is rendered as HTML outside the quiz flow.</p></div>
+  <section class="section seoCompact">
+    <div class="container">
+      <div class="card card-pad">
+        <h2 class="h2" style="margin-top:0;">SEO Snapshot: NGU Trading</h2>
+        <p class="lead" style="font-size:15px;">NGU helps people <strong>learn trading</strong> through process-first education: <strong>trading strategy</strong>, <strong>trading psychology</strong>, and disciplined rule-following with support from an <strong>AI trading coach</strong>. All content is educational, not financial advice.</p>
+      </div>
+    </div>
   </section>
 </main>
-<footer><div class="container">© NGU Trading · Education-first content · No financial advice</div></footer>
+
+<footer class="footer">
+  <div class="container legal">
+    <div>© <span class="js-year">2026</span> NGU Trading</div>
+    <div>Educational content only · No financial advice</div>
+  </div>
+</footer>
+<script>document.querySelectorAll('.js-year').forEach(el=>el.textContent=new Date().getFullYear())</script>
 </body>
 </html>

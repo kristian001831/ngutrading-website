@@ -1,7 +1,7 @@
 (function () {
-  const forms = document.querySelectorAll('[data-onboarding-quiz]');
+  const flows = document.querySelectorAll('[data-quiz-flow]');
+  if (!flows.length) return;
 
-  // Weighted routing map; highest score wins.
   const scoreMap = {
     challenge: {
       discipline: { advanced: 2, coach: 1 },
@@ -47,34 +47,76 @@
     let winner = 'free';
     if (score.coach >= score.free && score.coach >= score.advanced) winner = 'coach';
     if (score.advanced > score.coach && score.advanced >= score.free) winner = 'advanced';
-    return { winner, score };
+    return winner;
   }
 
-  forms.forEach((form) => {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const data = new FormData(form);
-      const answers = {
-        challenge: data.get('challenge'),
-        level: data.get('level'),
-        feature: data.get('feature'),
-        time: data.get('time')
-      };
+  flows.forEach((flow) => {
+    const steps = Array.from(flow.querySelectorAll('.quizStep'));
+    const answers = {};
+    let current = 0;
 
-      if (Object.values(answers).some((v) => !v)) {
-        const msg = form.querySelector('[data-quiz-message]');
-        if (msg) msg.textContent = form.dataset.msgRequired || 'Please answer all questions.';
-        return;
+    const nextBtn = flow.querySelector('[data-next]');
+    const backBtn = flow.querySelector('[data-back]');
+    const submitBtn = flow.querySelector('[data-submit]');
+    const progress = flow.querySelector('[data-progress]');
+    const note = flow.querySelector('[data-quiz-note]');
+
+    function render() {
+      steps.forEach((step, index) => {
+        step.hidden = index !== current;
+      });
+
+      const key = steps[current].dataset.question;
+      const isAnswered = Boolean(answers[key]);
+      const isLast = current === steps.length - 1;
+
+      if (progress) {
+        progress.textContent = `${current + 1} / ${steps.length}`;
       }
 
-      const result = decideRoute(answers);
-      const msg = form.querySelector('[data-quiz-message]');
-      if (msg) msg.textContent = form.dataset.msgRedirect || 'Redirecting to your best fit...';
+      if (backBtn) backBtn.disabled = current === 0;
+      if (nextBtn) {
+        nextBtn.hidden = isLast;
+        nextBtn.disabled = !isAnswered;
+      }
+      if (submitBtn) {
+        submitBtn.hidden = !isLast;
+        submitBtn.disabled = !isAnswered;
+      }
+    }
 
-      // Short delay for UX clarity.
-      setTimeout(() => {
-        window.location.href = routes[result.winner];
-      }, 350);
+    steps.forEach((step) => {
+      const key = step.dataset.question;
+      const choices = step.querySelectorAll('.quizChoice');
+      choices.forEach((choice) => {
+        choice.addEventListener('click', () => {
+          answers[key] = choice.dataset.value;
+          choices.forEach((x) => x.setAttribute('aria-pressed', 'false'));
+          choice.setAttribute('aria-pressed', 'true');
+          if (note) note.textContent = '';
+          render();
+        });
+      });
     });
+
+    nextBtn?.addEventListener('click', () => {
+      current = Math.min(current + 1, steps.length - 1);
+      render();
+    });
+
+    backBtn?.addEventListener('click', () => {
+      current = Math.max(current - 1, 0);
+      render();
+    });
+
+    submitBtn?.addEventListener('click', () => {
+      const winner = decideRoute(answers);
+      if (note) note.textContent = flow.dataset.redirectText || 'Redirecting…';
+      setTimeout(() => {
+        window.location.href = routes[winner];
+      }, 300);
+    });
+
+    render();
   });
 })();

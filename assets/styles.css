@@ -648,3 +648,22 @@ ul.cleanList li.li-x::before, ul.cleanList--main li.li-x::before{content:"❌";}
 }
 /* spacing so content doesn't stick to header on pages that already have top padding */
 body{ scroll-padding-top: 84px; }
+
+/* Fullscreen quiz flow (DE/EN homepages) */
+.quizShell{min-height:calc(100vh - 92px); display:flex; align-items:center; justify-content:center; padding:24px 0 36px;}
+.quizStage{width:min(980px,100%); border-radius:26px; border:1px solid rgba(255,255,255,.14); background:linear-gradient(145deg, rgba(8,7,18,.76), rgba(26,9,42,.45)); box-shadow:var(--shadow); overflow:hidden;}
+.quizStage__head{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:18px 22px; border-bottom:1px solid rgba(255,255,255,.08)}
+.quizStage__head .kicker{margin:0;}
+.quizProgress{font-size:13px; color:var(--gold); font-weight:900; letter-spacing:.08em}
+.quizStage__body{padding:20px 22px 22px;}
+.quizTitle{font-size:34px; line-height:1.1; margin:6px 0 8px; letter-spacing:-.02em}
+.quizLead{margin:0 0 18px; color:var(--muted); max-width:60ch}
+.quizChoices{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px;}
+.quizChoice{appearance:none; width:100%; text-align:left; border:1px solid rgba(255,255,255,.13); background:rgba(255,255,255,.04); color:var(--text); border-radius:16px; padding:14px 15px; font-size:15px; line-height:1.35; cursor:pointer; transition:.15s ease;}
+.quizChoice:hover{transform:translateY(-1px); border-color:rgba(255,213,110,.5); background:rgba(255,255,255,.07)}
+.quizChoice[aria-pressed="true"]{border-color:rgba(255,213,110,.95); background:linear-gradient(135deg, rgba(255,213,110,.24), rgba(156,54,207,.22)); box-shadow:0 0 0 1px rgba(255,213,110,.18) inset;}
+.quizNav{margin-top:18px; display:flex; justify-content:space-between; gap:10px; align-items:center}
+.quizNote{margin:8px 0 0; font-size:13px; color:var(--muted)}
+.seoCompact{padding-top:20px}
+.seoCompact .card{box-shadow:var(--shadow2)}
+@media (max-width:860px){.quizChoices{grid-template-columns:1fr}.quizTitle{font-size:28px}}
