@@ -1,196 +1,106 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B8YQBFNWQN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-B8YQBFNWQN');
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learn Trading with Structure | NGU Trading</title>
+  <meta name="description" content="Learn trading with a clear trading strategy, trading psychology support, and an AI trading coach. Keep your trading rules consistent.">
+  <meta name="keywords" content="learn trading, trading strategy, trading psychology, AI trading coach, follow trading rules">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://example.com/en/">
+  <link rel="alternate" hreflang="de" href="https://example.com/de/">
+  <link rel="alternate" hreflang="en" href="https://example.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/en/">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script defer src="/assets/quiz.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Is NGU Trading financial advice?","acceptedAnswer":{"@type":"Answer","text":"No. The content is educational and process-oriented, not personalized financial advice."}},
+      {"@type":"Question","name":"What is included in Free Access?","acceptedAnswer":{"@type":"Answer","text":"Free Access includes community entry, learning resources, and a practical starter workflow."}},
+      {"@type":"Question","name":"Who should use the AI Trading Coach?","acceptedAnswer":{"@type":"Answer","text":"Traders who want better rule-following and more stable execution habits."}}
+    ]
+  }
   </script>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>NGU Trading – Free Community + NGU Strategy Coach Bot</title>
-  <meta name="description" content="Join NGU Trading free access: community for traders, NGU Strategy Coach Bot, and limited free signals for first 50."/>
-  <meta name="robots" content="index,follow"/>
-  <meta property="og:title" content="NGU Trading – Free Access"/>
-  <meta property="og:description" content="Free community + NGU Strategy Coach Bot. System execution over hype."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="../assets/ngu-logo.jpeg"/>
-
-  <link rel="icon" href="../assets/ngu-logo.jpeg"/>
-  <link rel="stylesheet" href="../assets/styles.css"/>
 </head>
 <body>
-<header class="nguHeader">
-  <div class="nguHeader__inner">
-    <a class="nguBrand" href="index.html">
-      <img class="nguBrand__logo" src="../assets/ngu-logo.jpeg" alt="NGU Trading Logo">
-      <div class="nguBrand__text">
-        <div class="nguBrand__name">NGU TRADING</div>
-        <div class="nguBrand__tag">Never Give Up · System > Emotion</div>
-      </div>
-    </a>
-
-    <nav class="nguNav" aria-label="Primary">
-      <a class="nguNav__link" href="index.html#start">Start</a>
-      <a class="nguNav__link" href="index.html#proof">Proof</a>
-      <a class="nguNav__link" href="index.html#faq">FAQ</a>
-      <div class="nguLang" aria-label="Language">
-        <a class="nguLang__btn" href="/de/">DE</a>
-        <a class="nguLang__btn nguLang__btn--active" href="/en/">EN</a>
-      </div>
-    </nav>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/en/"><img src="/assets/ngu-logo.jpeg" alt="NGU Logo">NGU Trading</a>
+    <div class="nav-wrap">
+      <nav aria-label="Primary navigation">
+        <a href="/en/">Home</a><a href="/en/free-access.html">Free Access</a><a href="/en/coach-bot.html">Coach Bot</a><a href="/en/advanced.html">Advanced</a><a href="/en/faq.html">FAQ</a><a href="/en/proof.html">Proof</a>
+      </nav>
+      <div class="lang-switch"><a href="/de/">DE</a><a class="active" href="/en/">EN</a></div>
+    </div>
   </div>
 </header>
-
-<div class="giveawayBanner" id="giveawayBanner">
-  <div class="container giveawayBanner__inner">
-    <div class="giveawayBanner__text">
-      <span>🎁 Giveaway live · Ends Sunday, March 1 · 09:00 (German time)</span>
-      <span class="giveawayBanner__countdown" data-giveaway-countdown>--</span>
+<main>
+  <section class="hero container">
+    <h1>Learn trading with structure, not hype</h1>
+    <p>Build a practical <strong>trading strategy</strong>, improve <strong>trading psychology</strong>, and reliably follow your rules. NGU combines education, community, and an <strong>AI trading coach</strong> in a crawlable, fast static site.</p>
+    <div class="giveaway">
+      <h2>🎁 Giveaway: Start with Free Access</h2>
+      <p>Get immediate Free Access to core resources, peer support, and implementation checklists. Great for anyone who wants to learn trading in a step-by-step way.</p>
+      <a class="btn alt" href="/en/free-access.html">Explore Free Access</a>
     </div>
-    <a class="btn small gold" href="/en/giveaway/index.html">View giveaway details</a>
-  </div>
-</div>
+  </section>
 
-<div class="section">
-  <div class="container">
-    <div class="hero">
-      <div class="glow"></div>
-      <div class="inner">
-        <div class="pill">Free ecosystem • No email • Instant access</div>
-        <div class="kicker">NGU FREE ACCESS</div>
-        <div class="h1">Trade like a pro. Or don’t trade at all.</div>
-        <p class="lead">NGU is an execution framework built to eliminate overtrading, FOMO, and rule‑breaking: community + coach bot. Start free. Advanced is optional.</p>
+  <section class="container grid" id="onboarding">
+    <article class="card">
+      <h2>Interactive onboarding quiz</h2>
+      <p class="meta-note">Answer 4 questions and we route you to Free Access, Coach Bot, or Advanced.</p>
+      <form class="quiz" data-onboarding-quiz data-msg-required="Please answer all questions." data-msg-redirect="Thanks! Redirecting now.">
+        <fieldset>
+          <legend>1) What is your biggest trading challenge?</legend>
+          <label><input type="radio" name="challenge" value="discipline"> Discipline / rule-following</label>
+          <label><input type="radio" name="challenge" value="consistency"> Consistency</label>
+          <label><input type="radio" name="challenge" value="strategy"> Building a clear strategy</label>
+          <label><input type="radio" name="challenge" value="psychology"> Emotions / psychology</label>
+        </fieldset>
+        <fieldset>
+          <legend>2) What is your experience level?</legend>
+          <label><input type="radio" name="level" value="beginner"> Beginner</label>
+          <label><input type="radio" name="level" value="intermediate"> Intermediate</label>
+          <label><input type="radio" name="level" value="advanced"> Advanced</label>
+        </fieldset>
+        <fieldset>
+          <legend>3) What feature matters most to you?</legend>
+          <label><input type="radio" name="feature" value="community"> Community + pathway</label>
+          <label><input type="radio" name="feature" value="ai"> AI trading coach</label>
+          <label><input type="radio" name="feature" value="structure"> Structured framework</label>
+          <label><input type="radio" name="feature" value="accountability"> Accountability</label>
+        </fieldset>
+        <fieldset>
+          <legend>4) How much time do you commit daily?</legend>
+          <label><input type="radio" name="time" value="t15"> 15 minutes</label>
+          <label><input type="radio" name="time" value="t30"> 30 minutes</label>
+          <label><input type="radio" name="time" value="t60"> 60 minutes</label>
+          <label><input type="radio" name="time" value="t90"> 90+ minutes</label>
+        </fieldset>
+        <button class="btn" type="submit">Get my recommendation</button>
+        <p class="meta-note" data-quiz-message aria-live="polite"></p>
+      </form>
+    </article>
+    <aside class="card">
+      <h2>Routing logic snapshot</h2>
+      <ul class="clean">
+        <li>Beginner + low daily time → <strong>Free Access</strong></li>
+        <li>Psychology + AI-first preference → <strong>Coach Bot</strong></li>
+        <li>High commitment + system focus → <strong>Advanced</strong></li>
+      </ul>
+      <p class="meta-note">Educational only. No investment recommendations.</p>
+    </aside>
+  </section>
 
-        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
-          <a class="btn primary" href="./start/index.html">🔓 Get free access →</a>
-          <a class="btn gold" href="offer/index.html">View advanced →</a>
-        </div>
-
-        <p class="caption">No financial advice. No trade calls on this website.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="proof" class="section">
-  <div class="container">
-    <div class="kicker">Proof</div>
-    <div class="h2">Multi‑year stats (2023–2025)</div>
-    <p class="lead" style="font-size:14px;">Transparency, not promises. Results vary. Risk stays with you.</p>
-
-    <div class="imgframe">
-      <img src="../assets/proof/stats_2023_2025.jpg" alt="Stats 2023–2025">
-    </div>
-
-    
-  </div>
-</div>
-
-<div class="section">
-  <div class="container">
-    <div class="h2">What NGU stands for</div>
-    <div class="grid-3" style="margin-top:14px;">
-      <div class="feature"><h3>Structure</h3><p>Rules remove emotion. You trade like a business.</p></div>
-      <div class="feature"><h3>Discipline</h3><p>Systems beat motivation. You don’t need “flow”.</p></div>
-      <div class="feature"><h3>Longevity</h3><p>One trade doesn’t matter — staying funded &amp; payouts do.</p></div>
-    </div>
-
-    <div class="card" style="margin-top:16px;">
-      <div class="card-pad">
-        <div class="h2" style="margin-top:0;">What NGU is NOT</div>
-        <p class="lead" style="font-size:14px; max-width:none;">No hype. No Lambos. No “get rich quick”. No trade calls on the website.</p>
-        <div class="hr"></div>
-        <a class="btn primary" href="./start/index.html">🔓 Get free access →</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="container">
-    <div class="h2">Your free stack</div>
-    <div class="grid-3" style="margin-top:14px;">
-      <div class="feature"><h3>VIP community</h3><p>Setup checks, Q&amp;A, accountability. Focus: clean execution.</p></div>
-      <div class="feature"><h3>NGU coach bot</h3><p>Onboarding lock + audit feedback. No signals, no profit promises.</p></div>
-      <div class="feature"><h3>Signals (limited)</h3><p>Free signals are included — only for the first 50 inside the ecosystem.</p></div>
-    </div>
-
-    
-<div class="section">
-  <div class="container">
-    <div class="split2">
-      <div class="card glowCard glowGreen">
-        <div class="card-pad">
-          <div class="h2" style="margin-top:0;">Who NGU is for</div>
-          <p class="lead" style="font-size:14px;">If you recognize yourself in any point, NGU fits.</p>
-          <ul class="cleanList cleanList--main">
-  <li class="li-check">Overtrader who needs hard limits</li>
-  <li class="li-check">FOMO/impulse trader who wants a pre‑trade gate</li>
-  <li class="li-check">Prop trader focused on longevity &amp; payouts</li>
-  <li class="li-check">Trader who wants rules + audits (not motivation)</li>
-</ul>
-        <div class="hr"></div>
-          <a class="btn primary" href="./start/index.html">🔓 Get free access →</a>
-        </div>
-      </div>
-      <div class="card glowCard glowRed">
-        <div class="card-pad">
-          <div class="h2" style="margin-top:0;">Who NGU is NOT for</div>
-          <ul class="cleanList cleanList--main">
-  <li class="li-x">“Give me signals and I’ll press buy/sell”</li>
-  <li class="li-x">Get‑rich‑quick / Lambo mindset</li>
-  <li class="li-x">Someone who debates rules instead of executing</li>
-  <li class="li-x">Anyone who ignores risk</li>
-</ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="h2" style="margin-top:26px;">Unedited feedback (original language)</div>
-    <p class="lead" style="font-size:14px;">Screenshots remain in the original language for authenticity.</p>
-    
-
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
-      <a class="btn primary" href="./start/index.html">🔓 Get free access →</a>
-      <a class="btn gold" href="offer/index.html">View advanced →</a>
-    </div>
-  </div>
-</div>
-
-<div id="faq" class="section">
-  <div class="container">
-    <div class="h2">FAQ</div>
-    <div class="faq" style="margin-top:14px;">
-      <details open><summary>Do you give trade calls on the website?</summary><p>No. No trade calls. Focus is execution &amp; risk governance.</p></details>
-      <details><summary>Do I need the course?</summary><p>No. Free Access is enough to start. Advanced is optional.</p></details>
-      <details><summary>Do you collect emails?</summary><p>Not right now. No newsletter, no opt‑in.</p></details>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  <div class="container">
-    <div class="legal">
-      <div>© <span class="js-year"></span> NGU Trading.</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="impressum/index.html">Impressum</a>
-        <a href="datenschutz/index.html">Datenschutz</a>
-        <a href="disclaimer/index.html">Disclaimer</a>
-      </div>
-    </div>
-    <p class="caption">Educational content. No financial advice. Trading involves risk.</p>
-  </div>
-</div>
-<script src="../assets/app.js"></script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Organization", "name": "NGU Trading", "url": "./index.html", "logo": "../assets/ngu-logo.jpeg", "sameAs": ["https://www.tiktok.com/@futurebillionairego", "www.instagram.com/kristian.ngut", "www.instagram.com/futuremillionairego", "www.youtube.com/@kristianngut"]}
-</script>
+  <section class="container">
+    <h2>FAQ (short)</h2>
+    <div class="faq-item"><h3>Is the giveaway visible above the fold?</h3><p>Yes. Free Access is highlighted before and next to the quiz.</p></div>
+    <div class="faq-item"><h3>Can search engines index this homepage?</h3><p>Yes. The primary SEO copy is rendered as HTML outside the quiz flow.</p></div>
+  </section>
+</main>
+<footer><div class="container">© NGU Trading · Education-first content · No financial advice</div></footer>
 </body>
 </html>
