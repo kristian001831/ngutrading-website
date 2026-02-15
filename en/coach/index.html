@@ -13,6 +13,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>NGU Coach Bot — How to use it (Examples)</title>
+  <meta name="robots" content="index,follow"/>
   <meta name="description" content="Examples and use-cases for the NGU Trading Coach Bot."/>
   <link rel="icon" href="../../assets/ngu-logo.jpeg"/>
   <link rel="stylesheet" href="../../assets/styles.css"/>
@@ -20,18 +21,18 @@
 <body>
 <header class="nguHeader">
   <div class="nguHeader__inner">
-    <a class="nguBrand" href="../index.html">
+    <a class="nguBrand" href="../">
       <img class="nguBrand__logo" src="../../assets/ngu-logo.jpeg" alt="NGU Trading Logo">
       <div class="nguBrand__text">
         <div class="nguBrand__name">NGU TRADING</div>
-        <div class="nguBrand__tag">Never Give Up · System > Emotion</div>
+        <div class="nguBrand__tag">trade smarter.</div>
       </div>
     </a>
 
     <nav class="nguNav" aria-label="Primary">
-      <a class="nguNav__link" href="../index.html#start">Start</a>
-      <a class="nguNav__link" href="../index.html#proof">Proof</a>
-      <a class="nguNav__link" href="../index.html#faq">FAQ</a>
+      <a class="nguNav__link" href="../#start">Start</a>
+      <a class="nguNav__link" href="../#proof">Proof</a>
+      <a class="nguNav__link" href="../#faq">FAQ</a>
       <div class="nguLang" aria-label="Language">
         <a class="nguLang__btn" href="/de/">DE</a>
         <a class="nguLang__btn nguLang__btn--active" href="/en/">EN</a>
@@ -39,6 +40,7 @@
     </nav>
   </div>
 </header>
+<h1 class="sr-only">NGU Coach Bot for Structured Trading Execution</h1>
 
 <div class="section">
     <div class="container">
@@ -52,7 +54,7 @@
           <div class="coachGrid"><div class="coachCard"><div class="k">🧠 60‑second Trade Audit</div><div class="caption">Upload a chart or describe entry/SL/TP. The bot checks setup validity, timing, risk governance and rule violations.</div></div><div class="coachCard"><div class="k">⚠️ Stop FOMO & Overtrading</div><div class="caption">It detects behavior patterns (chasing, revenge, late entries) and puts you into a mode: Normal / Reduced / Protect.</div></div><div class="coachCard"><div class="k">📊 Daily / Weekly Execution Reports</div><div class="caption">Audit-style reports: compliance > PnL. You instantly see what blocks payouts — and what to fix.</div></div><div class="coachCard"><div class="k">🧾 Rules-to-Action Checklist</div><div class="caption">It converts feedback into 3 clear next‑session rules (entry, SL logic, max trades, mode).</div></div><div class="coachCard"><div class="k">🎯 Challenge Plan in Minutes</div><div class="caption">Share your account rules + goal. You get a sober plan: sessions, limits, risk, consequence ladder.</div></div></div>
 
           <div class="h2" style="margin-top:18px;">Live Examples</div>
-          <div class="bubbles"><div class="bubble me"><b>You:</b> Audit this trade using the NGU strategy. Here is my screenshot.</div><div class="bubble "><b>NGU Bot:</b> Got it. First: instrument, timeframe, session/timezone, entry/SL/TP. Then I’ll verify structure, cloud bias, breakout rules, and any violations.</div><div class="bubble me"><b>You:</b> Create a Daily Execution Report (0–100) for my trades today.</div><div class="bubble "><b>NGU Bot:</b> Send your last 3 trades (R, entry reason, SL logic). I’ll turn it into a weekly audit roll‑up.</div><div class="bubble me"><b>You:</b> Give me 3 strict rules for tomorrow so I don’t overtrade.</div></div>
+          <div class="bubbles"><div class="bubble me"><span class="emph">You:</span> Audit this trade using the NGU strategy. Here is my screenshot.</div><div class="bubble "><span class="emph">NGU Bot:</span> Got it. First: instrument, timeframe, session/timezone, entry/SL/TP. Then I’ll verify structure, cloud bias, breakout rules, and any violations.</div><div class="bubble me"><span class="emph">You:</span> Create a Daily Execution Report (0–100) for my trades today.</div><div class="bubble "><span class="emph">NGU Bot:</span> Send your last 3 trades (R, entry reason, SL logic). I’ll turn it into a weekly audit roll‑up.</div><div class="bubble me"><span class="emph">You:</span> Give me 3 strict rules for tomorrow so I don’t overtrade.</div></div>
 
           <p class="caption" style="margin-top:10px;">Pro tip: If you’re new, answer the onboarding questions precisely. You’ll get a clear Trader Profile + mode recommendation.</p>
 
@@ -62,10 +64,10 @@
             <div class="giveawaySampleCard">
               <div class="giveawaySamplePad">
                 <h3 class="giveawaySampleTitle">✅ NGU Execution Certificate (sample)</h3>
-                <p class="giveawaySampleText"><strong>Trader:</strong> Your Name</p>
-                <p class="giveawaySampleText"><strong>Week Ending:</strong> May 17, 2025</p>
-                <p class="giveawaySampleText"><strong>Execution Score:</strong> 86/100</p>
-                <p class="giveawaySampleText"><strong>Rules Hit:</strong> 92% compliance · No revenge trades</p>
+                <p class="giveawaySampleText"><span class="emph">Trader:</span> Your Name</p>
+                <p class="giveawaySampleText"><span class="emph">Week Ending:</span> May 17, 2025</p>
+                <p class="giveawaySampleText"><span class="emph">Execution Score:</span> 86/100</p>
+                <p class="giveawaySampleText"><span class="emph">Rules Hit:</span> 92% compliance · No revenge trades</p>
                 <p class="giveawaySampleText" style="margin-top:8px;">Statement: “Disciplined execution beats impulses. Keep it clean.”</p>
                 <div class="giveawaySampleMedia" aria-hidden="true">
                   <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NGU execution certificate example">
@@ -95,10 +97,10 @@
             <div class="giveawaySampleCard">
               <div class="giveawaySamplePad">
                 <h3 class="giveawaySampleTitle">📊 Daily/Weekly Summary (sample)</h3>
-                <p class="giveawaySampleText"><strong>Trades:</strong> 9 · <strong>Win rate:</strong> 56%</p>
-                <p class="giveawaySampleText"><strong>Best session:</strong> NY open · <strong>Avg R:</strong> +0.42</p>
-                <p class="giveawaySampleText"><strong>Top strength:</strong> Patience on entries</p>
-                <p class="giveawaySampleText"><strong>Fix next:</strong> FOMO after 2nd trade</p>
+                <p class="giveawaySampleText"><span class="emph">Trades:</span> 9 · <span class="emph">Win rate:</span> 56%</p>
+                <p class="giveawaySampleText"><span class="emph">Best session:</span> NY open · <span class="emph">Avg R:</span> +0.42</p>
+                <p class="giveawaySampleText"><span class="emph">Top strength:</span> Patience on entries</p>
+                <p class="giveawaySampleText"><span class="emph">Fix next:</span> FOMO after 2nd trade</p>
                 <p class="giveawaySampleText" style="margin-top:8px;">Next step: “One setup, one A+ entry, then stop.”</p>
                 <div class="giveawaySampleMedia" aria-hidden="true">
                   <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NGU execution summary example">
@@ -137,7 +139,7 @@
           <p class="lead" style="margin-top:10px;">Use this for 3 days straight and you’ll feel the difference: less chaos, more control. ✅</p>
 <div class="ctaRow" style="margin-top:16px;">
             <a class="btn primary" href="https://chatgpt.com/g/g-6978f4798004819197383b0c645e6854-ngu-trading-strategy-coach" target="_blank" rel="noopener">Open NGU Coach Bot →</a>
-            <a class="btn ghost" href="../start/index.html">Free Access Page</a>
+            <a class="btn ghost" href="../start/">Free Access Page</a>
           </div>
 
           <p class="caption" style="margin-top:10px;">No trade signals. No profit promises. Education + execution only.</p>
@@ -151,9 +153,9 @@
       <div class="legal">
         <div>© <span class="js-year"></span> NGU Trading.</div>
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="../impressum/index.html">Impressum</a>
-          <a href="../datenschutz/index.html">Datenschutz</a>
-          <a href="../disclaimer/index.html">Disclaimer</a>
+          <a href="../impressum/">Impressum</a>
+          <a href="../datenschutz/">Datenschutz</a>
+          <a href="../disclaimer/">Disclaimer</a>
         </div>
       </div>
     </div>
