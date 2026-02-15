@@ -588,11 +588,15 @@ ul.cleanList li.li-x::before, ul.cleanList--main li.li-x::before{content:"❌";}
   min-width: 0;
 }
 .nguBrand__logo{
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  object-position: center 52%;
   border-radius: 10px;
   display: block;
+  background: radial-gradient(circle at 50% 35%, rgba(128,76,198,.42), rgba(12,10,23,.95));
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 6px 16px rgba(0,0,0,.35);
 }
 .nguBrand__text{line-height:1.1}
 .nguBrand__name{
@@ -648,3 +652,8 @@ ul.cleanList li.li-x::before, ul.cleanList--main li.li-x::before{content:"❌";}
 }
 /* spacing so content doesn't stick to header on pages that already have top padding */
 body{ scroll-padding-top: 84px; }
+
+
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}
+
+.emph{font-weight:700;}
