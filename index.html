@@ -1,21 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Instant redirect for everyone -->
-  <meta http-equiv="refresh" content="0; url=/de/" />
-
-  <title>NGU Trading</title>
-
-  <!-- If browser is NOT German, override to /en/ -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NGU Trading | Language Redirect</title>
+  <meta name="robots" content="noindex,follow">
   <script>
-    try {
-      const l = (navigator.language || "").toLowerCase();
-      if (!l.startsWith("de")) location.replace("/en/");
-    } catch(e) {}
+    (function () {
+      var lang = (navigator.language || 'en').toLowerCase();
+      var target = lang.startsWith('de') ? '/de/' : '/en/';
+      window.location.replace(target);
+    })();
   </script>
 </head>
-<body></body>
+<body>
+  <p>If you are not redirected automatically, continue to <a href="/en/">English</a> or <a href="/de/">Deutsch</a>.</p>
+</body>
 </html>

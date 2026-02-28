@@ -3,184 +3,121 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>NGU Trading – Free Community + NGU Strategy Coach Bot</title>
-  <meta name="description" content="Join NGU Trading free access: community for traders, NGU Strategy Coach Bot, and limited free signals for first 50."/>
+  <title>Trading lernen mit Struktur | NGU Trading</title>
+  <meta name="description" content="Trading lernen mit klarer Trading Strategie, Trading Psychologie und KI Trading Coach. Free Access Giveaway und strukturierter Einstieg ohne Paywall."/>
   <meta name="robots" content="index,follow"/>
-  <meta property="og:title" content="NGU Trading – Free Access"/>
-  <meta property="og:description" content="Free community + NGU Strategy Coach Bot. System execution over hype."/>
+  <link rel="canonical" href="https://example.com/de/"/>
+  <link rel="alternate" hreflang="de" href="https://example.com/de/"/>
+  <link rel="alternate" hreflang="en" href="https://example.com/en/"/>
+  <link rel="alternate" hreflang="x-default" href="https://example.com/en/"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:image" content="assets/ngu-logo.jpeg"/>
-
-  <link rel="icon" href="assets/ngu-logo.jpeg"/>
-  <link rel="stylesheet" href="assets/styles.css"/>
-<script>
-  // Force language for this folder
-  try {
-    localStorage.setItem('ngu_lang','de');
-    var u=new URL(window.location.href);
-    u.searchParams.set('lang','de');
-    window.history.replaceState({},'',u.toString());
-  } catch(e) {}
-</script>
+  <meta property="og:title" content="Trading lernen mit Struktur | NGU Trading"/>
+  <meta property="og:description" content="Trading Strategie, Trading Psychologie und KI Trading Coach mit Free Access Giveaway."/>
+  <link rel="stylesheet" href="/assets/styles.css"/>
+  <script defer src="/assets/quiz.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ist NGU Trading Finanzberatung?","acceptedAnswer":{"@type":"Answer","text":"Nein. NGU liefert ausschließlich Bildungsinhalte und Prozesshilfe."}},{"@type":"Question","name":"Was bringt der Free Access?","acceptedAnswer":{"@type":"Answer","text":"Der Free Access gibt dir kostenlosen Einstieg in Community, Trading Grundlagen und klare Umsetzungsregeln."}}]}</script>
 </head>
 <body>
-<header class="nguHeader">
-  <div class="nguHeader__inner">
-    <a class="nguBrand" href="index.html">
-      <img class="nguBrand__logo" src="assets/ngu-logo.jpeg" alt="NGU Trading Logo">
-      <div class="nguBrand__text">
-        <div class="nguBrand__name">NGU TRADING</div>
-        <div class="nguBrand__tag">Never Give Up · System > Emotion</div>
-      </div>
+<header class="topbar">
+  <div class="container nav" style="padding:10px 0;">
+    <a class="brand" href="/de/">
+      <img src="/assets/ngu-logo.jpeg" alt="NGU Trading Logo"/>
+      <div class="meta"><strong>NGU TRADING</strong><span>Never Give Up · System &gt; Emotion</span></div>
     </a>
-
-    <nav class="nguNav" aria-label="Primary">
-      <a class="nguNav__link" href="index.html#start">Start</a>
-      <a class="nguNav__link" href="index.html#proof">Proof</a>
-      <a class="nguNav__link" href="index.html#faq">FAQ</a>
-      <div class="nguLang" aria-label="Language">
-        <a class="nguLang__btn nguLang__btn--active" href="../de/index.html">DE</a>
-        <a class="nguLang__btn" href="../en/index.html">EN</a>
-      </div>
-    </nav>
+    <div class="controls">
+      <a class="btn small" href="/de/free-access.html">Free Access</a>
+      <a class="btn small" href="/de/coach-bot.html">Coach Bot</a>
+      <a class="btn small" href="/de/advanced.html">Advanced</a>
+      <a class="btn small" href="/de/faq.html">FAQ</a>
+      <a class="btn small" href="/de/proof.html">Proof</a>
+      <a class="btn small active" href="/de/">DE</a>
+      <a class="btn small" href="/en/">EN</a>
+    </div>
   </div>
 </header>
 
-<div class="section">
-  <div class="container">
-    <div class="hero">
-      <div class="glow"></div>
-      <div class="inner">
-        <div class="pill" data-i18n="pill"></div>
-        <div class="kicker" data-i18n="hero_k"></div>
-        <div class="h1" data-i18n="hero_h"></div>
-        <p class="lead" data-i18n="hero_p"></p>
-
-        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
-          <a class="btn primary" href="./start/index.html" data-i18n="cta_get"></a>
-          <a class="btn gold" href="offer/index.html" data-i18n="cta_offer"></a>
+<main>
+  <section class="section quizShell">
+    <div class="container">
+      <div class="quizStage" data-quiz-flow data-redirect-text="Wir leiten dich weiter ...">
+        <div class="quizStage__head">
+          <div>
+            <div class="kicker">🎁 Giveaway: Free Access</div>
+            <div class="caption">Trading lernen · Trading Strategie · Trading Psychologie · KI Trading Coach · Trading Regeln einhalten</div>
+          </div>
+          <div class="quizProgress" data-progress></div>
         </div>
 
-        <p class="caption" data-i18n="hero_note"></p>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="quizStage__body">
+          <div class="quizStep" data-question="challenge">
+            <h1 class="quizTitle">Was ist aktuell deine größte Trading-Herausforderung?</h1>
+            <p class="quizLead">4 kurze Fragen. Danach erhältst du direkt den besten Startpfad.</p>
+            <div class="quizChoices">
+              <button class="quizChoice" type="button" data-value="discipline" aria-pressed="false">Ich halte meine Regeln nicht konsequent ein.</button>
+              <button class="quizChoice" type="button" data-value="consistency" aria-pressed="false">Meine Ergebnisse sind nicht konstant.</button>
+              <button class="quizChoice" type="button" data-value="strategy" aria-pressed="false">Mir fehlt eine klare Trading Strategie.</button>
+              <button class="quizChoice" type="button" data-value="psychology" aria-pressed="false">Emotionen blockieren meine Entscheidungen.</button>
+            </div>
+          </div>
 
-<div id="proof" class="section">
-  <div class="container">
-    <div class="kicker" data-i18n="proof_k"></div>
-    <div class="h2" data-i18n="proof_h"></div>
-    <p class="lead" style="font-size:14px;" data-i18n="proof_p"></p>
+          <div class="quizStep" data-question="level" hidden>
+            <h2 class="quizTitle">Wie würdest du dein Erfahrungslevel einschätzen?</h2>
+            <div class="quizChoices">
+              <button class="quizChoice" type="button" data-value="beginner" aria-pressed="false">Anfänger: Ich lerne die Basics.</button>
+              <button class="quizChoice" type="button" data-value="intermediate" aria-pressed="false">Fortgeschritten: Ich trade aktiv mit Plan.</button>
+              <button class="quizChoice" type="button" data-value="advanced" aria-pressed="false">Sehr erfahren: Ich optimiere Details.</button>
+            </div>
+          </div>
 
-    <div class="imgframe">
-      <img src="assets/proof/stats_2023_2025.jpg" alt="Stats 2023–2025">
-    </div>
+          <div class="quizStep" data-question="feature" hidden>
+            <h2 class="quizTitle">Welche Funktion ist für dich am wichtigsten?</h2>
+            <div class="quizChoices">
+              <button class="quizChoice" type="button" data-value="community" aria-pressed="false">Community + klarer Lernpfad</button>
+              <button class="quizChoice" type="button" data-value="ai" aria-pressed="false">KI Trading Coach mit direktem Feedback</button>
+              <button class="quizChoice" type="button" data-value="structure" aria-pressed="false">Regelbasiertes Framework</button>
+              <button class="quizChoice" type="button" data-value="accountability" aria-pressed="false">Accountability für saubere Ausführung</button>
+            </div>
+          </div>
 
-    
-  </div>
-</div>
+          <div class="quizStep" data-question="time" hidden>
+            <h2 class="quizTitle">Wie viel Zeit investierst du täglich?</h2>
+            <div class="quizChoices">
+              <button class="quizChoice" type="button" data-value="t15" aria-pressed="false">15 Minuten</button>
+              <button class="quizChoice" type="button" data-value="t30" aria-pressed="false">30 Minuten</button>
+              <button class="quizChoice" type="button" data-value="t60" aria-pressed="false">60 Minuten</button>
+              <button class="quizChoice" type="button" data-value="t90" aria-pressed="false">90+ Minuten</button>
+            </div>
+          </div>
 
-<div class="section">
-  <div class="container">
-    <div class="h2" data-i18n="what_h"></div>
-    <div class="grid-3" style="margin-top:14px;">
-      <div class="feature"><h3 data-i18n="w1_t"></h3><p data-i18n="w1_p"></p></div>
-      <div class="feature"><h3 data-i18n="w2_t"></h3><p data-i18n="w2_p"></p></div>
-      <div class="feature"><h3 data-i18n="w3_t"></h3><p data-i18n="w3_p"></p></div>
-    </div>
-
-    <div class="card" style="margin-top:16px;">
-      <div class="card-pad">
-        <div class="h2" style="margin-top:0;" data-i18n="not_h"></div>
-        <p class="lead" style="font-size:14px; max-width:none;" data-i18n="not_p"></p>
-        <div class="hr"></div>
-        <a class="btn primary" href="./start/index.html" data-i18n="cta_get"></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="container">
-    <div class="h2" data-i18n="stack_h"></div>
-    <div class="grid-3" style="margin-top:14px;">
-      <div class="feature"><h3 data-i18n="f1_t"></h3><p data-i18n="f1_p"></p></div>
-      <div class="feature"><h3 data-i18n="f2_t"></h3><p data-i18n="f2_p"></p></div>
-      <div class="feature"><h3 data-i18n="f3_t"></h3><p data-i18n="f3_p"></p></div>
-    </div>
-
-    
-<div class="section">
-  <div class="container">
-    <div class="split2">
-      <div class="card glowCard glowGreen">
-        <div class="card-pad">
-          <div class="h2" style="margin-top:0;" data-i18n="for_h"></div>
-          <p class="lead" style="font-size:14px;" data-i18n="for_p"></p>
-          <ul class="cleanList cleanList--main">
-  <li class="li-check" data-i18n="for_1"></li>
-  <li class="li-check" data-i18n="for_2"></li>
-  <li class="li-check" data-i18n="for_3"></li>
-  <li class="li-check" data-i18n="for_4"></li>
-</ul>
-        <div class="hr"></div>
-          <a class="btn primary" href="./start/index.html" data-i18n="cta_get"></a>
-        </div>
-      </div>
-      <div class="card glowCard glowRed">
-        <div class="card-pad">
-          <div class="h2" style="margin-top:0;" data-i18n="notfor_h"></div>
-          <ul class="cleanList cleanList--main">
-  <li class="li-x" data-i18n="notfor_1"></li>
-  <li class="li-x" data-i18n="notfor_2"></li>
-  <li class="li-x" data-i18n="notfor_3"></li>
-  <li class="li-x" data-i18n="notfor_4"></li>
-</ul>
+          <div class="quizNav">
+            <button type="button" class="btn" data-back>Zurück</button>
+            <div style="display:flex; gap:10px;">
+              <button type="button" class="btn primary" data-next>Weiter</button>
+              <button type="button" class="btn gold" data-submit hidden>Empfehlung öffnen</button>
+            </div>
+          </div>
+          <p class="quizNote" data-quiz-note aria-live="polite"></p>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="h2" style="margin-top:26px;" data-i18n="proof2_h"></div>
-    <p class="lead" style="font-size:14px;" data-i18n="proof2_p"></p>
-    
-
-    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
-      <a class="btn primary" href="./start/index.html" data-i18n="cta_get"></a>
-      <a class="btn gold" href="offer/index.html" data-i18n="cta_offer"></a>
-    </div>
-  </div>
-</div>
-
-<div id="faq" class="section">
-  <div class="container">
-    <div class="h2" data-i18n="faq_h"></div>
-    <div class="faq" style="margin-top:14px;">
-      <details open><summary data-i18n="faq1_q"></summary><p data-i18n="faq1_a"></p></details>
-      <details><summary data-i18n="faq2_q"></summary><p data-i18n="faq2_a"></p></details>
-      <details><summary data-i18n="faq3_q"></summary><p data-i18n="faq3_a"></p></details>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  <div class="container">
-    <div class="legal">
-      <div>© <span class="js-year"></span> NGU Trading.</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="impressum/index.html">Impressum</a>
-        <a href="datenschutz/index.html">Datenschutz</a>
-        <a href="disclaimer/index.html">Disclaimer</a>
+  <section class="section seoCompact">
+    <div class="container">
+      <div class="card card-pad">
+        <h2 class="h2" style="margin-top:0;">SEO-Kurzinfo: NGU Trading</h2>
+        <p class="lead" style="font-size:15px;">NGU unterstützt dich beim <strong>Trading lernen</strong> mit Fokus auf <strong>Trading Strategie</strong>, <strong>Trading Psychologie</strong> und das konsequente <strong>Trading Regeln einhalten</strong>. Der <strong>KI Trading Coach</strong> und Free Access sind Bildungsangebote – keine Anlageberatung.</p>
       </div>
     </div>
-    <p class="caption" data-i18n="legal"></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container legal">
+    <div>© <span class="js-year">2026</span> NGU Trading</div>
+    <div>Educational content only · Keine Anlageberatung</div>
   </div>
-</div>
-<script src="assets/i18n.js"></script><script src="assets/app.js"></script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Organization", "name": "NGU Trading", "url": "./index.html", "logo": "./assets/ngu-logo.jpeg", "sameAs": ["https://www.tiktok.com/@futurebillionairego", "www.instagram.com/kristian.ngut", "www.instagram.com/futuremillionairego", "www.youtube.com/@kristianngut"]}
-</script>
+</footer>
+<script>document.querySelectorAll('.js-year').forEach(el=>el.textContent=new Date().getFullYear())</script>
 </body>
 </html>
