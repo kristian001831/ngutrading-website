@@ -5,7 +5,6 @@ const CONFIG = {
   telegramInvite: "https://t.me/nguvipgroup",
   coachBot: "https://chatgpt.com/g/g-6978f4798004819197383b0c645e6854-ngu-trading-strategy-coach",
   whopCheckout: "https://whop.com/checkout/plan_bgPFruiqerClS",
-  langKey: "ngu_lang",
   spotsKey: "ngu_spots_data",
   minSpots: 2,
   startMin: 11,
@@ -21,42 +20,6 @@ const CONFIG = {
     set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
   };
 
-  function guessLang(){
-    const saved = store.get(CONFIG.langKey, null);
-    if(saved) return saved;
-    const lang = (navigator.language||'').toLowerCase();
-    const tz = (Intl.DateTimeFormat().resolvedOptions().timeZone||'').toLowerCase();
-    const looksDACH = lang.startsWith('de') || /europe\/(berlin|zurich|vienna)/.test(tz);
-    return looksDACH ? 'de' : 'en';
-  }
-
-  function dict(){
-    const code = document.documentElement.getAttribute('lang') || 'en';
-    return (window.NGU_I18N && window.NGU_I18N[code]) ? window.NGU_I18N[code] : window.NGU_I18N.en;
-  }
-
-
-  function toggleLegalBlocks(){
-    const code = document.documentElement.getAttribute('lang') || 'en';
-    $$('[data-lang-block]').forEach(el=>{
-      const show = (el.getAttribute('data-lang-block') === code);
-      el.style.display = show ? '' : 'none';
-    });
-  }
-
-  function applyLang(code){
-    const d = (window.NGU_I18N && window.NGU_I18N[code]) ? window.NGU_I18N[code] : window.NGU_I18N.en;
-    document.documentElement.setAttribute('lang', code);
-    store.set(CONFIG.langKey, code);
-    $$('[data-i18n]').forEach(el=>{
-      const key = el.getAttribute('data-i18n');
-      el.textContent = d[key] ?? '';
-    });
-    $('#langDE')?.classList.toggle('active', code==='de');
-    $('#langEN')?.classList.toggle('active', code==='en');
-    toggleLegalBlocks();
-  }
-
   function setExternal(sel, href){
     $$(sel).forEach(a=>{
       a.setAttribute('href', href);
@@ -68,11 +31,6 @@ const CONFIG = {
   function openModal(){
     const m = $('#bridgeModal');
     if(!m) return;
-    const d = dict();
-    $('#mTitle').textContent = d.modal_h || "✅ Opened";
-    $('#mBody').textContent = d.modal_p || "";
-    $('#mFree').textContent = d.modal_free || "Continue";
-    $('#mAdv').textContent = d.modal_adv || "View advanced";
     m.classList.add('show');
   }
   function closeModal(){ $('#bridgeModal')?.classList.remove('show'); }
@@ -123,12 +81,20 @@ const CONFIG = {
     }
   }
 
-  // init
-  const lang = guessLang();
-  applyLang(lang);
-  $('#langDE')?.addEventListener('click', ()=>applyLang('de'));
-  $('#langEN')?.addEventListener('click', ()=>applyLang('en'));
+  function tickGiveawayCountdown(){
+    const els = document.querySelectorAll('[data-giveaway-countdown]');
+    if(!els.length) return;
+    const end = new Date('2026-03-01T09:00:00+01:00');
+    const now = new Date();
+    const total = Math.max(0, Math.floor((end - now) / 1000));
+    const days = Math.floor(total / 86400);
+    const hours = Math.floor((total % 86400) / 3600);
+    const minutes = Math.floor((total % 3600) / 60);
+    const text = `${days}d ${String(hours).padStart(2,'0')}h ${String(minutes).padStart(2,'0')}m`;
+    els.forEach((el)=>{ el.textContent = text; });
+  }
 
+  // init
   setExternal('.telegramLink', CONFIG.telegramInvite);
   setExternal('.botLink', CONFIG.coachBot);
   setExternal('.checkoutLink', CONFIG.whopCheckout);
@@ -143,37 +109,110 @@ const CONFIG = {
   $('#mFree')?.addEventListener('click', closeModal);
   $('#bridgeModal')?.addEventListener('click', (e)=>{ if(e.target.id==='bridgeModal') closeModal(); });
 
+  function ensureGiveawayHint(){
+    if($('#giveawayHint')) return;
+    const lang = document.documentElement.lang || 'en';
+    const isDe = lang.toLowerCase().startsWith('de');
+    const giveawayHref = isDe ? '/de/giveaway/index.html' : '/en/giveaway/index.html';
+    const copy = isDe ? {
+      title: '🎁 Giveaway läuft',
+      body: 'Infos zum Gewinnspiel & Beispiele sind jetzt auf der Detailseite.',
+      ends: 'Endet: Sonntag, 1. März · 09:00 Uhr (DE)',
+      cta: 'Zur Giveaway-Seite',
+      close: 'Später'
+    } : {
+      title: '🎁 Giveaway live',
+      body: 'Details and sample images are on the giveaway page.',
+      ends: 'Ends: Sunday, March 1 · 09:00 (DE time)',
+      cta: 'View giveaway details',
+      close: 'Not now'
+    };
+    const modal = document.createElement('div');
+    modal.className = 'modal giveawayHintModal';
+    modal.id = 'giveawayHint';
+    modal.innerHTML = `
+      <div class="box giveawayHintBox" role="dialog" aria-modal="true">
+        <div class="pad giveawayHintPad">
+          <div class="giveawayHintHead">
+            <div>
+              <h3>${copy.title}</h3>
+              <p>${copy.body}</p>
+            </div>
+            <button class="btn small" type="button" id="giveawayHintClose">✕</button>
+          </div>
+          <div class="giveawayHintMeta">
+            <span>${copy.ends}</span>
+            <span class="giveawayHintCountdown" data-giveaway-countdown>--</span>
+          </div>
+          <div class="row" style="margin-top:10px;">
+            <a class="btn gold" href="${giveawayHref}">${copy.cta}</a>
+            <button class="btn ghost" type="button" id="giveawayHintLater">${copy.close}</button>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    const closeHint = ()=>{
+      modal.classList.remove('show');
+      store.set('ngu_giveaway_hint_seen', todayKey());
+    };
+    $('#giveawayHintClose')?.addEventListener('click', closeHint);
+    $('#giveawayHintLater')?.addEventListener('click', closeHint);
+    modal.addEventListener('click', (e)=>{ if(e.target.id==='giveawayHint') closeHint(); });
+  }
+
+  function maybeShowGiveawayHint(){
+    if(window.location.pathname.includes('/giveaway/')) return;
+    const seen = store.get('ngu_giveaway_hint_seen', null);
+    if(seen === todayKey()) return;
+    ensureGiveawayHint();
+    setTimeout(()=>{
+      $('#giveawayHint')?.classList.add('show');
+      tickGiveawayCountdown();
+    }, 500);
+  }
+
+  function ensureGiveawayBanner(){
+    if($('#giveawayBanner')) return;
+    if(window.location.pathname.includes('/giveaway/')) return;
+    const header = document.querySelector('header');
+    if(!header) return;
+    const lang = document.documentElement.lang || 'en';
+    const isDe = lang.toLowerCase().startsWith('de');
+    const giveawayHref = isDe ? '/de/giveaway/index.html' : '/en/giveaway/index.html';
+    const copy = isDe ? {
+      text: '🎁 Giveaway läuft · Endet Sonntag, 1. März · 09:00 Uhr (DE)',
+      cta: 'Zur Giveaway-Seite'
+    } : {
+      text: '🎁 Giveaway live · Ends Sunday, March 1 · 09:00 (German time)',
+      cta: 'View giveaway details'
+    };
+    const banner = document.createElement('div');
+    banner.className = 'giveawayBanner';
+    banner.id = 'giveawayBanner';
+    banner.innerHTML = `
+      <div class="container giveawayBanner__inner">
+        <div class="giveawayBanner__text">
+          <span>${copy.text}</span>
+          <span class="giveawayBanner__countdown" data-giveaway-countdown>--</span>
+        </div>
+        <a class="btn small gold" href="${giveawayHref}">${copy.cta}</a>
+      </div>
+    `;
+    header.after(banner);
+  }
+
   // offer widgets
   tickCountdown();
   setInterval(tickCountdown, 1000);
   updateSpots();
   setInterval(updateSpots, 60*1000); // check once/min
 
+  ensureGiveawayBanner();
+  maybeShowGiveawayHint();
+  tickGiveawayCountdown();
+  setInterval(tickGiveawayCountdown, 60000);
+
   // year
   $$('.js-year').forEach(el=>el.textContent = new Date().getFullYear());
-})();
-
-// --- Language via URL (?lang=en|de) ---
-(function(){
-  try{
-    const p=new URLSearchParams(window.location.search);
-    const q=p.get('lang');
-    if(q==='en'||q==='de'){
-      localStorage.setItem('ngu_lang', q);
-    }
-  }catch(e){}
-})();
-
-
-(function(){
-  function setShareLinks(){
-    var de=document.querySelectorAll('[data-share="de"]');
-    var en=document.querySelectorAll('[data-share="en"]');
-    try{
-      var u=new URL(window.location.href);
-      u.searchParams.set('lang','de'); de.forEach(function(a){a.href=u.toString();});
-      u.searchParams.set('lang','en'); en.forEach(function(a){a.href=u.toString();});
-    }catch(e){}
-  }
-  document.addEventListener('DOMContentLoaded', setShareLinks);
 })();
