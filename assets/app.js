@@ -81,137 +81,13 @@ const CONFIG = {
     }
   }
 
-  function tickGiveawayCountdown(){
-    const els = document.querySelectorAll('[data-giveaway-countdown]');
-    if(!els.length) return;
-    const end = new Date('2026-03-01T09:00:00+01:00');
-    const now = new Date();
-    const total = Math.max(0, Math.floor((end - now) / 1000));
-    const days = Math.floor(total / 86400);
-    const hours = Math.floor((total % 86400) / 3600);
-    const minutes = Math.floor((total % 3600) / 60);
-    const text = `${days}d ${String(hours).padStart(2,'0')}h ${String(minutes).padStart(2,'0')}m`;
-    els.forEach((el)=>{ el.textContent = text; });
-  }
-
-  // init
-  setExternal('.telegramLink', CONFIG.telegramInvite);
-  setExternal('.botLink', CONFIG.coachBot);
-  setExternal('.checkoutLink', CONFIG.whopCheckout);
-
-  // Show modal after clicking external links (keeps funnel alive)
-  $$('.telegramLink, .botLink').forEach(el=>{
-    el.addEventListener('click', ()=>{
-      setTimeout(openModal, 140);
-    });
-  });
-  $('#mClose')?.addEventListener('click', closeModal);
-  $('#mFree')?.addEventListener('click', closeModal);
-  $('#bridgeModal')?.addEventListener('click', (e)=>{ if(e.target.id==='bridgeModal') closeModal(); });
-
-  function ensureGiveawayHint(){
-    if($('#giveawayHint')) return;
-    const lang = document.documentElement.lang || 'en';
-    const isDe = lang.toLowerCase().startsWith('de');
-    const giveawayHref = isDe ? '/de/giveaway/index.html' : '/en/giveaway/index.html';
-    const copy = isDe ? {
-      title: '🎁 Giveaway läuft',
-      body: 'Infos zum Gewinnspiel & Beispiele sind jetzt auf der Detailseite.',
-      ends: 'Endet: Sonntag, 1. März · 09:00 Uhr (DE)',
-      cta: 'Zur Giveaway-Seite',
-      close: 'Später'
-    } : {
-      title: '🎁 Giveaway live',
-      body: 'Details and sample images are on the giveaway page.',
-      ends: 'Ends: Sunday, March 1 · 09:00 (DE time)',
-      cta: 'View giveaway details',
-      close: 'Not now'
-    };
-    const modal = document.createElement('div');
-    modal.className = 'modal giveawayHintModal';
-    modal.id = 'giveawayHint';
-    modal.innerHTML = `
-      <div class="box giveawayHintBox" role="dialog" aria-modal="true">
-        <div class="pad giveawayHintPad">
-          <div class="giveawayHintHead">
-            <div>
-              <h3>${copy.title}</h3>
-              <p>${copy.body}</p>
-            </div>
-            <button class="btn small" type="button" id="giveawayHintClose">✕</button>
-          </div>
-          <div class="giveawayHintMeta">
-            <span>${copy.ends}</span>
-            <span class="giveawayHintCountdown" data-giveaway-countdown>--</span>
-          </div>
-          <div class="row" style="margin-top:10px;">
-            <a class="btn gold" href="${giveawayHref}">${copy.cta}</a>
-            <button class="btn ghost" type="button" id="giveawayHintLater">${copy.close}</button>
-          </div>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-    const closeHint = ()=>{
-      modal.classList.remove('show');
-      store.set('ngu_giveaway_hint_seen', todayKey());
-    };
-    $('#giveawayHintClose')?.addEventListener('click', closeHint);
-    $('#giveawayHintLater')?.addEventListener('click', closeHint);
-    modal.addEventListener('click', (e)=>{ if(e.target.id==='giveawayHint') closeHint(); });
-  }
-
-  function maybeShowGiveawayHint(){
-    if(window.location.pathname.includes('/giveaway/')) return;
-    const seen = store.get('ngu_giveaway_hint_seen', null);
-    if(seen === todayKey()) return;
-    ensureGiveawayHint();
-    setTimeout(()=>{
-      $('#giveawayHint')?.classList.add('show');
-      tickGiveawayCountdown();
-    }, 500);
-  }
-
-  function ensureGiveawayBanner(){
-    if($('#giveawayBanner')) return;
-    if(window.location.pathname.includes('/giveaway/')) return;
-    const header = document.querySelector('header');
-    if(!header) return;
-    const lang = document.documentElement.lang || 'en';
-    const isDe = lang.toLowerCase().startsWith('de');
-    const giveawayHref = isDe ? '/de/giveaway/index.html' : '/en/giveaway/index.html';
-    const copy = isDe ? {
-      text: '🎁 Giveaway läuft · Endet Sonntag, 1. März · 09:00 Uhr (DE)',
-      cta: 'Zur Giveaway-Seite'
-    } : {
-      text: '🎁 Giveaway live · Ends Sunday, March 1 · 09:00 (German time)',
-      cta: 'View giveaway details'
-    };
-    const banner = document.createElement('div');
-    banner.className = 'giveawayBanner';
-    banner.id = 'giveawayBanner';
-    banner.innerHTML = `
-      <div class="container giveawayBanner__inner">
-        <div class="giveawayBanner__text">
-          <span>${copy.text}</span>
-          <span class="giveawayBanner__countdown" data-giveaway-countdown>--</span>
-        </div>
-        <a class="btn small gold" href="${giveawayHref}">${copy.cta}</a>
-      </div>
-    `;
-    header.after(banner);
-  }
-
   // offer widgets
   tickCountdown();
   setInterval(tickCountdown, 1000);
   updateSpots();
   setInterval(updateSpots, 60*1000); // check once/min
 
-  ensureGiveawayBanner();
-  maybeShowGiveawayHint();
-  tickGiveawayCountdown();
-  setInterval(tickGiveawayCountdown, 60000);
+  // giveaway features disabled
 
   // year
   $$('.js-year').forEach(el=>el.textContent = new Date().getFullYear());
