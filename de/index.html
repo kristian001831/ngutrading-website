@@ -3,24 +3,23 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>NGU Edge | Trading Performance System & Execution Tracking</title>
-  <meta name="description" content="NGU Edge ist ein Trading Performance System für Trading Journal Workflows, Prop Firm Tracking, Execution Tracking und Capital Efficiency."/>
+  <title>NGU Trading | Matchroom Fuer Funded Trader</title>
+  <meta name="description" content="Eine dunkle NGU Matchroom-Oberflaeche, die funded Vergleich, Trading Proof und die tiefere NGU Operator-Ebene in einem Archiv-Gefuehl verbindet."/>
   <meta name="robots" content="index,follow"/>
-  <meta property="og:title" content="NGU Edge | Execution-First Trading Performance"/>
-  <meta property="og:description" content="Execution Tracking, Trading Journal Struktur, Prop Firm Tracking und Capital Efficiency in einem System."/>
+  <meta property="og:title" content="NGU Trading | Matchroom Fuer Funded Trader"/>
+  <meta property="og:description" content="Eine klassifiziert wirkende Trading-Oberflaeche fuer funded Vergleich, Proof, NGU App Richtung und die tiefere Operator-Ebene."/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="assets/ngu-logo.jpeg"/>
-
   <link rel="icon" href="assets/ngu-logo.jpeg"/>
   <link rel="stylesheet" href="assets/styles.css"/>
-<script>
-  try {
-    localStorage.setItem('ngu_lang','de');
-    var u=new URL(window.location.href);
-    u.searchParams.set('lang','de');
-    window.history.replaceState({},'',u.toString());
-  } catch(e) {}
-</script>
+  <script>
+    try {
+      localStorage.setItem('ngu_lang', 'de');
+      var u = new URL(window.location.href);
+      u.searchParams.set('lang', 'de');
+      window.history.replaceState({}, '', u.toString());
+    } catch (e) {}
+  </script>
 </head>
 <body>
 <header class="nguHeader">
@@ -29,126 +28,230 @@
       <img class="nguBrand__logo" src="assets/ngu-logo.jpeg" alt="NGU Trading Logo">
       <div class="nguBrand__text">
         <div class="nguBrand__name">NGU TRADING</div>
-        <div class="nguBrand__tag">Never Give Up · System &gt; Emotion</div>
+        <div class="nguBrand__tag">Matchroom / Archiv / after-hours</div>
       </div>
     </a>
-
     <nav class="nguNav" aria-label="Primary">
-      <a class="nguNav__link" href="index.html#start">Start</a>
-      <a class="nguNav__link" href="index.html#proof">Proof</a>
-      <a class="nguNav__link" href="index.html#faq">FAQ</a>
+      <a class="nguNav__link" href="#start">Start</a>
+      <a class="nguNav__link" href="#archive">Archiv</a>
+      <a class="nguNav__link" href="funded/index.html">Compare</a>
+      <a class="nguNav__link" href="#app">App</a>
+      <a class="nguNav__link" href="offer/index.html">Advanced</a>
       <div class="nguLang" aria-label="Language">
-        <a class="nguLang__btn nguLang__btn--active" href="../de/index.html">DE</a>
+        <a class="nguLang__btn nguLang__btn--active" href="../de/index.html" aria-current="page">DE</a>
         <a class="nguLang__btn" href="../en/index.html">EN</a>
       </div>
     </nav>
   </div>
 </header>
 
-<div id="start" class="section">
-  <div class="container">
-    <div class="hero">
-      <div class="glow"></div>
-      <div class="inner">
-        <div class="pill">Hauptprodukt • NGU Edge</div>
-        <div class="kicker">Execution-First Operating System</div>
-        <h1 class="h1">Miss zuerst die Ausführung. Profit folgt der Struktur.</h1>
-        <p class="lead">NGU Edge ist das zentrale Produkt: ein strukturiertes Framework für Ausführungsqualität, Risikodisziplin, Kapitaleffizienz und langfristige Trader-Entwicklung.</p>
+<main class="page-main">
+  <section id="start" class="section">
+    <div class="container">
+      <div class="archive-stage">
+        <article class="card archive-hero motion-enter">
+          <div class="hero-copy">
+            <div class="pill">Matchroom / dark archive / Community zuerst</div>
+            <div class="kicker">NGU TRADING</div>
+            <h1 class="hero-title">Struktur fuer Trader, die funded werden und konsistent bleiben wollen.</h1>
+            <p class="lead">NGU verbindet drei Ebenen, die meist getrennt auftreten: eine serioese Trading-Community, einen saubereren Prop-Firm-Vergleich und NGU Edge, das taegliche Execution-System gegen Overtrading, Revenge Trading und Regelbrueche unter Druck.</p>
+            <div class="actions-row">
+              <a class="btn primary discordLink" href="#">Discord betreten</a>
+              <a class="btn ghost" href="funded/index.html">Matchroom Compare oeffnen</a>
+              <a class="btn gold" href="offer/index.html">Advanced oeffnen</a>
+            </div>
+          </div>
+          <div class="archive-grid">
+            <div class="imgframe"><img src="assets/proof/stats_2023_2025.jpg" alt="Langfristiger Trading Performance Ueberblick von 2023 bis 2025"></div>
+            <div class="imgframe"><img src="assets/proof/feedback_new_03.jpg" alt="Community Feedback Screenshot von NGU Trading"></div>
+            <div class="imgframe"><img src="assets/proof/profit_11.jpg" alt="Trading Profit Screenshot"></div>
+            <div class="imgframe"><img src="assets/proof/feedback_new_08.jpg" alt="Weiterer Trader Feedback Screenshot"></div>
+            <div class="archive-tag archive-tag--one"><strong>Proof</strong>Echte Trader Rueckmeldungen und verfolgte Ergebnisse bleiben ueber die ganze Flaeche sichtbar.</div>
+            <div class="archive-tag archive-tag--two"><strong>Compare</strong>Funded Firmen werden als Wege gerahmt, nicht als Rabatt-Banner.</div>
+          </div>
+        </article>
 
-        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
-          <a class="btn primary" href="/de/edge.html">Explore NGU Edge</a>
-          <a class="btn gold" href="https://ngutrading.app" target="_blank" rel="noopener noreferrer">Start Free</a>
-        </div>
+        <aside class="archive-side">
+          <article class="card dossier-card motion-enter motion-enter-delay-1">
+            <div class="dossier-head">
+              <div class="eyebrow">Filed note</div>
+              <div class="dossier-code">Case 24.04.26</div>
+            </div>
+            <div class="scan-lines">
+              <div class="scan-row"><span>Community</span><strong>Geh zuerst in den Raum, stell Fragen und ordne dich ein, bevor du etwas kaufst.</strong></div>
+              <div class="scan-row"><span>Funding</span><strong>Vergleiche Prop Firmen side by side, bevor du Geld fuer eine Challenge ausgibst.</strong></div>
+              <div class="scan-row"><span>Execution</span><strong>Nutze NGU Edge, wenn das eigentliche Problem Verhalten und nicht Strategiewissen ist.</strong></div>
+            </div>
+          </article>
 
-        <p class="caption">Bildungsangebot. Keine Anlageberatung. Keine unrealistischen Versprechen.</p>
+          <article class="card broadcast-card motion-enter motion-enter-delay-2">
+            <div class="broadcast-head">
+              <div class="broadcast-led">Live tape</div>
+              <div class="dossier-code">After-hours feed</div>
+            </div>
+            <div class="ticker-stack" aria-hidden="true">
+              <div class="ticker-line">
+                <span class="ticker-pill">regeln vor dringlichkeit</span>
+                <span class="ticker-pill">fit vor affiliate noise</span>
+                <span class="ticker-pill">survival vor challenge hype</span>
+                <span class="ticker-pill">execution vor impuls</span>
+              </div>
+              <div class="ticker-line">
+                <span class="ticker-pill">funded wege sauber erklaert</span>
+                <span class="ticker-pill">community als front door</span>
+                <span class="ticker-pill">founder pricing endet am 30 april</span>
+                <span class="ticker-pill">127 early-access seats offen</span>
+              </div>
+              <div class="ticker-line">
+                <span class="ticker-pill">execution system</span>
+                <span class="ticker-pill">capital system</span>
+                <span class="ticker-pill">progression system</span>
+                <span class="ticker-pill">intelligence layer</span>
+              </div>
+            </div>
+          </article>
+        </aside>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="section">
-  <div class="container">
-    <div class="grid-4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
-      <div class="feature"><h3>⚙ Execution</h3><p>Regelqualität statt nur Ergebnis messen.</p></div>
-      <div class="feature"><h3>🧭 Disziplin</h3><p>Verhaltenskonsistenz vor Emotionstrading.</p></div>
-      <div class="feature"><h3>🏦 Kapital</h3><p>Prop-Gebühren, Payouts und Effizienz im Blick.</p></div>
-      <div class="feature"><h3>📈 Struktur</h3><p>90-Tage-Progression mit klarer Accountability.</p></div>
-    </div>
-  </div>
-</div>
-
-<div id="proof" class="section">
-  <div class="container">
-    <div class="kicker">Proof</div>
-    <div class="h2">Multi-year stats (2023–2025)</div>
-    <p class="lead" style="font-size:14px;">Transparenz statt Hype. Ergebnisse variieren. Risiko bleibt beim Trader.</p>
-
-    <div class="imgframe">
-      <img src="assets/proof/stats_2023_2025.jpg" alt="Stats 2023–2025">
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="container">
-    <div class="h2">Quick insights</div>
-    <div class="grid-2" style="margin-top:14px;">
-      <div class="card"><div class="card-pad"><div class="h2" style="font-size:24px; margin:0;">📊 Clean Day &gt; Green PnL</div><p class="caption">Ein grüner Tag mit Regelbruch kann schlechter sein als ein disziplinierter roter Tag.</p></div></div>
-      <div class="card"><div class="card-pad"><div class="h2" style="font-size:24px; margin:0;">🧠 Struktur schlägt Emotion</div><p class="caption">Systeme reduzieren Impulsentscheidungen unter Druck.</p></div></div>
-      <div class="card"><div class="card-pad"><div class="h2" style="font-size:24px; margin:0;">⚖ Capital efficiency &gt; account hopping</div><p class="caption">Pass-Rate, Gebühren und Netto-Profitabilität strukturiert tracken.</p></div></div>
-      <div class="card"><div class="card-pad"><div class="h2" style="font-size:24px; margin:0;">📈 Disziplin skaliert</div><p class="caption">90-Tage-Zyklen bauen eine stabile Trading-Identität.</p></div></div>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="container">
-    <div class="h2">Access layers</div>
-    <div class="grid-2" style="margin-top:14px;">
-      <div class="card goldline">
-        <div class="card-pad">
-          <div class="kicker">Sekundäre Ebene</div>
-          <div class="h2" style="margin-top:6px;">Community (Free Access)</div>
-          <p class="lead" style="font-size:14px;">Strukturiertes Umfeld für Accountability und Trader-Austausch. Signals nur als Information, ohne Versprechen.</p>
-          <a class="btn ghost telegramLink" href="https://t.me/nguvipgroup" target="_blank" rel="noopener noreferrer">Community öffnen</a>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-pad">
-          <div class="kicker">Sekundäre Ebene</div>
-          <div class="h2" style="margin-top:6px;">NGU Advanced — Operator Level</div>
-          <p class="lead" style="font-size:14px;">Baut auf NGU Edge auf: Videos, Ebooks, direkter Support, exklusive Community und kontinuierlich neuer Content.</p>
-          <a class="btn gold" href="offer/index.html">NGU Advanced ansehen</a>
-        </div>
+  <section id="archive" class="section section--tight">
+    <div class="container">
+      <div class="matchroom-grid">
+        <article class="card matchroom-card motion-enter">
+          <div class="section-header">
+            <div class="eyebrow">Starte hier</div>
+            <h2 class="h2">Die meisten Trader brauchen nicht mehr Strategie. Sie brauchen sauberere Execution.</h2>
+            <p class="lead compact">NGU ist fuer Trader gebaut, die ihre Strategie im Kern kennen, aber nach einem schlechten Setup die Kontrolle verlieren, Max-Loss Regeln brechen oder in Revenge Entries rutschen. Die oeffentliche Seite soll den naechsten sinnvollen Schritt klar machen.</p>
+          </div>
+          <div class="criteria-grid">
+            <div class="criteria-tile">
+              <strong>Discord</strong>
+              <p>Nutze den Raum fuer Kontext, Fragen und ehrliche Einordnung, bevor du etwas buchst.</p>
+            </div>
+            <div class="criteria-tile">
+              <strong>Firm Compare</strong>
+              <p>Der funded Desk zeigt, welche Route staerker fuer Futures-Struktur, leichteren Einstieg oder mehr Vielfalt ist.</p>
+            </div>
+            <div class="criteria-tile">
+              <strong>NGU Edge</strong>
+              <p>NGU Edge macht Execution-Probleme messbar, coachbar und deutlich schwerer zu ignorieren.</p>
+            </div>
+          </div>
+        </article>
+        <aside class="card matchroom-aside motion-enter motion-enter-delay-1">
+          <div class="eyebrow">NGU Edge</div>
+          <h2 class="h2">Fixiere Overtrading und Revenge Trading in 14 Tagen.</h2>
+          <p class="lead compact">Wenn du Strategie schon kennst, aber unter Druck weiter Regeln brichst, gibt dir NGU Edge einen taeglichen Psychology Loop, der Konsistenz sichtbar macht. Start frei, volles AI Coaching danach fuer EUR 9 bis 19 pro Monat.</p>
+          <div class="actions-row" style="margin-top:20px;">
+            <a class="btn primary" href="https://ngutrading.app" target="_blank" rel="noopener noreferrer">Free Access</a>
+            <a class="btn ghost" href="https://ngutrading.app" target="_blank" rel="noopener noreferrer">So funktioniert es</a>
+          </div>
+        </aside>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div id="faq" class="section">
-  <div class="container">
-    <div class="h2">FAQ</div>
-    <div class="faq" style="margin-top:14px;">
-      <details open><summary>Was ist das Hauptprodukt?</summary><p>NGU Edge ist das Hauptprodukt und zentrale Operating System für Performance-Entwicklung.</p></details>
-      <details><summary>Ist das eine Signal-Plattform?</summary><p>Nein. Der Fokus liegt auf Execution, Verhalten und Risikogovernance.</p></details>
-      <details><summary>Wo sollte ich starten?</summary><p>Starte mit NGU Edge. Community und NGU Advanced sind sekundäre Ebenen um dieses Kernsystem.</p></details>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="archive-columns">
+        <article class="card archive-note-card motion-enter">
+          <div class="section-header">
+            <div class="eyebrow">Proof</div>
+            <h2 class="h2">Proof soll die Entscheidung tragen und nicht in einer Galerie verstauben.</h2>
+          </div>
+          <div class="archive-grid">
+            <div class="imgframe"><img src="assets/proof/feedback_new_01.jpg" alt="Community Feedback Screenshot aus der NGU Umgebung"></div>
+            <div class="imgframe"><img src="assets/proof/testimonial_03.png" alt="Trader Testimonial Screenshot"></div>
+            <div class="imgframe"><img src="assets/proof/profit_05.jpg" alt="Trading Profit Screenshot"></div>
+            <div class="imgframe"><img src="assets/proof/feedback_new_06.jpg" alt="Weiterer Community Feedback Screenshot"></div>
+          </div>
+        </article>
+        <article class="card archive-note-card motion-enter motion-enter-delay-1">
+          <div class="section-header">
+            <div class="eyebrow">NGU Edge Loop</div>
+            <h2 class="h2">Ein taeglicher Psychology Loop, der Konsistenz messbar macht.</h2>
+          </div>
+          <div class="resource-pill"><strong>Schritt 1</strong><span>Logge deinen Tag in drei bis fuenf Minuten: Trades, Emotionen und Regeltreue direkt nach der Session.</span></div>
+          <div class="resource-pill"><strong>Schritt 2</strong><span>Sieh, was dich bricht: Der Psychology Score zeigt Overtrading, Revenge Muster und Inkonsistenz-Risiken.</span></div>
+          <div class="resource-pill"><strong>Schritt 3</strong><span>Folge einer AI Aktion vor der naechsten Session, damit die Korrektur klar und direkt bleibt.</span></div>
+        </article>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="footer">
+  <section id="app" class="section section--tight">
+    <div class="container">
+      <div class="matchroom-grid">
+        <article class="card matchroom-card motion-enter">
+          <div class="section-header">
+            <div class="eyebrow">NGU Edge</div>
+            <h2 class="h2">Du hast kein Strategieproblem. Du hast ein Execution-Problem.</h2>
+            <p class="lead compact">NGU Edge ist die Execution-Ebene fuer Trader, die ihren Setup-Kern kennen, aber nach einem roten Setup uebertraden, ausserhalb des Plans revenge traden oder unter Druck Risk Limits brechen. Das Produkt wird als 14-Tage Reset-Protokoll positioniert, nicht als ueberladener Workflow.</p>
+          </div>
+          <div class="criteria-grid">
+            <div class="criteria-tile">
+              <strong>Daily Score</strong>
+              <p>Ein Psychology Score legt emotionale Lecks offen, damit Inkonsistenz sichtbar statt vage wird.</p>
+            </div>
+            <div class="criteria-tile">
+              <strong>AI Coaching</strong>
+              <p>Das Coaching nutzt Journal- und Verhaltensdaten und gibt dir genau eine fokussierte Aktion fuer die naechste Session.</p>
+            </div>
+            <div class="criteria-tile">
+              <strong>Discipline Loop</strong>
+              <p>Streaks, Einzelsession-Fokus und klare Struktur machen Konsistenz schwerer zu umgehen.</p>
+            </div>
+          </div>
+        </article>
+        <aside class="card matchroom-aside motion-enter motion-enter-delay-1">
+          <div class="eyebrow">Founder Pricing</div>
+          <h2 class="h2">Free Access zuerst, volles Coaching zum Founder Preis.</h2>
+          <p class="lead compact">Founder Pricing endet am 30. April. Die aktuelle Live-Message ist 127 early-access seats left. Oeffentliche Positionierung: keine Kreditkarte noetig, weniger als 30 Sekunden bis zum Start und volles AI Coaching fuer EUR 9 bis 19 im Monat.</p>
+          <div class="resource-pill" style="margin-top:18px;"><strong>Behavior Proof</strong><span>Oeffentliche Proof-Richtung: Regelbrueche von 11 pro Woche auf 4 im ersten Monat, 2 Blowups pro Monat auf 0 fuer 6 gerade Wochen und ein Plus von 21 Punkten beim Consistency Score.</span></div>
+          <div class="actions-row" style="margin-top:20px;">
+            <a class="btn primary" href="https://ngutrading.app" target="_blank" rel="noopener noreferrer">NGU Edge oeffnen</a>
+            <a class="btn ghost" href="https://ngutrading.app" target="_blank" rel="noopener noreferrer">Log in</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="archive-steps">
+        <article class="archive-step motion-enter">
+          <strong>1. Den Raum betreten</strong>
+          <p>Discord bleibt die erste reale Tuer. Community ist weiterhin die oeffentliche Ebene.</p>
+        </article>
+        <article class="archive-step motion-enter motion-enter-delay-1">
+          <strong>2. Das Matchboard nutzen</strong>
+          <p>Die funded Vergleichsseite ist der Ort, an dem die Entscheidung mit Reihen-Vergleich und sichtbaren Staerken geschaerft wird.</p>
+        </article>
+        <article class="archive-step motion-enter motion-enter-delay-2">
+          <strong>3. Nur tiefer gehen, wenn noetig</strong>
+          <p>Advanced wird der bewusste naechste Zug fuer Trader, die ihre Luecke bereits kennen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
   <div class="container">
     <div class="legal">
-      <div>© <span class="js-year"></span> NGU Trading.</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <div>&copy; <span class="js-year"></span> NGU Trading.</div>
+      <div class="actions-row tight">
         <a href="impressum/index.html">Impressum</a>
         <a href="datenschutz/index.html">Datenschutz</a>
         <a href="disclaimer/index.html">Disclaimer</a>
       </div>
     </div>
-    <p class="caption">Bildungsangebot. Keine Anlageberatung. Trading ist riskant.</p>
+    <p class="caption">Nur Bildungsinhalt. Keine Finanzberatung. Trading beinhaltet Risiko.</p>
   </div>
-</div>
-<script src="assets/i18n.js"></script><script src="assets/app.js"></script>
+</footer>
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
 </body>
 </html>

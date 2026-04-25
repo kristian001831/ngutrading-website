@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>NGU — Start Free</title>
+  <title>NGU Trading | Einstieg waehlen</title>
+  <meta name="description" content="Waehle den richtigen Einstieg in NGU: erst Community-Zugang oder direkt die tiefere Operator-Ebene, wenn du sie schon brauchst."/>
   <link rel="icon" href="../assets/ngu-logo.jpeg"/>
   <link rel="stylesheet" href="../assets/styles.css"/>
-<script>
-  // Force language for this folder
-  try {
-    localStorage.setItem('ngu_lang','de');
-    var u=new URL(window.location.href);
-    u.searchParams.set('lang','de');
-    window.history.replaceState({},'',u.toString());
-  } catch(e) {}
-</script>
+  <script>
+    try {
+      localStorage.setItem('ngu_lang', 'de');
+      var u = new URL(window.location.href);
+      u.searchParams.set('lang', 'de');
+      window.history.replaceState({}, '', u.toString());
+    } catch (e) {}
+  </script>
 </head>
 <body>
 <header class="nguHeader">
@@ -23,110 +23,125 @@
       <img class="nguBrand__logo" src="../assets/ngu-logo.jpeg" alt="NGU Trading Logo">
       <div class="nguBrand__text">
         <div class="nguBrand__name">NGU TRADING</div>
-        <div class="nguBrand__tag">Never Give Up · System > Emotion</div>
+        <div class="nguBrand__tag">Einstieg soll ruhig wirken, nicht performativ</div>
       </div>
     </a>
-
     <nav class="nguNav" aria-label="Primary">
-      <a class="nguNav__link" href="../index.html#start">Start</a>
-      <a class="nguNav__link" href="../index.html#proof">Proof</a>
-      <a class="nguNav__link" href="../index.html#faq">FAQ</a>
+      <a class="nguNav__link" href="../index.html#start">Home</a>
+      <a class="nguNav__link" href="../index.html#funding">Funding</a>
+      <a class="nguNav__link" href="../offer/index.html">Advanced</a>
       <div class="nguLang" aria-label="Language">
-        <a class="nguLang__btn nguLang__btn--active" href="../../de/index.html">DE</a>
-        <a class="nguLang__btn" href="../../en/index.html">EN</a>
+        <a class="nguLang__btn nguLang__btn--active" href="../../de/start/index.html" aria-current="page">DE</a>
+        <a class="nguLang__btn" href="../../en/start/index.html">EN</a>
       </div>
     </nav>
   </div>
 </header>
 
-<div class="section">
-  <div class="container">
-    <div class="hero">
-      <div class="glow"></div>
-      <div class="inner">
-        <div class="h1" style="font-size:46px;" data-i18n="bridge_h"></div>
-<div class="progress">
-  <div class="label">Step 1 of 2 • Free access</div>
-  <div class="bar"><div class="fill" style="width:50%"></div></div>
-</div>
-        <p class="lead" data-i18n="bridge_p"></p>
-        <p class="caption" data-i18n="bridge_tip"></p>
-
-        <div class="grid-2" style="margin-top:18px;">
-          <div class="card">
-            <div class="card-pad">
-              <div class="kicker">FREE</div>
-              <div class="h2" style="font-size:28px; margin:10px 0 10px;">Free NGU Access</div>
-              <ul class="cleanList">
-  <li class="li-check">Community (Accountability + Q&amp;A)</li>
-  <li class="li-check">NGU Edge path (execution-first)</li>
-  <li class="li-check">Signals information (no promises)</li>
-</ul>
-              <div class="hr"></div>
-              <div style="display:flex; gap:12px; flex-wrap:wrap;">
-                <a class="btn primary" href="../edge.html">Explore NGU Edge</a>
-                <a class="btn ghost" href="https://ngutrading.app" target="_blank" rel="noopener noreferrer">Start Free</a>
-              </div>
-              <p class="caption">No email. No payment.</p>
-            </div>
-          </div>
-
-          <div class="card goldline">
-            <div class="card-pad">
-              <div class="kicker" data-i18n="adv_k"></div>
-              <div class="h2" style="font-size:28px;" data-i18n="adv_h"></div>
-              <p class="lead" style="font-size:14px;" data-i18n="adv_p"></p>
-              <div class="grid-2" style="margin-top:12px;">
-                <div class="feature"><p style="margin:0;" data-i18n="adv_b1"></p></div>
-                <div class="feature"><p style="margin:0;" data-i18n="adv_b2"></p></div>
-              </div>
-              <div class="feature" style="margin-top:12px;"><p style="margin:0;" data-i18n="adv_b3"></p></div>
-              <div class="hr"></div>
-              <a class="btn gold" href="../offer/index.html" data-i18n="cta_offer"></a>
-              <p class="caption">Optional. The free path works on its own.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:18px;">
-          <a class="btn" href="../index.html">← Back</a>
+<main class="page-main">
+  <section class="section">
+    <div class="container">
+      <div class="section-header motion-enter">
+        <div class="pill">Schritt 1 von 2</div>
+        <h1 class="hero-title">Waehle die richtige Tiefe, nicht die lauteste Option.</h1>
+        <p class="lead">Diese Seite verlangsamt die Entscheidung bewusst. Manche Trader brauchen zuerst den Raum. Andere wissen bereits, dass sie tiefere Umsetzung brauchen. Es geht um Fit, nicht um Status.</p>
+        <div class="progress" aria-label="Schritt 1 von 2">
+          <div class="label">Einstieg waehlen</div>
+          <div class="bar" aria-hidden="true"><div class="fill"></div></div>
         </div>
       </div>
+
+      <div class="split-choice">
+        <article class="choice-card featured motion-enter">
+          <div class="eyebrow">Free access</div>
+          <h2 class="h2" style="margin-top:16px;">Starte in der Community.</h2>
+          <p class="lead compact" style="margin-top:14px;">Am besten, wenn du zuerst den Raum, den Rhythmus und den NGU Strategy Coach willst, bevor du fuer mehr operative Tiefe zahlst.</p>
+          <ul class="cleanList cleanList--main" style="margin-top:18px;">
+            <li class="li-check">Discord als Front Door</li>
+            <li class="li-check">Kein E-Mail-Gate</li>
+            <li class="li-check">Coach-Zugang und Kontext zuerst</li>
+            <li class="li-check">Ein ruhiger Weg zu pruefen, ob NGU passt</li>
+          </ul>
+          <div class="actions-row" style="margin-top:22px;">
+            <a class="btn primary discordLink" href="#">Discord oeffnen</a>
+            <a class="btn ghost botLink" href="#">Coach oeffnen</a>
+          </div>
+        </article>
+
+        <article class="choice-card motion-enter motion-enter-delay-1">
+          <div class="eyebrow">Advanced</div>
+          <h2 class="h2" style="margin-top:16px;">Geh tiefer, wenn du schon eine Basis hast.</h2>
+          <p class="lead compact" style="margin-top:14px;">Am besten, wenn du bereits weisst, dass du engere Regeln, sauberere Reviews und ein staerkeres Operating Framework brauchst.</p>
+          <ul class="cleanList cleanList--main" style="margin-top:18px;">
+            <li class="li-check">Tiefere Checklisten und Audit-Logik</li>
+            <li class="li-check">Mehr Umsetzungs-Support</li>
+            <li class="li-check">Besser fuer Trader mit bestehender Ernsthaftigkeit</li>
+            <li class="li-check">Ein Schritt nach Vertrauen, nicht davor</li>
+          </ul>
+          <div class="actions-row" style="margin-top:22px;">
+            <a class="btn gold" href="../offer/index.html">Advanced ansehen</a>
+          </div>
+        </article>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="journey-grid">
+        <article class="card sequence-card motion-enter">
+          <h3>Nutze die Community, wenn du noch Rhythmus aufbaust.</h3>
+          <p>Der Raum selbst kann schon reichen, um Prozess, Sprache und Accountability sauberer zu machen.</p>
+        </article>
+        <article class="card sequence-card motion-enter motion-enter-delay-1">
+          <h3>Nutze Advanced, wenn die Unsicherheit schon weg ist.</h3>
+          <p>Die tiefere Ebene funktioniert am besten, wenn du bereits genau weisst, welche Art von operativem Support du brauchst.</p>
+        </article>
+        <article class="card sequence-card motion-enter motion-enter-delay-2">
+          <h3>Funding-Entscheidungen koennen warten, bis der Kontext klar ist.</h3>
+          <p>Es gibt keinen Grund, direkt von der Landingpage zum Anbieter zu springen. Erst den Raum betreten, dann klarer entscheiden.</p>
+        </article>
+        <article class="card sequence-card motion-enter motion-enter-delay-3">
+          <h3>Die Seite will erst Vertrauen verdienen, dann Tiefe anbieten.</h3>
+          <p>Diese Reihenfolge ist wichtig. Ruhige Entscheidungen fuehren meist zu staerkeren Nutzern als druckvolle.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
 
 <div id="bridgeModal" class="modal" aria-hidden="true">
-  <div class="box" role="dialog" aria-modal="true">
+  <div class="box" role="dialog" aria-modal="true" aria-labelledby="mTitle" aria-describedby="mBody" tabindex="-1">
     <div class="pad">
       <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
         <div>
-          <h3 id="mTitle">✅ Free access opened</h3>
+          <h2 id="mTitle">✅ Free access opened</h2>
           <p id="mBody">Opened in a new tab.</p>
         </div>
-        <button id="mClose" class="btn small">✕</button>
+        <button id="mClose" class="btn small" type="button" aria-label="Close dialog">✕</button>
       </div>
       <div class="row">
-        <button id="mFree" class="btn">Continue free</button>
+        <button id="mFree" class="btn" type="button">Continue free</button>
         <a id="mAdv" class="btn gold" href="../offer/index.html">View advanced</a>
       </div>
-      <p class="caption">This tab stays open so you can continue the funnel.</p>
     </div>
   </div>
 </div>
-<div class="footer">
+
+<footer class="footer">
   <div class="container">
     <div class="legal">
       <div>© <span class="js-year"></span> NGU Trading.</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <div class="actions-row tight">
         <a href="../impressum/index.html">Impressum</a>
         <a href="../datenschutz/index.html">Datenschutz</a>
         <a href="../disclaimer/index.html">Disclaimer</a>
       </div>
     </div>
-    <p class="caption" data-i18n="legal"></p>
+    <p class="caption">Trading bleibt riskant. NGU bietet Struktur, keine garantierten Ergebnisse.</p>
   </div>
-</div>
-<script src="../assets/i18n.js"></script><script src="../assets/app.js"></script>
+</footer>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>
