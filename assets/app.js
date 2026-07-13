@@ -10,7 +10,6 @@ window.NGU_PROOF_FILES = ["feedback_new_01.jpg","feedback_new_02.jpg","feedback_
 const CONFIG = {
   app:        "https://ngutrading.app",
   discord:    "https://urlgeni.us/discord/fmg",
-  coachBot:   "https://chatgpt.com/g/g-6978f4798004819197383b0c645e6854-ngu-trading-strategy-coach",
   instagram:  "https://instagram.com/futuremillionairego",
   youtube:    "https://youtube.com/@fmg.trading",
   interview:  "https://www.youtube.com/embed/DM4sUQYr46o"
@@ -23,10 +22,10 @@ const AFFILIATES = [
     name:"Alpha Futures", url:"https://app.alpha-futures.com/signup/Kristian020613/",
     code:"Kristian020613", discount:"10% OFF",
     market:"Futures",
-    tags:["Futures-native","Clean rules","14-day payouts"],
-    tags_de:["Futures-nativ","Klare Regeln","Payout alle 14 Tage"],
-    why:"Sharper futures structure. Best if you care about rule clarity and a cleaner, operator-grade feel over promotional noise.",
-    why_de:"Schärfere Futures-Struktur. Am besten, wenn dir Regelklarheit und ein sauberes, operator-artiges Gefühl wichtiger sind als Werbelärm."
+    tags:["Futures-native","Clean rules","Payouts every 5 days"],
+    tags_de:["Futures-nativ","Klare Regeln","Payout alle 5 Tage"],
+    why:"Sharper futures structure with fast payouts every 5 days. Best if you care about rule clarity and a cleaner, operator-grade feel over promotional noise.",
+    why_de:"Schärfere Futures-Struktur mit schnellen Payouts alle 5 Tage. Am besten, wenn dir Regelklarheit und ein sauberes, operator-artiges Gefühl wichtiger sind als Werbelärm."
   },
   {
     name:"FundedHero", url:"https://fundedhero.com",
@@ -59,10 +58,10 @@ const AFFILIATES = [
     name:"OneFunded", url:"https://onefunded.com/?utm_medium=aff&utm_term=356&utm_source=tracknow&campaign_id=7&ref_id=356",
     code:"FMG", discount:"25% OFF",
     market:"Prop",
-    tags:["Discounted entry","Flexible plans"],
-    tags_de:["Rabattierter Einstieg","Flexible Pläne"],
-    why:"Solid discounted entry point. Check payout cadence and rules against how you actually trade first.",
-    why_de:"Solider, rabattierter Einstieg. Prüfe Payout-Rhythmus und Regeln zuerst gegen deinen echten Trading-Stil."
+    tags:["Safe choice","Reliable","Discounted entry"],
+    tags_de:["Sichere Wahl","Verlässlich","Rabattierter Einstieg"],
+    why:"The safe, steady pick — a reliable route when you want fewer surprises. Still check payout cadence and rules for how you actually trade.",
+    why_de:"Die sichere, ruhige Wahl — eine verlässliche Route, wenn du weniger Überraschungen willst. Prüfe trotzdem Payout-Rhythmus und Regeln für deinen Stil."
   },
   {
     name:"IQ Capital", url:"https://checkout.iqcapital.io/products?aff=fmg",
@@ -170,7 +169,6 @@ const AFFILIATES = [
   document.addEventListener("DOMContentLoaded", ()=>{
     setExternal(".discordLink", CONFIG.discord);
     setExternal(".appLink",     CONFIG.app);
-    setExternal(".botLink",     CONFIG.coachBot);
     setExternal(".igLink",      CONFIG.instagram);
     setExternal(".ytLink",      CONFIG.youtube);
     renderAffiliates();
