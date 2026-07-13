@@ -1,87 +1,133 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>NGU Coach Bot — So nutzt du ihn (Beispiele)</title>
-  <meta name="description" content="Examples and use-cases for the NGU Trading Coach Bot."/>
-  <link rel="icon" href="../assets/ngu-logo.jpeg"/>
-  <link rel="stylesheet" href="../assets/styles.css"/>
-  <script>
-    // Force language for this folder
-    try { localStorage.setItem('ngu_lang','de'); } catch(e) {}
-  </script>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NGU KI-Strategy-Coach | So funktioniert er — NGU Trading</title>
+<meta name="description" content="Der NGU KI-Strategy-Coach: 60-Sekunden-Trade-Audits, FOMO- und Overtrading-Erkennung, Execution-Reports und Regeln für die nächste Session. Ein Coaching-Layer in NGU Edge."/>
+<meta name="robots" content="index,follow"/>
+<meta property="og:title" content="NGU KI-Strategy-Coach"/>
+<meta property="og:description" content="Ein Trading-Coach im Chat — Execution, Disziplin und Prop-Firm-Longevity. Keine Signale, kein Hype."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="/assets/ngu-logo.jpeg"/>
+<link rel="icon" href="/assets/ngu-logo.jpeg"/>
+<link rel="canonical" href="/de/coach/"/>
+<link rel="alternate" hreflang="en" href="/en/coach/"/>
+<link rel="alternate" hreflang="de" href="/de/coach/"/>
+<link rel="alternate" hreflang="x-default" href="/en/coach/"/>
+<link rel="stylesheet" href="/assets/styles.css"/>
 </head>
 <body>
-<header class="nguHeader">
-  <div class="nguHeader__inner">
-    <a class="nguBrand" href="../index.html">
-      <img class="nguBrand__logo" src="../assets/ngu-logo.jpeg" alt="NGU Trading Logo">
-      <div class="nguBrand__text">
-        <div class="nguBrand__name">NGU TRADING</div>
-        <div class="nguBrand__tag">Never Give Up · System > Emotion</div>
-      </div>
-    </a>
+<div class="grain" aria-hidden="true"></div>
 
-    <nav class="nguNav" aria-label="Primary">
-      <a class="nguNav__link" href="../index.html#start">Start</a>
-      <a class="nguNav__link" href="../index.html#proof">Proof</a>
-      <a class="nguNav__link" href="../index.html#faq">FAQ</a>
-      <div class="nguLang" aria-label="Language">
-        <a class="nguLang__btn nguLang__btn--active" href="../../de/index.html">DE</a>
-        <a class="nguLang__btn" href="../../en/index.html">EN</a>
-      </div>
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="/de/">
+      <img src="/assets/ngu-logo.jpeg" alt="NGU Trading Logo"/>
+      <span class="brand-txt"><span class="brand-name">NGU TRADING</span><span class="brand-tag">System &gt; Emotion</span></span>
+    </a>
+    <nav class="nav" aria-label="Primär">
+      <a class="lnk" href="/de/">Start</a>
+      <a class="lnk" href="/de/edge.html">Die App</a>
+      <a class="lnk" href="/de/funded/">Funded</a>
+      <a class="lnk" href="/de/affiliates/">Empfohlen</a>
+      <a class="lnk" href="/de/about/">Über mich</a>
+      <a class="btn primary sm discordLink magnetic" href="#">Discord</a>
+      <span class="lang"><a class="on" href="/de/coach/" aria-current="page">DE</a><a href="/en/coach/">EN</a></span>
     </nav>
+    <button class="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span></button>
   </div>
 </header>
 
-<main class="page-main">
-<div class="section">
-    <div class="container">
-      <div class="card goldline">
-        <div class="card-pad">
-          <div class="pill"><span class="dot"></span> NGU Coach Bot</div>
-          <div class="h1">NGU Coach Bot</div>
-          <p class="lead">Ein Trading-Coach im Chat — gebaut für Execution, Disziplin und Prop-Firm-Langlebigkeit. Keine Signale. Kein Hype. Nur Struktur.</p>
-
-          <div class="badgeRow"><span class="badge">✅ Kein Signal-Bot</span><span class="badge">🛡️ Risk Governance</span><span class="badge">📌 Regeln statt Emotion</span><span class="badge">📈 Prozess → Payouts</span></div>
-          <div class="coachGrid"><div class="coachCard"><div class="k">🧠 Trade-Audit in 60 Sekunden</div><div class="caption">Lade deinen Chart hoch oder beschreibe Entry/SL/TP. Der Bot prüft Setup-Validität, Timing, Risiko und Regelverstöße.</div></div><div class="coachCard"><div class="k">⚠️ FOMO & Overtrading stoppen</div><div class="caption">Der Bot erkennt Muster (Chasing, Revenge, Late Entries) und setzt dich in einen Modus: Normal / Reduced / Protect.</div></div><div class="coachCard"><div class="k">📊 Daily / Weekly Execution Reports</div><div class="caption">Audit-Style Reports: Compliance > PnL. Du siehst sofort, was dich Auszahlungen kostet — und was du fixen musst.</div></div><div class="coachCard"><div class="k">🧾 Rules-to-Action Checklist</div><div class="caption">Der Bot macht aus Feedback 3 klare Next‑Session Regeln (Entry, SL‑Logik, Max Trades, Mode).</div></div><div class="coachCard"><div class="k">🎯 Challenge‑Plan in Minuten</div><div class="caption">Sag Account‑Regeln + Ziel. Du bekommst einen nüchternen Plan: Sessions, Limits, Risiko, Konsequenz‑Ladder.</div></div></div>
-
-          <h2 class="h2" style="margin-top:18px;">Live Examples</h2>
-          <div class="bubbles"><div class="bubble me"><b>Du:</b> Analysiere diesen Trade nach der NGU-Strategie. Hier ist mein Screenshot.</div><div class="bubble "><b>NGU Bot:</b> Okay. Erst: Instrument, Timeframe, Session/Timezone, Entry/SL/TP. Dann prüfe ich Struktur, Cloud-Bias, Breakout-Regeln und mögliche Verstöße.</div><div class="bubble me"><b>Du:</b> Erstelle mir einen Daily Execution Report (0–100) für meine heutigen Trades.</div><div class="bubble "><b>NGU Bot:</b> Sende deine letzten 3 Trades (R, Entry‑Grund, SL‑Logik). Ich mache daraus ein Weekly Audit Roll‑Up.</div><div class="bubble me"><b>Du:</b> Gib mir 3 Regeln für morgen, damit ich nicht overtrade.</div></div>
-
-          <p class="caption" style="margin-top:10px;">Pro-Tipp: Wenn du neu bist, beantworte die Onboarding-Fragen sauber. Dann bekommst du sofort ein Trader-Profil + Mode-Empfehlung.</p>
-
-          
-          <h2 class="h2" style="margin-top:18px;">Power Moves (copy‑paste)</h2>
-          <div class="bubbles"><div class="bubble">„Ich trade ES. Welche Infos brauchst du für ein sauberes Audit?“</div><div class="bubble">„Hier sind 5 Trades. Weekly Audit + Haupt‑Fehlermuster.“</div><div class="bubble">„Ich bin im Drawdown. Empfiehl Mode (Normal/Reduced/Protect).“</div><div class="bubble">„Mach mir eine Pre‑Session Checklist (NGU).“</div></div>
-          <p class="lead" style="margin-top:10px;">Wenn du das 3 Tage am Stück nutzt, fühlst du sofort den Unterschied: weniger Chaos, mehr Kontrolle. ✅</p>
-<div class="ctaRow" style="margin-top:16px;">
-            <a class="btn primary" href="https://chatgpt.com/g/g-6978f4798004819197383b0c645e6854-ngu-trading-strategy-coach" target="_blank" rel="noopener">Zum NGU Coach Bot →</a>
-            <a class="btn ghost" href="../start/index.html">Free Access Page</a>
+<main>
+  <section class="section hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">In NGU Edge · KI-Strategy-Coach</span>
+          <h1 class="display">Ein Trading-Coach im Chat. Keine Signale. Kein Hype.</h1>
+          <p class="lead">Der NGU KI-Strategy-Coach ist für Execution, Disziplin und Prop-Firm-Longevity gebaut. Er auditet deine Trades, erkennt das Verhalten, das Payouts blockiert, und wandelt Feedback in klare Regeln für die nächste Session.</p>
+          <div class="btn-row">
+            <a class="btn primary magnetic botLink" href="#">Coach öffnen <span class="arw">→</span></a>
+            <a class="btn ghost appLink" href="#">NGU Edge öffnen</a>
           </div>
+          <div class="chips" style="margin-top:26px">
+            <span class="tag">Kein Signal-Bot</span>
+            <span class="tag">Risk-Governance</span>
+            <span class="tag">Regeln vor Emotion</span>
+            <span class="tag">Prozess → Payouts</span>
+          </div>
+        </div>
+        <aside class="card pad reveal" style="--i:1">
+          <div class="bubbles">
+            <div class="bubble me"><b>Du</b>Audite diesen Trade mit der NGU-Strategie — hier mein Screenshot.</div>
+            <div class="bubble"><b>NGU Coach</b>Instrument, Timeframe, Session, Entry/SL/TP? Dann prüfe ich Struktur, Bias, Breakout-Regeln und Verstöße.</div>
+            <div class="bubble me"><b>Du</b>Gib mir einen Tages-Execution-Report (0–100) für heute.</div>
+            <div class="bubble"><b>NGU Coach</b>Schick deine letzten 3 Trades (R, Entry-Grund, SL-Logik). Ich mach daraus ein Wochen-Audit.</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-          <p class="caption" style="margin-top:10px;">No trade signals. No profit promises. Education + execution only.</p>
+  <section class="section tight">
+    <div class="wrap">
+      <div class="shead reveal"><span class="eyebrow">Was er macht</span><h2 class="h2">Sechs Power-Moves.</h2></div>
+      <div class="pillars">
+        <article class="card pillar reveal"><div class="idx">01</div><h3>60-Sekunden-Trade-Audit</h3><p>Entry/SL/TP beschreiben oder Chart hochladen. Er prüft Setup-Validität, Timing, Risk-Governance und Regelverstöße.</p></article>
+        <article class="card pillar reveal" style="--i:1"><div class="idx">02</div><h3>FOMO &amp; Overtrading stoppen</h3><p>Er erkennt Chasing, Revenge und späte Entries und setzt dich in einen Modus: Normal, Reduziert oder Protect.</p></article>
+        <article class="card pillar reveal" style="--i:2"><div class="idx">03</div><h3>Execution-Reports</h3><p>Audit-artige Tages- und Wochen-Reports, in denen Compliance vor P&amp;L steht — du siehst, was Payouts blockiert.</p></article>
+        <article class="card pillar reveal"><div class="idx">04</div><h3>Regeln-zu-Aktion</h3><p>Er wandelt Feedback in drei klare Regeln für die nächste Session: Entry, SL-Logik, Max-Trades, Modus.</p></article>
+        <article class="card pillar reveal" style="--i:1"><div class="idx">05</div><h3>Challenge-Plan</h3><p>Teile Konto-Regeln und Ziel — bekomm einen nüchternen Plan: Sessions, Limits, Risiko, Konsequenz-Leiter.</p></article>
+        <article class="card pillar reveal" style="--i:2"><div class="idx">06</div><h3>Trader-Profil</h3><p>Beantworte das Onboarding präzise und erhalte ein klares Profil plus Modus-Empfehlung.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="shead reveal"><span class="eyebrow">Copy-Paste-Prompts</span><h2 class="h2">Probier diese.</h2></div>
+      <div class="card pad reveal bubbles">
+        <div class="bubble">„Ich trade ES. Was brauchst du für ein sauberes Audit?"</div>
+        <div class="bubble">„Hier 5 Trades — Wochen-Audit + Haupt-Failure-Pattern."</div>
+        <div class="bubble">„Ich bin im Drawdown. Empfiehl einen Modus (Normal / Reduziert / Protect)."</div>
+        <div class="bubble">„Erstell mir eine Pre-Session-NGU-Checkliste."</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta reveal">
+        <span class="eyebrow plain">Keine Signale · nur Bildung</span>
+        <h2 class="h2">Nutz ihn drei Tage am Stück und spür den Unterschied.</h2>
+        <div class="btn-row" style="justify-content:center">
+          <a class="btn primary magnetic botLink" href="#">Coach öffnen <span class="arw">→</span></a>
+          <a class="btn ghost discordLink" href="#">Im Discord fragen</a>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+</main>
 
-  </main>
-
-  <div class="footer">
-    <div class="container">
-      <div class="legal">
-        <div>© <span class="js-year"></span> NGU Trading.</div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="../impressum/index.html">Impressum</a>
-          <a href="../datenschutz/index.html">Datenschutz</a>
-          <a href="../disclaimer/index.html">Disclaimer</a>
-        </div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <div class="brand" style="margin-bottom:14px"><img style="width:36px;height:36px;border-radius:10px" src="/assets/ngu-logo.jpeg" alt="NGU Trading"><span class="brand-name">NGU TRADING</span></div>
+        <p class="small faint" style="max-width:34ch">Keine Trade-Signale. Keine Profit-Versprechen. Nur Bildung und Execution.</p>
       </div>
+      <div><h5>Entdecken</h5><a href="/de/">Start</a><a href="/de/edge.html">NGU Edge App</a><a href="/de/funded/">Funded-Vergleich</a><a href="/de/affiliates/">Empfohlen</a></div>
+      <div><h5>Verbinden</h5><a class="discordLink" href="#">Discord</a><a class="igLink" href="#">Instagram</a><a class="ytLink" href="#">YouTube</a><a class="appLink" href="#">ngutrading.app</a></div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span class="js-year"></span> NGU Trading. Nur Bildungsinhalte. Keine Finanzberatung.</span>
+      <span class="btn-row" style="gap:16px"><a href="/de/impressum/">Impressum</a><a href="/de/datenschutz/">Datenschutz</a><a href="/de/disclaimer/">Disclaimer</a></span>
     </div>
   </div>
+</footer>
 
-  <script src="../assets/app.js"></script>
+<script src="/assets/app.js"></script>
+<script src="/assets/motion.js"></script>
 </body>
 </html>

@@ -1,133 +1,371 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>NGU Edge | Trading Journal, Prop Firm Tracking & Capital Efficiency Trading</title>
-  <meta name="description" content="NGU Edge is a trading performance system for trading journal structure, execution tracking, prop firm tracking, and capital efficiency trading."/>
-  <meta name="robots" content="index,follow"/>
-  <meta property="og:title" content="NGU Edge | Trading Performance System"/>
-  <meta property="og:description" content="Execution tracking, trading journal workflows, prop firm tracking, and capital efficiency in one structured platform."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:image" content="assets/ngu-logo.jpeg"/>
-  <link rel="icon" href="assets/ngu-logo.jpeg"/>
-  <link rel="stylesheet" href="assets/styles.css"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>NGU Edge | Trading Journal, Backtesting & Prop-Firm Tracking App</title>
+<meta name="description" content="NGU Edge is a trading performance web app: journaling, backtesting, prop-firm and capital tracking, gamified progression, an intelligence layer and an AI coach. Free to start."/>
+<meta name="robots" content="index,follow"/>
+<meta property="og:title" content="NGU Edge | Trading performance operating system"/>
+<meta property="og:description" content="Journal, backtest, track funded accounts and fix execution — one structured app at ngutrading.app."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="/assets/ngu-logo.jpeg"/>
+<link rel="icon" href="/assets/ngu-logo.jpeg"/>
+<link rel="canonical" href="/en/edge.html"/>
+<link rel="alternate" hreflang="en" href="/en/edge.html"/>
+<link rel="alternate" hreflang="de" href="/de/edge.html"/>
+<link rel="alternate" hreflang="x-default" href="/en/edge.html"/>
+<link rel="stylesheet" href="/assets/styles.css"/>
 </head>
 <body>
-<header class="nguHeader">
-  <div class="nguHeader__inner">
-    <a class="nguBrand" href="index.html">
-      <img class="nguBrand__logo" src="assets/ngu-logo.jpeg" alt="NGU Trading Logo">
-      <div class="nguBrand__text">
-        <div class="nguBrand__name">NGU TRADING</div>
-        <div class="nguBrand__tag">Never Give Up · System &gt; Emotion</div>
-      </div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="/en/">
+      <img src="/assets/ngu-logo.jpeg" alt="NGU Trading logo"/>
+      <span class="brand-txt"><span class="brand-name">NGU TRADING</span><span class="brand-tag">System &gt; Emotion</span></span>
     </a>
-    <nav class="nguNav" aria-label="Primary">
-      <a class="nguNav__link" href="index.html">Home</a>
-      <a class="nguNav__link" href="#roadmap">Roadmap</a>
-      <a class="nguNav__link" href="#faq">FAQ</a>
-      <div class="nguLang" aria-label="Language">
-        <a class="nguLang__btn" href="../de/edge.html">DE</a>
-        <a class="nguLang__btn nguLang__btn--active" href="../en/edge.html">EN</a>
-      </div>
+    <nav class="nav" aria-label="Primary">
+      <a class="lnk" href="/en/">Home</a>
+      <a class="lnk active" href="/en/edge.html">The App</a>
+      <a class="lnk" href="/en/funded/">Funded</a>
+      <a class="lnk" href="/en/affiliates/">Recommended</a>
+      <a class="lnk" href="/en/about/">About</a>
+      <a class="btn primary sm discordLink magnetic" href="#">Discord</a>
+      <span class="lang"><a href="/de/edge.html">DE</a><a class="on" href="/en/edge.html" aria-current="page">EN</a></span>
     </nav>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
   </div>
 </header>
 
-<div class="section">
-  <div class="container">
-    <div class="hero dark">
-      <div class="glow"></div>
-      <div class="inner">
-        <div class="pill">Primary Product • NGU Edge</div>
-        <div class="kicker">Structured performance operating system</div>
-        <h1 class="h1">Execution quality is the core metric. Profit is the byproduct.</h1>
-        <p class="lead">NGU Edge is not a signal platform and not just a journal. It is a measurable framework for behavior consistency, risk discipline, and capital efficiency.</p>
-        <div style="margin-top:12px;"><a class="btn ghost" href="https://ngutrading.app" target="_blank" rel="noopener noreferrer">Open Edge App</a></div>
+<main>
+  <!-- HERO -->
+  <section class="section hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="reveal">
+          <span class="eyebrow">Primary product · ngutrading.app</span>
+          <h1 class="display">Execution quality is the metric. <span class="accent">Profit is the byproduct.</span></h1>
+          <p class="lead">NGU Edge is a performance operating system for traders — not a signal room and not just a journal. It measures behaviour, risk discipline and capital efficiency, then tells you the one thing to fix before your next session.</p>
+          <div class="btn-row">
+            <a class="btn primary magnetic appLink" href="#">Get free access <span class="arw">→</span></a>
+            <a class="btn ghost appLink" href="#">Log in</a>
+          </div>
+          <div class="hero-meta">
+            <div class="m"><b data-count="6">0</b><span>Core systems</span></div>
+            <div class="m"><b data-count="9" data-prefix="€" data-suffix="–19">0</b><span>Pro / month</span></div>
+            <div class="m"><b data-count="30" data-suffix="s">0</b><span>To start</span></div>
+          </div>
+        </div>
+        <aside class="card pad reveal" style="--i:1">
+          <div class="module-visual" style="min-height:340px;border:0">
+            <div class="mv-grid"></div>
+            <div class="mv-in">
+              <span class="mv-chip"><span class="dot"></span> Season 3 · Day 41</span>
+              <div class="mv-stat"><b data-count="91">0</b><span>Consistency<br>index</span></div>
+              <div class="mv-bars">
+                <div class="mv-bar"><i data-w="88%"></i></div>
+                <div class="mv-bar"><i data-w="72%"></i></div>
+                <div class="mv-bar"><i data-w="95%"></i></div>
+              </div>
+              <div class="leagues">
+                <span class="league">Rookie</span>
+                <span class="league">Pro</span>
+                <span class="league on">Elite</span>
+                <span class="league">Legend</span>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="section">
-  <div class="container">
-    <div class="h2">Core modules</div>
-    <div class="grid-2" style="margin-top:14px;">
-      <div class="card goldline"><div class="card-pad"><div class="kicker">⚙ Module 01</div><div class="h2" style="font-size:26px; margin:8px 0;">Execution System</div><p class="caption">Per-trade and daily logs, emotional tags, rule-based execution scoring, and clean-day tracking.</p></div></div>
-      <div class="card goldline"><div class="card-pad"><div class="kicker">🏦 Module 02</div><div class="h2" style="font-size:26px; margin:8px 0;">Capital System</div><p class="caption">Prop attempts, funded accounts, payouts, challenge costs, and capital efficiency visibility.</p></div></div>
-      <div class="card"><div class="card-pad"><div class="kicker">📈 Module 03</div><div class="h2" style="font-size:26px; margin:8px 0;">Progression System</div><p class="caption">90-day seasons, XP, streaks, stability, and league progression from Rookie to Legend.</p></div></div>
-      <div class="card"><div class="card-pad"><div class="kicker">🧠 Module 04</div><div class="h2" style="font-size:26px; margin:8px 0;">Intelligence Layer</div><p class="caption">Execution trends, drawdown risk signals, pattern flags, and structured optimization cues.</p></div></div>
+  <div class="tape" aria-hidden="true">
+    <div class="tape-track">
+      <span class="pill">journal</span><span class="pill">backtest</span><span class="pill">execution score</span><span class="pill">capital tracking</span><span class="pill">psychology loop</span><span class="pill">AI coach</span><span class="pill">seasons &amp; leagues</span>
+      <span class="pill">journal</span><span class="pill">backtest</span><span class="pill">execution score</span><span class="pill">capital tracking</span><span class="pill">psychology loop</span><span class="pill">AI coach</span><span class="pill">seasons &amp; leagues</span>
     </div>
   </div>
-</div>
 
-<div id="roadmap" class="section">
-  <div class="container">
-    <div class="h2">NGU Edge Roadmap</div>
-    <div style="margin-top:14px; display:grid; gap:12px;">
-      <div class="card goldline"><div class="card-pad"><div class="kicker">✔ LIVE NOW</div><h3 style="margin:8px 0 0;">Live Foundation</h3><p class="caption">Execution system, journal, capital tracking, league progression, and forecast baseline.</p></div></div>
-      <div class="card"><div class="card-pad"><div class="kicker">→ NEXT (3–6 months)</div><h3 style="margin:8px 0 0;">Optimization Refinement</h3><p class="caption">Execution Replay 2.0, emotional correlation upgrades, smarter forecast modeling, trend strength scoring.</p></div></div>
-      <div class="card"><div class="card-pad"><div class="kicker">→ FUTURE (6–9 months)</div><h3 style="margin:8px 0 0;">Structured Social Layer</h3><p class="caption">Execution-based profiles, season cards, private leagues, anonymous discipline rankings.</p></div></div>
-      <div class="card"><div class="card-pad"><div class="kicker">○ PLANNED (9–12 months)</div><h3 style="margin:8px 0 0;">Advanced Profitability Engine</h3><p class="caption">Multi-account scaling planner, risk/failure modeling, capital allocation optimization, deep archive.</p></div></div>
-      <div class="card"><div class="card-pad"><div class="kicker">○ LONG-TERM VISION</div><h3 style="margin:8px 0 0;">12–24 Month Direction</h3><p class="caption">Performance hub, discipline benchmark, social execution network, capital optimization engine.</p></div></div>
+  <!-- MODULES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="shead reveal">
+        <span class="eyebrow">What's inside</span>
+        <h2 class="h2">Six systems that turn discipline into something you can measure.</h2>
+      </div>
+
+      <!-- 01 Journal -->
+      <article class="module">
+        <div class="module-copy reveal">
+          <div class="idx">01 — TRADING JOURNAL</div>
+          <h3>A journal that scores behaviour, not just P&amp;L.</h3>
+          <ul class="feat-list">
+            <li>Per-trade and daily logs in three to five minutes, right after the session</li>
+            <li>Emotional tags (FOMO, revenge, hesitation) attached to real trades</li>
+            <li>Rule-based execution scoring so a clean day is visible, not a feeling</li>
+            <li>Clean-day tracking and streaks that make consistency countable</li>
+          </ul>
+        </div>
+        <div class="module-visual reveal" style="--i:1">
+          <div class="mv-grid"></div>
+          <div class="mv-in">
+            <div class="mv-log">
+              <div class="r"><span>ES · 08:42 · plan followed</span><span class="g">+1.4R</span></div>
+              <div class="r"><span>NQ · 09:15 · revenge</span><span class="d">−1.0R · flagged</span></div>
+              <div class="r"><span>ES · 10:03 · rule-clean</span><span class="g">+0.8R</span></div>
+              <div class="r"><span>Daily execution score</span><span class="g">86 / 100</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 Backtesting -->
+      <article class="module">
+        <div class="module-copy reveal">
+          <div class="idx">02 — BACKTESTING</div>
+          <h3>Pressure-test the setup before you risk a funded account.</h3>
+          <ul class="feat-list">
+            <li>Replay and log historical setups against your own rule set</li>
+            <li>Build a sample size before betting evaluation fees on a hunch</li>
+            <li>See win-rate, expectancy and drawdown by session and by setup</li>
+            <li>Turn "I think this works" into a number you can defend</li>
+          </ul>
+        </div>
+        <div class="module-visual reveal" style="--i:1">
+          <div class="mv-grid"></div>
+          <div class="mv-in">
+            <div class="mv-stat"><b data-count="1.42" data-dec="2" data-suffix="R">0</b><span>Expectancy<br>per trade</span></div>
+            <div class="mv-bars">
+              <div class="mv-bar"><i data-w="61%"></i></div>
+              <div class="mv-bar"><i data-w="78%"></i></div>
+              <div class="mv-bar"><i data-w="44%"></i></div>
+            </div>
+            <span class="mv-chip"><span class="dot"></span> 240-trade sample · London open</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 Capital -->
+      <article class="module">
+        <div class="module-copy reveal">
+          <div class="idx">03 — CAPITAL &amp; PROP TRACKING</div>
+          <h3>Every evaluation, payout and fee in one honest ledger.</h3>
+          <ul class="feat-list">
+            <li>Track evaluations, funded accounts and reset/challenge costs</li>
+            <li>Log payouts and see fee-adjusted, real capital efficiency</li>
+            <li>Know your true cost-per-funded-account across firms</li>
+            <li>Stop guessing whether the prop grind is actually profitable</li>
+          </ul>
+        </div>
+        <div class="module-visual reveal" style="--i:1">
+          <div class="mv-grid"></div>
+          <div class="mv-in">
+            <div class="mv-log">
+              <div class="r"><span>Eval fees (YTD)</span><span class="d">−$418</span></div>
+              <div class="r"><span>Payouts (YTD)</span><span class="g">+$3,240</span></div>
+              <div class="r"><span>Net capital efficiency</span><span class="g">+676%</span></div>
+            </div>
+            <span class="mv-chip"><span class="dot"></span> 2 funded · 1 in evaluation</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 Progression -->
+      <article class="module">
+        <div class="module-copy reveal">
+          <div class="idx">04 — PROGRESSION</div>
+          <h3>Seasons, XP and leagues that reward the boring, right decisions.</h3>
+          <ul class="feat-list">
+            <li>90-day seasons so discipline is a campaign, not a mood</li>
+            <li>XP and streaks for rule-following, not for gambling wins</li>
+            <li>Leagues from Rookie to Legend based on execution, not luck</li>
+            <li>Stability scoring that punishes blow-ups more than it rewards spikes</li>
+          </ul>
+        </div>
+        <div class="module-visual reveal" style="--i:1">
+          <div class="mv-grid"></div>
+          <div class="mv-in">
+            <div class="mv-stat"><b data-count="41">0</b><span>Day streak<br>rule-clean</span></div>
+            <div class="leagues">
+              <span class="league">Rookie</span><span class="league">Pro</span><span class="league on">Elite</span><span class="league">Legend</span>
+            </div>
+            <span class="mv-chip"><span class="dot"></span> Season 3 · +1,240 XP this week</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05 Intelligence -->
+      <article class="module">
+        <div class="module-copy reveal">
+          <div class="idx">05 — INTELLIGENCE LAYER</div>
+          <h3>Your data, read back to you as early-warning signals.</h3>
+          <ul class="feat-list">
+            <li>Execution trends that surface drift before it becomes a drawdown</li>
+            <li>Drawdown-risk signals and behavioural pattern flags</li>
+            <li>Correlation between emotion tags and losing days</li>
+            <li>Structured optimisation cues — what to change, not just what happened</li>
+          </ul>
+        </div>
+        <div class="module-visual reveal" style="--i:1">
+          <div class="mv-grid"></div>
+          <div class="mv-in">
+            <div class="mv-log">
+              <div class="r"><span>Pattern</span><span class="d">losses cluster after 11:00</span></div>
+              <div class="r"><span>Signal</span><span class="d">drawdown risk rising</span></div>
+              <div class="r"><span>Cue</span><span class="g">stop after 2nd loss</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06 AI Coach -->
+      <article class="module">
+        <div class="module-copy reveal">
+          <div class="idx">06 — AI STRATEGY COACH</div>
+          <h3>One focused action before the next session — from your own data.</h3>
+          <ul class="feat-list">
+            <li>Coaching built on your journal and behaviour, not generic advice</li>
+            <li>60-second trade audits: setup validity, timing, rule violations</li>
+            <li>Puts you into a mode — Normal / Reduced / Protect — when tilt shows</li>
+            <li>Converts feedback into three clear rules for tomorrow</li>
+          </ul>
+          <div class="btn-row" style="margin-top:6px">
+            <a class="btn ghost sm" href="/en/coach/">How the coach works <span class="arw">→</span></a>
+          </div>
+        </div>
+        <div class="module-visual reveal" style="--i:1">
+          <div class="mv-grid"></div>
+          <div class="mv-in">
+            <div class="bubbles">
+              <div class="bubble me"><b>You</b>Give me 3 rules so I don't overtrade tomorrow.</div>
+              <div class="bubble"><b>NGU Coach</b>Cap at 3 trades. No entry after 11:00. Stop at −2R. Mode: Reduced.</div>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="section">
-  <div class="container">
-    <div class="h2">Included tools</div>
-    <div class="card" style="margin-top:14px;">
-      <div class="card-pad">
-        <p class="caption" style="margin:0 0 8px;">Feature-level inclusion under NGU Edge</p>
-        <h3 style="margin:0 0 6px;">NGU Strategy Coach (AI)</h3>
-        <p class="caption" style="margin:0 0 12px;">Structured audit and rule-enforcement assistant.</p>
-        <a class="btn ghost" href="https://chatgpt.com/g/g-6978f4798004819197383b0c645e6854-ngu-trading-strategy-coach" target="_blank" rel="noopener noreferrer">Open tool</a>
+  <!-- PSYCHOLOGY LOOP -->
+  <section class="section tight" id="loop">
+    <div class="wrap">
+      <div class="shead reveal">
+        <span class="eyebrow">The daily loop</span>
+        <h2 class="h2">Three minutes a day. A visibly cleaner month.</h2>
+      </div>
+      <div class="pillars">
+        <article class="card pillar reveal"><div class="idx">STEP 01</div><h3>Log</h3><p>Record the session in 3–5 minutes: trades, emotions and whether you followed your rules.</p></article>
+        <article class="card pillar reveal" style="--i:1"><div class="idx">STEP 02</div><h3>See</h3><p>Your psychology score highlights overtrading, revenge patterns and inconsistency risk.</p></article>
+        <article class="card pillar reveal" style="--i:2"><div class="idx">STEP 03</div><h3>Fix</h3><p>Follow one AI action before the next session so the correction is clear and immediate.</p></article>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div id="faq" class="section">
-  <div class="container">
-    <div class="h2">FAQ</div>
-    <div class="faq" style="margin-top:14px;">
-      <details open><summary>Is NGU Edge only a journal?</summary><p>No. The journal is one module inside a broader execution and performance system.</p></details>
-      <details><summary>Does it support prop firm tracking?</summary><p>Yes. Evaluations, funded accounts, payout behavior, and fee-adjusted performance are tracked.</p></details>
-      <details><summary>What is the main principle?</summary><p>Professionals measure execution. Profit follows structure over time.</p></details>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  <div class="container">
-    <div class="legal">
-      <div>© <span class="js-year"></span> NGU Trading.</div>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="impressum/index.html">Impressum</a>
-        <a href="datenschutz/index.html">Datenschutz</a>
-        <a href="disclaimer/index.html">Disclaimer</a>
+  <!-- PRICING -->
+  <section class="section tight" id="pricing">
+    <div class="wrap">
+      <div class="shead reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2 class="h2">Start free. Unlock AI coaching when you're ready.</h2>
+      </div>
+      <div class="price-grid">
+        <article class="card price reveal">
+          <div class="idx">FREE</div>
+          <div class="amt"><b>€0</b><span>/ forever</span></div>
+          <ul class="feat-list">
+            <li>Trading journal &amp; execution scoring</li>
+            <li>Capital &amp; prop-firm tracking</li>
+            <li>Seasons, XP and leagues</li>
+            <li>No credit card, under 30 seconds to start</li>
+          </ul>
+          <a class="btn primary block appLink" href="#">Get free access <span class="arw">→</span></a>
+        </article>
+        <article class="card price feature glow reveal" style="--i:1">
+          <div class="idx accent">PRO · AI COACHING</div>
+          <div class="amt"><b>€9–19</b><span>/ month</span></div>
+          <ul class="feat-list">
+            <li>Everything in Free</li>
+            <li>AI Strategy Coach on your own data</li>
+            <li>Intelligence layer: signals &amp; pattern flags</li>
+            <li>Deeper backtesting analytics</li>
+          </ul>
+          <a class="btn ghost block appLink" href="#">Open NGU Edge <span class="arw">→</span></a>
+        </article>
       </div>
     </div>
-    <p class="caption">Educational content. No financial advice. Trading involves risk.</p>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="section tight" id="roadmap">
+    <div class="wrap">
+      <div class="shead reveal">
+        <span class="eyebrow">Roadmap</span>
+        <h2 class="h2">Where NGU Edge is going.</h2>
+      </div>
+      <div class="road card pad reveal">
+        <div class="stop live"><div class="marker"></div><div><div class="when">✔ Live now</div><h4>Live foundation</h4><p>Execution system, journal, capital tracking, league progression and forecast baseline.</p></div></div>
+        <div class="stop"><div class="marker"></div><div><div class="when">→ Next · 3–6 months</div><h4>Optimisation refinement</h4><p>Execution Replay 2.0, emotional-correlation upgrades, smarter forecast modelling, trend-strength scoring.</p></div></div>
+        <div class="stop"><div class="marker"></div><div><div class="when">→ Future · 6–9 months</div><h4>Structured social layer</h4><p>Execution-based profiles, season cards, private leagues and anonymous discipline rankings.</p></div></div>
+        <div class="stop"><div class="marker"></div><div><div class="when">○ Planned · 9–12 months</div><h4>Advanced profitability engine</h4><p>Multi-account scaling planner, risk/failure modelling, capital-allocation optimisation and a deep archive.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section tight" id="faq">
+    <div class="wrap">
+      <div class="shead reveal"><span class="eyebrow">FAQ</span><h2 class="h2">Straight answers.</h2></div>
+      <div class="card pad reveal" style="display:grid;gap:8px">
+        <details open><summary class="h3" style="cursor:pointer;padding:10px 0">Is NGU Edge just a journal?</summary><p class="p" style="padding:0 0 12px">No. The journal is one of six systems — journaling, backtesting, capital tracking, progression, intelligence and AI coaching.</p></details>
+        <hr class="divider"/>
+        <details><summary class="h3" style="cursor:pointer;padding:10px 0">Does it support prop-firm tracking?</summary><p class="p" style="padding:0 0 12px">Yes. Evaluations, funded accounts, payout behaviour and fee-adjusted performance are all tracked.</p></details>
+        <hr class="divider"/>
+        <details><summary class="h3" style="cursor:pointer;padding:10px 0">Do I need to pay to start?</summary><p class="p" style="padding:0 0 12px">No. The core app is free forever. AI coaching and the intelligence layer are €9–19/month when you want them.</p></details>
+        <hr class="divider"/>
+        <details><summary class="h3" style="cursor:pointer;padding:10px 0">What's the core principle?</summary><p class="p" style="padding:0 0 12px">Professionals measure execution. Profit follows structure over time — not the other way around.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta reveal">
+        <span class="eyebrow plain">Free to start</span>
+        <h2 class="h2">Open NGU Edge and log your first session today.</h2>
+        <div class="btn-row" style="justify-content:center">
+          <a class="btn primary magnetic appLink" href="#">Get free access <span class="arw">→</span></a>
+          <a class="btn ghost discordLink" href="#">Ask in Discord</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <div class="brand" style="margin-bottom:14px"><img style="width:36px;height:36px;border-radius:10px" src="/assets/ngu-logo.jpeg" alt="NGU Trading"><span class="brand-name">NGU TRADING</span></div>
+        <p class="small faint" style="max-width:34ch">NGU Edge — the execution &amp; journaling app at ngutrading.app.</p>
+      </div>
+      <div><h5>Explore</h5><a href="/en/">Home</a><a href="/en/funded/">Funded compare</a><a href="/en/affiliates/">Recommended</a><a href="/en/about/">About</a><a href="/en/coach/">AI Coach</a></div>
+      <div><h5>Connect</h5><a class="discordLink" href="#">Discord</a><a class="igLink" href="#">Instagram</a><a class="ytLink" href="#">YouTube</a><a class="appLink" href="#">ngutrading.app</a></div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span class="js-year"></span> NGU Trading. Educational content only. No financial advice.</span>
+      <span class="btn-row" style="gap:16px"><a href="/en/impressum/">Impressum</a><a href="/en/datenschutz/">Datenschutz</a><a href="/en/disclaimer/">Disclaimer</a></span>
+    </div>
   </div>
-</div>
-<script src="assets/app.js"></script>
+</footer>
+
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "NGU Edge",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "url": "https://ngutrading.app/en/edge.html",
-  "description": "Trading performance system for trading journal workflows, prop firm tracking, execution tracking, and capital efficiency trading.",
-  "publisher": {
-    "@type": "Organization",
-    "name": "NGU Trading"
-  }
-}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"NGU Edge","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://ngutrading.app","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Trading performance app for journaling, backtesting, prop-firm tracking, capital efficiency and AI coaching.","publisher":{"@type":"Organization","name":"NGU Trading"}}
 </script>
+<script src="/assets/app.js"></script>
+<script src="/assets/motion.js"></script>
 </body>
 </html>
